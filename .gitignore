@@ -17,5 +17,4 @@ package-lock.json
 
 # HTML build artifacts & references
 HTML/images-b64/
-HTML/medenic-template.webflow.io/
 HTML/build-single-file.js
