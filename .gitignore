@@ -1,0 +1,21 @@
+node_modules/
+.claude/
+
+# Separate projects
+Cabinet/
+
+# Raw content / media (use cloud storage)
+Content/
+
+# Extraction tooling & artifacts
+extraction/
+EXTRACTION-PROCESS.md
+
+# Build tooling
+package.json
+package-lock.json
+
+# HTML build artifacts & references
+HTML/images-b64/
+HTML/medenic-template.webflow.io/
+HTML/build-single-file.js
