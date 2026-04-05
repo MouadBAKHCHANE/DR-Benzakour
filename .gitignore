@@ -11,9 +11,9 @@ Content/
 extraction/
 EXTRACTION-PROCESS.md
 
-# Build tooling
-package.json
-package-lock.json
+# Build tooling (root only)
+/package.json
+/package-lock.json
 
 # HTML build artifacts & references
 HTML/images-b64/
