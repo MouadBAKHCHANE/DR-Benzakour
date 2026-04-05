@@ -45,29 +45,22 @@ export function LatestPosts() {
                 href={`/actualites/${article.slug}`}
                 className="post-block-02 reveal"
               >
-                <div className="post-left-02">
-                  <div className="post-dots"></div>
-                  <div className="post-wrapper">
-                    <div>{article.tag}</div>
-                    <div>{article.date}</div>
-                  </div>
+                <div className="post-meta-02">
+                  <div className="post-tag-02">{article.tag}</div>
+                  <div className="post-date-02">{article.date}</div>
                 </div>
-                <div className="post-right">
-                  <div className="post-img-02">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="post-image-02"
-                    />
-                  </div>
-                  <div className="post-wrapper-02">
-                    <div>{article.title}</div>
-                    <img
-                      src={IC_ARROW_BLACK}
-                      alt="Arrow"
-                      className="arrow-02"
-                    />
-                  </div>
+                <div className="post-img-02">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="post-image-02"
+                  />
+                </div>
+                <div className="post-title-wrapper-02">
+                  <h3 className="post-title-02">{article.title}</h3>
+                </div>
+                <div className="post-arrow-02">
+                  <img src={IC_ARROW_BLACK} alt="Go" />
                 </div>
               </Link>
             </div>

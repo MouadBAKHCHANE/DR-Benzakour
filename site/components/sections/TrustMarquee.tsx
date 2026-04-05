@@ -42,7 +42,7 @@ export function TrustMarquee() {
             <div className="trusted-block">
               <div className="trusted-info">
                 <span className="body-small">02</span>
-                <div>Techniques Mini-Invasives</div>
+                <div>Prévention Santé</div>
               </div>
               <img className="trusted-icon" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a35f8f1db73c0c58b8f7_ic-trusted-02.svg" alt="" loading="lazy" />
             </div>
@@ -56,7 +56,7 @@ export function TrustMarquee() {
             <div className="trusted-block">
               <div className="trusted-info">
                 <span className="body-small">04</span>
-                <div>Suivi Personnalisé</div>
+                <div>Suivi à Vie</div>
               </div>
               <img className="trusted-icon" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a35f3606afaaa24586bc_ic-trusted-04.svg" alt="" loading="lazy" />
             </div>
