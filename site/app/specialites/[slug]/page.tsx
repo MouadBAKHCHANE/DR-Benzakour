@@ -2,18 +2,11 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { AppointmentForm } from "@/components/sections/AppointmentForm";
 
 /* ── CDN assets ── */
-const IC_TITLE =
-  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
 const IC_ARROW_DOT =
   "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg";
-const IC_PHONE =
-  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691ea0b8e1c99be6f2c709cb_ic-phone.svg";
-const IC_MAIL =
-  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691ea16318dbdab56f7d3e78_ic-mail-02.svg";
-const APPOINTMENT_IMG =
-  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691e97f73a1e5ad1ffe4421a_appoinment.webp";
 const SERVICE_IMG =
   "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06.webp";
 
@@ -325,160 +318,7 @@ export default async function ServiceDetailPage({
           </section>
 
           {/* ── Appointment Section ── */}
-          <section className="appointment">
-            <div className="w-layout-blockcontainer container w-container">
-              <div className="appointment-outer">
-                {/* Left info */}
-                <div className="appointment-main-info">
-                  <div className="section-title left">
-                    <div className="sub-title">
-                      <img src={IC_TITLE} loading="lazy" alt="Sub Title" />
-                      <div>Rendez-vous</div>
-                    </div>
-                    <h2 className="section-heading">
-                      Prendre Rendez-vous
-                    </h2>
-                  </div>
-
-                  <div className="appointment-main-data">
-                    <div className="appointment-data reveal">
-                      <div className="appointment-img">
-                        <img
-                          src={APPOINTMENT_IMG}
-                          loading="lazy"
-                          alt="Cabinet"
-                          className="cover-image"
-                        />
-                      </div>
-                      <div>
-                        <div className="appointment-text">
-                          Dr. Benzakour
-                        </div>
-                        <div className="body-small">
-                          Casablanca, Maroc
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="appointment-contact reveal">
-                      <div className="appointment-text-02">
-                        Nous contacter
-                      </div>
-                      <div className="appointment-link-wrap">
-                        <div className="appointment-link">
-                          <img src={IC_PHONE} loading="lazy" alt="Phone" />
-                          <a
-                            href="tel:+212661143123"
-                            className="ft-contact-link w-inline-block"
-                          >
-                            <div className="nav-top-line _02"></div>
-                            <div>+212 661 143 123</div>
-                            <div className="nav-bottom-line _02"></div>
-                          </a>
-                        </div>
-                        <div className="appointment-link">
-                          <img src={IC_MAIL} loading="lazy" alt="Mail" />
-                          <a
-                            href="mailto:drbenzakouramal@gmail.com"
-                            className="contact-link w-inline-block"
-                          >
-                            <div className="nav-top-line _02"></div>
-                            <div>drbenzakouramal@gmail.com</div>
-                            <div className="nav-bottom-line _02"></div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right form */}
-                <div className="appointment-form-wrap reveal">
-                  <p className="appointment-info-02">
-                    Que vous ayez des questions ou souhaitiez en savoir plus sur
-                    nos services, n&apos;h&eacute;sitez pas &agrave; nous
-                    contacter.
-                  </p>
-                  <div className="appointment-form-block w-form">
-                    <form
-                      id="email-form"
-                      name="email-form"
-                      data-name="Email Form"
-                      method="get"
-                      className="appointment-form _02"
-                    >
-                      <div className="appointment-form-inner _02">
-                        <input
-                          className="appointment-input _02 w-input"
-                          maxLength={256}
-                          name="First-Name"
-                          data-name="First Name"
-                          placeholder="Pr&eacute;nom*"
-                          type="text"
-                          id="first-name"
-                          required
-                        />
-                        <input
-                          className="appointment-input _02 w-input"
-                          maxLength={256}
-                          name="Last-Name"
-                          data-name="Last Name"
-                          placeholder="Nom"
-                          type="text"
-                          id="last-name"
-                        />
-                        <input
-                          className="appointment-input _02 w-input"
-                          maxLength={256}
-                          name="Phone-number"
-                          data-name="Phone number"
-                          placeholder="T&eacute;l&eacute;phone"
-                          type="tel"
-                          id="phone"
-                        />
-                        <input
-                          className="appointment-input _02 w-input"
-                          maxLength={256}
-                          name="email"
-                          data-name="Email"
-                          placeholder="Email*"
-                          type="email"
-                          id="email"
-                          required
-                        />
-                        <textarea
-                          required
-                          placeholder="&Eacute;crivez votre message ici *"
-                          maxLength={5000}
-                          id="message"
-                          name="Message"
-                          data-name="Message"
-                          className="appointment-message _02 w-input"
-                        ></textarea>
-                      </div>
-                      <input
-                        type="submit"
-                        className="form-button w-button"
-                        value="Prendre rendez-vous"
-                      />
-                    </form>
-                    <div className="success-message w-form-done">
-                      <div>
-                        Merci&nbsp;! Votre demande a bien
-                        &eacute;t&eacute; envoy&eacute;e.
-                      </div>
-                    </div>
-                    <div className="error-message w-form-fail">
-                      <div>
-                        Oups&nbsp;! Une erreur est survenue lors de
-                        l&apos;envoi du formulaire.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <AppointmentForm />
         </div>
       </ScrollReveal>
       <Footer />

@@ -1309,7 +1309,7 @@ h6 {
 .inquiry-section {
   margin-bottom: 0;
   background: #f6f4ed;
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .inquiry-inner {
@@ -1357,6 +1357,53 @@ h6 {
 .inquiry-icon {
   width: 28px;
   height: 28px;
+}
+
+@media (max-width: 767px) {
+  .inquiry-inner {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .inquiry-block {
+    padding: 14px 16px 14px 24px;
+    font-size: 15px;
+  }
+
+  .inquiry-icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+
+  .inquiry-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .inquiry-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .inquiry-block {
+    padding: 12px 14px 12px 20px;
+    font-size: 14px;
+  }
+
+  .inquiry-icon-wrap {
+    width: 38px;
+    height: 38px;
+  }
+
+  .inquiry-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .inquiry-section {
+    padding: 40px 0;
+  }
 }
 
 /* ===== TRUSTED ===== */
@@ -2269,6 +2316,10 @@ h6 {
   margin-bottom: 100px;
 }
 
+.about-page .doctor-details-section {
+  margin-bottom: 40px;
+}
+
 .details-wrapper {
   display: flex;
   flex-direction: column;
@@ -2337,7 +2388,7 @@ h6 {
 
 /* ===== HORIZONTAL SCROLL SECTION ===== */
 .hscroll-section {
-  height: 200vh;
+  height: 180vh;
   position: relative;
   margin-bottom: 0;
 }
@@ -2521,15 +2572,6 @@ img {
     padding-right: 30px;
   }
 
-  .contact-inner {
-    flex-direction: column;
-  }
-
-  .contact-image {
-    width: 100%;
-    min-height: 350px;
-  }
-
   .contact-right {
     max-width: 100%;
     flex: auto;
@@ -2602,10 +2644,6 @@ img {
 
   .contact-two-cols {
     grid-template-columns: 1fr;
-  }
-
-  .contact-image {
-    min-height: 280px;
   }
 
   .appointment-inner {
@@ -3678,6 +3716,7 @@ img {
   grid-template-columns: 150px 150px 150px 150px 150px;
   grid-template-rows: 154px;
   grid-column-gap: 20px;
+  justify-content: center;
 }
 
 /* ===== OUR PURPOSE ===== */
@@ -5022,6 +5061,10 @@ img {
   margin-bottom: 150px;
 }
 
+.about-page .page-wrap {
+  margin-bottom: 0px;
+}
+
 .pagination {
   display: flex;
   flex-wrap: wrap;
@@ -5173,6 +5216,7 @@ img {
     grid-template-columns: 174.188px 174.203px 174.203px 174.203px 174.188px;
     font-size: 16px;
     line-height: 27.2px;
+    justify-content: center;
   }
 
   .ans-box {
@@ -6621,6 +6665,7 @@ img {
     grid-row-gap: 20px;
     font-size: 16px;
     line-height: 27.2px;
+    justify-content: center;
   }
 
   .ans-box {
@@ -8098,6 +8143,7 @@ img {
     grid-row-gap: 16px;
     font-size: 16px;
     line-height: 27.2px;
+    justify-content: center;
   }
 
   .ans-box {
@@ -9624,6 +9670,21 @@ img {
     display: none !important;
   }
 
+  /* Left-align Doctor Info for Mobile/Tablet */
+  .doctor-profile-data,
+  .doctor-profile-info,
+  .doctor-info-block,
+  .doctor-profile-contact {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .doctor-info-label {
+    text-align: left !important;
+  }
+  .doctor-contact-row {
+    justify-content: flex-start !important;
+  }
+
   /* Centering the "About" and "Services" cards (ivards typo) */
   .about-wrap,
   .service-list-02 {
@@ -9638,7 +9699,8 @@ img {
 
   .about-wrap {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    justify-content: center !important;
   }
   
   .about-block,
@@ -9658,22 +9720,24 @@ img {
     padding: 60px 0 !important;
   }
   .inquiry-inner {
-    gap: 15px !important;
-  }
-  .inquiry-wrapper {
     gap: 12px !important;
   }
+  .inquiry-wrapper {
+    gap: 10px !important;
+  }
   .inquiry-block {
-    padding: 8px 8px 8px 20px !important;
-    font-size: 15px !important;
+    padding: 6px 6px 6px 16px !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    min-height: 44px !important;
   }
   .inquiry-icon-wrap {
-    width: 44px !important;
-    height: 44px !important;
+    width: 34px !important;
+    height: 34px !important;
   }
   .inquiry-icon {
-    width: 20px !important;
-    height: 20px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 
   /* Compact Footer Logo */
@@ -9681,6 +9745,63 @@ img {
     height: 60px !important;
     width: auto !important;
     margin-left: 0 !important;
+  }
+
+  /* Full Width Square Contact Image */
+  .contact-inner {
+    flex-direction: column !important;
+  }
+  .contact-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    margin-bottom: 30px !important;
+    overflow: hidden !important;
+  }
+  .contact-image .section-img,
+  .contact-image .section-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Centered Footer Left Section & Menu Optimization */
+  .footer-left {
+    align-items: center !important;
+    text-align: center !important;
+    padding: 60px 20px !important;
+  }
+  .footer-brand {
+    align-items: center !important;
+  }
+  .footer-brand-logo {
+    margin-left: 0 !important;
+    height: 80px !important;
+  }
+  .footer-about-label {
+    display: none !important; /* Hide the À Propos title as requested */
+  }
+  .footer-description {
+    max-width: 100% !important;
+  }
+  .footer-cta {
+    align-items: center !important;
+  }
+  .footer-socials {
+    justify-content: center !important;
+  }
+  .footer-nav-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Navigation near Information */
+    gap: 30px !important;
+  }
+  .footer-nav-group {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .footer-right {
+    padding: 60px 20px !important;
   }
 }
 

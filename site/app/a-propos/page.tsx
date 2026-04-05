@@ -195,7 +195,7 @@ export default function AboutPage() {
   return (
     <ScrollReveal>
       <Navbar />
-      <main>
+      <main className="about-page">
         {/* Doctor Profile Hero */}
         <section className="doctor-profile">
           <div className="doctor-profile-inner">
