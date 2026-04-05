@@ -674,7 +674,37 @@ h6 {
 .hero {
   height: 100vh;
   position: relative;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    height: 80vh;
+    margin-bottom: 50px;
+  }
+
+  .hero-heading {
+    font-size: 40px;
+  }
+
+  .hero-inner {
+    padding-top: 80px;
+  }
+
+  .hero-service-wrapper {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero {
+    height: 70vh;
+    margin-bottom: 40px;
+  }
+
+  .hero-heading {
+    font-size: 32px;
+  }
 }
 
 .hero-main-img {
@@ -914,9 +944,76 @@ h6 {
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .story-image {
+    min-height: 200px;
+    max-height: 200px;
+  }
+
+  .story-bottom {
+    padding: 0;
+    gap: 10px;
+  }
+
+  .our-story {
+    margin-bottom: 40px;
+  }
+
+  .story-inner {
+    gap: 20px;
+  }
+
+  .story-top {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 479px) {
+  .story-image {
+    min-height: 150px;
+    max-height: 150px;
+  }
+
+  .our-story {
+    margin-bottom: 30px;
+  }
+}
+
 /* ===== SERVICES ===== */
 .service {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .service {
+    margin-bottom: 50px;
+  }
+
+  .service-list-02 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-box {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .service {
+    margin-bottom: 40px;
+  }
+
+  .service-box {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .service-main-text {
+    font-size: 18px;
+  }
 }
 
 .service-list-02 {
@@ -1110,7 +1207,21 @@ h6 {
 
 /* ===== DOCTORS ===== */
 .doctors {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .doctors {
+    margin-bottom: 50px;
+  }
+
+  .doctor-text {
+    font-size: 24px;
+  }
+
+  .doctor-wrap {
+    padding: 20px 0;
+  }
 }
 
 .doctors-list-02 {
@@ -1249,8 +1360,37 @@ h6 {
 
 /* ===== TRUSTED ===== */
 .trusted-section {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .trusted-section {
+    margin-bottom: 50px;
+  }
+
+  .trusted-marquee {
+    font-size: 36px;
+  }
+
+  .trusted-bottom {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .trusted-data {
+    max-width: 100%;
+  }
+
+  .trusted-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 479px) {
+  .trusted-marquee {
+    font-size: 24px;
+  }
 }
 
 .trusted-marquee {
