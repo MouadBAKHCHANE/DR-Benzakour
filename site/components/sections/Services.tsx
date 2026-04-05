@@ -24,7 +24,7 @@ export function Services() {
               <div className="service-desc">Prise en charge chirurgicale des pathologies de l&rsquo;appareil digestif et viscéral.</div>
             </div>
             <div className="service-bottom">
-              <a href="#" className="secondary-button">
+              <a href="/specialites" className="secondary-button">
                 Voir Détails <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c51686118fbd9369a33f9_e05520c736f24c95da8c1c5278672026_ic-arrow.svg" alt="" />
               </a>
             </div>
@@ -43,7 +43,7 @@ export function Services() {
               <div className="service-desc">Prise en charge chirurgicale experte des cancers de l&rsquo;appareil digestif.</div>
             </div>
             <div className="service-bottom">
-              <a href="#" className="secondary-button">
+              <a href="/specialites" className="secondary-button">
                 Voir Détails <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c51686118fbd9369a33f9_e05520c736f24c95da8c1c5278672026_ic-arrow.svg" alt="" />
               </a>
             </div>
@@ -62,7 +62,7 @@ export function Services() {
               <div className="service-desc">Interventions mini-invasives avec récupération accélérée.</div>
             </div>
             <div className="service-bottom">
-              <a href="#" className="secondary-button">
+              <a href="/specialites" className="secondary-button">
                 Voir Détails <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c51686118fbd9369a33f9_e05520c736f24c95da8c1c5278672026_ic-arrow.svg" alt="" />
               </a>
             </div>
@@ -81,7 +81,7 @@ export function Services() {
               <div className="service-desc">Traitement de la carcinose péritonéale par chirurgie et chimiothérapie hyperthermique.</div>
             </div>
             <div className="service-bottom">
-              <a href="#" className="secondary-button">
+              <a href="/specialites" className="secondary-button">
                 Voir Détails <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c51686118fbd9369a33f9_e05520c736f24c95da8c1c5278672026_ic-arrow.svg" alt="" />
               </a>
             </div>

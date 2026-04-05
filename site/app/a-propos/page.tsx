@@ -144,7 +144,7 @@ function HorizontalScroll() {
 
           {/* Panel 2: Image Da Vinci */}
           <div className="hscroll-panel hscroll-img-panel">
-            <img src="/images/dr-davinci.jpg" alt="Dr. Benzakour - Da Vinci" />
+            <img src="/images/dr-davinci.png" alt="Dr. Benzakour - Da Vinci" />
           </div>
 
           {/* Panel 3: Text */}
@@ -171,7 +171,7 @@ function HorizontalScroll() {
 
           {/* Panel 4: Image MedBot */}
           <div className="hscroll-panel hscroll-img-panel">
-            <img src="/images/dr-medbot.jpg" alt="Dr. Benzakour - MedBot" />
+            <img src="/images/dr-medbot.png" alt="Dr. Benzakour - MedBot" />
           </div>
         </div>
       </div>
