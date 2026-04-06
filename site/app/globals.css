@@ -3609,6 +3609,145 @@ h6 {
   }
 }
 
+/* Mobile — Rendez-vous section: align left + tight spacing */
+@media (max-width: 767px) {
+  .appointment-section {
+    padding: 50px 0 !important;
+  }
+  .appointment-inner {
+    padding: 0 20px !important;
+    text-align: left !important;
+    justify-items: stretch !important;
+    gap: 20px !important;
+  }
+  .appointment-left,
+  .appointment-section .appointment-right {
+    text-align: left !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 14px !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  .appointment-left {
+    gap: 12px !important;
+  }
+  .appointment-badge {
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: flex-start !important;
+  }
+  .appointment-title {
+    text-align: left !important;
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+    margin: 0 0 4px 0 !important;
+    padding-left: 0 !important;
+  }
+  .appointment-desc {
+    text-align: left !important;
+    margin: 0 0 8px 0 !important;
+    padding-left: 0 !important;
+    font-size: 14px !important;
+  }
+  .appointment-contact {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: auto !important;
+    align-self: flex-start !important;
+  }
+  .appointment-info-row {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .appointment-info-row::before {
+    display: none !important;
+  }
+  .appointment-info-block {
+    width: 100% !important;
+    align-items: flex-start !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  .appointment-info-heading {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  .appointment-info-text {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  .appointment-map {
+    height: 240px !important;
+    margin-top: 4px !important;
+  }
+  .appointment-cta-wrap {
+    margin-top: 20px !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Tablet — keep 2 columns but tighter, top-aligned, no decorative line */
+@media (min-width: 768px) and (max-width: 991px) {
+  .appointment-inner {
+    padding: 40px 30px !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: start !important;
+    gap: 32px !important;
+  }
+  .appointment-left {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+  .appointment-section .appointment-right {
+    align-self: start !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .appointment-badge {
+    margin-top: 0 !important;
+  }
+  .appointment-info-row {
+    flex-direction: column !important;
+    gap: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  .appointment-info-row::before {
+    display: none !important;
+  }
+  .appointment-contact {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    justify-content: flex-start !important;
+  }
+  .appointment-title {
+    text-align: left !important;
+  }
+  .appointment-desc {
+    text-align: left !important;
+  }
+}
+
 @media (max-width: 991px) {
   .footer-cta .primary-button {
     display: none !important;
@@ -3620,65 +3759,6 @@ h6 {
     display: flex !important;
     margin-top: 24px;
     justify-content: center;
-  }
-  .appointment-inner {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-    justify-items: center !important;
-    padding: 40px 16px !important;
-    gap: 24px !important;
-  }
-  .appointment-left, 
-  .appointment-right {
-    align-items: center !important;
-    width: 100% !important;
-    gap: 20px !important;
-  }
-  .appointment-title {
-    font-size: 28px !important;
-    line-height: 1.1 !important;
-    margin-bottom: 4px !important;
-  }
-  .appointment-desc {
-    max-width: 400px !important;
-    margin-bottom: 16px !important;
-    font-size: 15px !important;
-  }
-  .appointment-contact {
-    justify-content: center !important;
-    background: #f8fbff;
-    padding: 16px 20px;
-    border: 1px solid rgba(0,75,92,0.08);
-    width: 100%;
-    margin-bottom: 0px !important;
-  }
-  .appointment-info-row {
-    flex-direction: column !important;
-    gap: 32px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: white;
-    padding: 32px 20px;
-    border: 1px solid rgba(0,0,0,0.04);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-    width: 100% !important;
-    position: relative;
-    overflow: hidden;
-  }
-  .appointment-info-row::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #004b5c;
-  }
-  .appointment-map {
-    height: 320px !important;
-    width: 100% !important;
-    margin-top: 8px;
-    border: 1px solid rgba(0,0,0,0.05);
   }
 }
 
@@ -11778,56 +11858,75 @@ img {
 
   /* --- Rendez-vous Section Mobile Fixes --- */
   .appointment-section {
-    padding: 60px 0 !important;
+    padding: 50px 0 !important;
+  }
+
+  .appointment-inner {
+    padding: 0 20px !important;
+    text-align: left !important;
+    justify-items: stretch !important;
+    align-items: start !important;
+    gap: 24px !important;
   }
 
   .appointment-left {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 0 15px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    gap: 14px !important;
   }
 
   .appointment-badge {
-    justify-content: center !important;
-    margin-bottom: 20px !important;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .appointment-title {
     font-size: 26px !important;
     line-height: 1.2 !important;
-    margin-bottom: 16px !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
   }
 
   .appointment-desc {
     font-size: 15px !important;
     line-height: 1.5 !important;
-    margin-bottom: 25px !important;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
     color: #555 !important;
+    text-align: left !important;
+    max-width: 100% !important;
   }
 
   .appointment-contact {
-    background: transparent !important; 
+    background: transparent !important;
     border: none !important;
-    padding: 10px 0 !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0 auto 5px !important;
+    padding: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     text-align: left !important;
     gap: 12px !important;
-    justify-content: center !important; /* Added to keep everything more centered on screen */
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
   }
 
   .appointment-contact-images {
     width: 44px !important;
     height: 44px !important;
     min-width: 44px !important;
-    background: #e8f8f9 !important;
   }
-  
+
   .appointment-contact-icon {
     width: 20px !important;
     height: 20px !important;
@@ -11851,35 +11950,55 @@ img {
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 10px 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
   }
 
   .appointment-right {
-    margin-top: 40px !important;
+    margin-top: 8px !important;
     padding: 0 !important;
+    gap: 16px !important;
   }
 
   .appointment-info-row {
-    margin-bottom: 20px !important;
-    padding: 0 15px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    gap: 16px !important;
+  }
+
+  .appointment-info-row::before {
+    display: none !important;
   }
 
   .appointment-info-heading {
-    justify-content: center !important;
-    margin-bottom: 8px !important;
+    justify-content: flex-start !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+  }
+
+  .appointment-info-text {
+    padding-left: 0 !important;
+    margin: 0 !important;
+    text-align: left !important;
   }
 
   .appointment-map {
-    height: 300px !important;
-    margin-top: 20px !important;
-    padding: 0 10px !important; /* Small padding for the "wild" look */
-    border-radius: 12px !important;
+    height: 280px !important;
+    margin-top: 8px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     width: 100% !important;
+  }
+
+  .appointment-cta-wrap {
+    justify-content: flex-start !important;
+    margin-top: 16px !important;
   }
 
   /* --- Marquee (Expertise Reconnue) Mobile Fixes --- */
@@ -11907,18 +12026,19 @@ img {
 @media (min-width: 768px) and (max-width: 1024px) {
   .appointment-inner {
     grid-template-columns: 1fr 1fr !important;
-    gap: 40px !important;
-    padding: 0 40px !important;
+    gap: 30px !important;
+    padding: 0 20px !important; /* Reduced padding to move overall content more "left" */
     align-items: flex-start !important;
   }
 
   .appointment-left {
     align-items: flex-start !important;
     text-align: left !important;
+    padding-left: 0 !important; /* Shift left */
   }
 
   .appointment-right {
-    margin-top: 130px !important; /* Align with contact info top */
+    margin-top: 80px !important; /* Move it higher to align with "Vos coordonnées..." text */
     padding: 0 !important;
   }
 
@@ -11934,6 +12054,14 @@ img {
     align-items: flex-start !important;
   }
   
+  .appointment-info-row {
+     border-top: none !important; /* Remove the heavy line above Jours de consultation */
+     margin-top: 0 !important;
+     display: flex !important;
+     flex-direction: column !important; /* Stack info blocks vertically on tablet as in screenshot */
+     gap: 30px !important;
+  }
+  
   .appointment-contact {
     margin-bottom: 15px !important;
   }
@@ -11945,6 +12073,7 @@ img {
   .appointment-map {
     grid-column: 1 / span 2 !important;
     margin-top: 40px !important;
+    width: 100% !important;
   }
   
   .appointment-title, .appointment-desc {
