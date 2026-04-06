@@ -1,37 +1,37 @@
 export function TrustMarquee() {
   return (
     <section className="trusted-section">
-      {/* Marquee */}
-      <div className="trusted-marquee">
-        {/* Original texts */}
-        <span><span>Excellence Chirurgicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        <span><span>Innovation Médicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        <span><span>Soins de Confiance</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        <span><span>Expertise Reconnue</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        {/* Duplicated texts for seamless loop */}
-        <span><span>Excellence Chirurgicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        <span><span>Innovation Médicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        <span><span>Soins de Confiance</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-        <span><span>Expertise Reconnue</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
-      </div>
-
-      {/* Bottom Section */}
       <div className="trusted-bottom reveal">
-        {/* Description Text */}
-        <div className="trusted-data">
-          <p>Le Dr Benzakour s&rsquo;engage à offrir des soins chirurgicaux avancés et accessibles, combinant expertise médicale et attention personnalisée.</p>
-          <p>Très impliqué dans l&rsquo;évolution de la médecine au Maroc, il collabore avec des organisations de premier plan et participe activement à des conférences sur la médecine de demain.</p>
-        </div>
-
-        {/* Values Section */}
         <div className="trusted-wrapper">
           {/* Image */}
           <div className="trusted-img">
             <img src="/images/IMG_0024.jpg" alt="Trusted" loading="lazy" />
           </div>
 
-          {/* Values List */}
+          {/* Texts and Values List */}
           <div className="trusted-wrap">
+            {/* Marquee moved to the right column */}
+            <div className="trusted-marquee-container">
+              <div className="trusted-marquee">
+                {/* Original texts */}
+                <span><span>Excellence Chirurgicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                <span><span>Innovation Médicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                <span><span>Soins de Confiance</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                <span><span>Expertise Reconnue</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                {/* Duplicated texts for seamless loop */}
+                <span><span>Excellence Chirurgicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                <span><span>Innovation Médicale</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                <span><span>Soins de Confiance</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+                <span><span>Expertise Reconnue</span> <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6925a0f5194d6fa1a7e3e965_ic-subtitle.svg" alt="" /></span>
+              </div>
+            </div>
+
+            {/* Description Text */}
+            <div className="trusted-data">
+              <p>Le Dr Benzakour s&rsquo;engage à offrir des soins chirurgicaux avancés et accessibles, combinant expertise médicale et attention personnalisée.</p>
+              <p>Très impliqué dans l&rsquo;évolution de la médecine au Maroc, il collabore avec des organisations de premier plan et participe activement à des conférences sur la médecine de demain.</p>
+            </div>
+
             <div className="trusted-block top">
               <div className="trusted-info">
                 <span className="body-small">01</span>

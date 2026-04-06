@@ -29,16 +29,13 @@ export function OurStory() {
               <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/692680410d8a3395fdf7b9fe_story-01.webp" alt="Story 1" loading="lazy" />
             </div>
             <div className="story-img">
-              <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/69268041c26ed3f81026a5d1_story-02.webp" alt="Story 2" loading="lazy" />
+              <img className="story-image" src="/images/apropos-section-1.png" alt="À Propos" loading="lazy" />
             </div>
             <div className="story-img-02">
-              <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/692680417410fefad4c825f0_story-03.webp" alt="Story 3" loading="lazy" />
-            </div>
-            <div className="story-img-03">
-              <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/69268042bd5b20d0646bd8bc_story-04.webp" alt="Story 4" loading="lazy" />
+              <img className="story-image" src="/images/spec-2.png" alt="Spécialité" loading="lazy" />
             </div>
             <div className="story-img-04">
-              <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/69268042100944f7417ade72_story-05.webp" alt="Story 5" loading="lazy" />
+              <img className="story-image story-image-zoom" src="/images/dr-davinci.png" alt="Dr. Benzakour" loading="lazy" />
             </div>
           </div>
         </div>

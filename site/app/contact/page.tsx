@@ -118,7 +118,7 @@ export default function ContactPage() {
                           </a>
                         </div>
                         <div className="contact-info">
-                          <div className="contact-text">Rendez-vous&nbsp;:</div>
+                          <div className="contact-text">Téléphone&nbsp;:</div>
                           <a
                             href="tel:+212661143123"
                             className="contact-link w-inline-block"
@@ -127,6 +127,10 @@ export default function ContactPage() {
                             <div>+212 661 143 123</div>
                             <div className="nav-bottom-line _02"></div>
                           </a>
+                        </div>
+                        <div className="contact-info">
+                          <div className="contact-text">Jours de consultation&nbsp;:</div>
+                          <div>Lundi au Vendredi, Samedi Matin</div>
                         </div>
                       </div>
                     </div>
@@ -225,7 +229,7 @@ export default function ContactPage() {
                       ></textarea>
                     </div>
                     <button type="submit" className="contact-submit-btn">
-                      Prendre Rendez-vous
+                      Envoyez le message
                     </button>
                   </form>
                   {formStatus === "success" && (
@@ -295,6 +299,54 @@ export default function ContactPage() {
               </div>
             </div>
           </section>
+          {/* ── Feature Bento Grid ── */}
+          <section className="feature-grid">
+            <div className="container">
+              <div className="feature-top">
+                <div className="feature-wrap">
+                  <div className="feature-block _dark reveal">
+                    <div className="feature-icon-wrap">
+                      <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db628df1656aa61ae1df5_ic-feature-01.svg" alt="" className="feature-icon" />
+                    </div>
+                    <div>
+                      <div className="feature-text white">Cabinet Moderne</div>
+                      <div className="body-small" style={{ color: "rgba(255,255,255,0.7)" }}>Infrastructure de pointe pour une prise en charge efficace et sécurisée.</div>
+                    </div>
+                  </div>
+                  <div className="feature-block _light reveal">
+                    <div className="feature-icon-wrap">
+                      <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db628a09a478062829583_ic-feature-02.svg" alt="" className="feature-icon" />
+                    </div>
+                    <div>
+                      <div className="feature-text">Suivi Personnalisé</div>
+                      <div className="body-small">Accompagnement attentif avant, pendant et après chaque intervention.</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="feature-main-img reveal">
+                  <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db6282353ce6a70d93685_feature-img-01.webp" alt="Cabinet" className="feature-image" />
+                </div>
+              </div>
+              <div className="feature-bottom">
+                <div className="feature-img reveal">
+                  <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db628dffb49f913be9f59_feature-img-03.webp" alt="Chirurgie" className="feature-image" />
+                </div>
+                <div className="feature-block _accent reveal">
+                  <div className="feature-icon-wrap">
+                    <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db62981c44291c4ff04dc_ic-feature-03.svg" alt="" className="feature-icon" />
+                  </div>
+                  <div>
+                    <div className="feature-text">Expertise Chirurgicale</div>
+                    <div className="body-small">30 ans d&rsquo;expérience et une maîtrise des techniques les plus innovantes au service de chaque patient.</div>
+                  </div>
+                </div>
+                <div className="feature-img reveal">
+                  <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db6288d67674e64a07a23_feature-img-02.webp" alt="Équipe" className="feature-image" />
+                </div>
+              </div>
+            </div>
+          </section>
+
         </div>
       </ScrollReveal>
       <Footer />

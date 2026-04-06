@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero-main-img">
-        <img className="hero-main-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/692684daef1ecc7570243bf3_8cf90d232d596c6f862ac2f72f01c73c_hero.webp" alt="Hero" loading="eager" />
+        <img className="hero-main-image" src="/images/hero.png" alt="Dr. Benzakour" loading="eager" />
       </div>
       <div className="hero-inner">
         <div className="container hero-content-area">

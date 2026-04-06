@@ -36,7 +36,7 @@ export function Footer() {
             </p>
           </div>
           <div className="footer-cta">
-            <Link href="/rendez-vous" className="primary-button">
+            <button type="button" data-appointment className="primary-button">
               <div className="arrow-wrap _01">
                 <img src={IC_ARROW_DOT} alt="Arrow" />
               </div>
@@ -46,7 +46,7 @@ export function Footer() {
               <div className="arrow-wrap _02">
                 <img src={IC_ARROW_DOT} alt="Arrow" />
               </div>
-            </Link>
+            </button>
             <div className="footer-socials">
               <a href="#" className="footer-social-link yt">
                 <img src={IC_YOUTUBE} alt="YouTube" />
@@ -73,22 +73,8 @@ export function Footer() {
                 <Link href="/a-propos" className="footer-nav-link">
                   À Propos
                 </Link>
-                <Link href="/specialites" className="footer-nav-link">
-                  Spécialités
-                </Link>
                 <Link href="/actualites" className="footer-nav-link">
                   Actualités
-                </Link>
-              </div>
-            </div>
-            <div className="footer-nav-group">
-              <div className="footer-nav-title">
-                <img src={IC_TITLE} alt="" />
-                INFORMATIONS
-              </div>
-              <div className="footer-nav-links">
-                <Link href="/contact" className="footer-nav-link">
-                  Rendez-vous
                 </Link>
                 <Link href="/contact" className="footer-nav-link">
                   Contact
@@ -96,8 +82,34 @@ export function Footer() {
                 <Link href="/confidentialite" className="footer-nav-link">
                   Politique de Confidentialité
                 </Link>
-                <Link href="/mentions-legales" className="footer-nav-link">
-                  Mentions Légales
+              </div>
+            </div>
+            <div className="footer-nav-group">
+              <div className="footer-nav-title">
+                <img src={IC_TITLE} alt="" />
+                SPÉCIALITÉS
+              </div>
+              <div className="footer-nav-links">
+                <Link href="/specialites" className="footer-nav-link">
+                  Nos Spécialités
+                </Link>
+                <Link href="/specialites/chirurgie-viscerale" className="footer-nav-link">
+                  Chirurgie Viscérale &amp; Digestive
+                </Link>
+                <Link href="/specialites/chirurgie-robotique" className="footer-nav-link">
+                  Chirurgie Robotique
+                </Link>
+                <Link href="/specialites/chirurgie-mini-invasive" className="footer-nav-link">
+                  Chirurgie Mini-Invasive
+                </Link>
+                <Link href="/specialites/cancerologie-digestive" className="footer-nav-link">
+                  Cancérologie Digestive
+                </Link>
+                <Link href="/specialites/raac" className="footer-nav-link">
+                  RAAC &mdash; Récupération
+                </Link>
+                <Link href="/specialites/consultation-specialisee" className="footer-nav-link">
+                  Consultation Spécialisée
                 </Link>
               </div>
             </div>
@@ -119,13 +131,18 @@ export function Footer() {
                 <img className="footer-contact-icon" src={IC_CALL} alt="" />
                 <span>+212 661 143 123</span>
               </a>
-              <div className="footer-contact-item">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Angle+Bd+Sidi+Abderrahmane+et+Route+d%27Azemour+Hay-Hassani+Casablanca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-contact-item"
+              >
                 <img className="footer-contact-icon" src={IC_TITLE} alt="" />
                 <span>
                   Angle Bd. Sidi Abderrahmane et Route d&rsquo;Azemour,
                   Hay-Hassani, Casablanca
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

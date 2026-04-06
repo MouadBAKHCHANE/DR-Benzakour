@@ -14,11 +14,12 @@ const specialitesItems = [
 ];
 
 const actualitesItems = [
-  { label: "Chirurgie Digestive", href: "/actualites" },
-  { label: "Innovation", href: "/actualites" },
-  { label: "Cancérologie", href: "/actualites" },
-  { label: "Récupération", href: "/actualites" },
-  { label: "Prévention", href: "/actualites" },
+  { label: "Chirurgie Digestive", href: "/actualites?cat=Chirurgie+Digestive" },
+  { label: "Innovation", href: "/actualites?cat=Innovation" },
+  { label: "Cancérologie", href: "/actualites?cat=Cancérologie" },
+  { label: "Récupération", href: "/actualites?cat=Récupération" },
+  { label: "Laparoscopie", href: "/actualites?cat=Laparoscopie" },
+  { label: "Prévention", href: "/actualites?cat=Prévention" },
 ];
 
 interface NavbarProps {
@@ -164,7 +165,7 @@ export function Navbar({ hasHero = false }: NavbarProps) {
                 <span></span>
                 <span></span>
               </button>
-              <Link href="/rendez-vous" className="primary-button nav-cta desktop">
+              <button type="button" data-appointment className="primary-button nav-cta desktop">
                 <div className="arrow-wrap _01">
                   <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg" alt="Arrow" />
                 </div>
@@ -174,7 +175,7 @@ export function Navbar({ hasHero = false }: NavbarProps) {
                 <div className="arrow-wrap _02">
                   <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg" alt="Arrow" />
                 </div>
-              </Link>
+              </button>
             </div>
           </div>
         </nav>
@@ -198,13 +199,22 @@ export function Navbar({ hasHero = false }: NavbarProps) {
           <Link href="/contact" className={`mobile-link ${pathname === "/contact" ? "active" : ""}`} onClick={() => setMenuOpen(false)}>
             Contact
           </Link>
-          <Link
-            href="/rendez-vous"
-            className="mobile-cta"
+          <button
+            type="button"
+            data-appointment
+            className="primary-button mobile-cta"
             onClick={() => setMenuOpen(false)}
           >
-            Prendre Rendez-vous
-          </Link>
+            <div className="arrow-wrap _01">
+              <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg" alt="Arrow" />
+            </div>
+            <div className="primary-text">
+              <div>Prendre Rendez-vous</div>
+            </div>
+            <div className="arrow-wrap _02">
+              <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg" alt="Arrow" />
+            </div>
+          </button>
         </div>
       </div>
     </>

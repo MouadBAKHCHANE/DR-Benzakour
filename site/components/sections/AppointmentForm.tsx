@@ -1,3 +1,10 @@
+const IC_LOCATION =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d8eded5d539bcc7ecac20_ic-location.svg";
+const IC_CALENDAR_STAR =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
+const IC_ARROW_DOT =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg";
+
 export function AppointmentForm() {
   return (
     <section className="appointment-section" id="appointment">
@@ -5,7 +12,7 @@ export function AppointmentForm() {
         {/* Left Side Content */}
         <div className="appointment-left">
           <div className="appointment-badge">
-            <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
+            <img src={IC_CALENDAR_STAR} alt="" />
             <span>Rendez-vous</span>
           </div>
           <h2 className="appointment-title">Demander une consultation.</h2>
@@ -31,45 +38,53 @@ export function AppointmentForm() {
           </div>
         </div>
 
-        {/* Right Side Form */}
-        <form className="appointment-form" id="appointmentForm">
-          <div className="form-row">
-            <div className="form-group">
-              <input type="text" className="form-input" name="name" placeholder="Votre nom" required />
+        {/* Right Side — Info */}
+        <div className="appointment-right">
+          <div className="appointment-info-block">
+            <div className="appointment-info-heading">
+              <img src={IC_CALENDAR_STAR} alt="" />
+              <div>Jours de consultation</div>
             </div>
-            <div className="form-group">
-              <input type="tel" className="form-input" name="phone" placeholder="Numéro de téléphone" required />
+            <p className="appointment-info-text">Lundi au Vendredi, Samedi Matin</p>
+          </div>
+
+          <div className="appointment-info-block">
+            <div className="appointment-info-heading">
+              <img src={IC_LOCATION} alt="" />
+              <div>Adresse du cabinet</div>
             </div>
+            <p className="appointment-info-text">
+              Angle Bd. Sidi Abderrahmane,<br />Hay-Hassani, Casablanca
+            </p>
           </div>
-          <div className="form-row">
-            <div className="form-group">
-              <input type="date" className="form-input" name="date" required />
-            </div>
-            <div className="form-group">
-              <input type="time" className="form-input" name="time" required />
-            </div>
+
+          <div className="appointment-map">
+            <iframe
+              width="100%"
+              height="220"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Angle+Bd+Sidi+Abderrahmane,+Hay-Hassani,+Casablanca&hl=fr&z=15&output=embed"
+            ></iframe>
           </div>
-          <div className="form-group full-width">
-            <input type="email" className="form-input" name="email" placeholder="Adresse email" required />
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="appointment-cta-wrap">
+        <button type="button" data-appointment className="primary-button">
+          <div className="arrow-wrap _01">
+            <img src={IC_ARROW_DOT} alt="Arrow" />
           </div>
-          <div className="form-group full-width">
-            <textarea className="form-textarea" name="message" placeholder="Votre message" required></textarea>
+          <div className="primary-text">
+            <div>Prendre Rendez-vous</div>
           </div>
-          <div className="form-bottom">
-            <p className="form-privacy">Votre vie privée est notre priorité. Vos informations ne seront utilisées qu&rsquo;avec votre consentement explicite.</p>
-            <button type="submit" className="primary-button">
-              <div className="arrow-wrap _01">
-                <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg" alt="Arrow" />
-              </div>
-              <div className="primary-text">
-                <div>Prendre Rendez-vous</div>
-              </div>
-              <div className="arrow-wrap _02">
-                <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg" alt="Arrow" />
-              </div>
-            </button>
+          <div className="arrow-wrap _02">
+            <img src={IC_ARROW_DOT} alt="Arrow" />
           </div>
-        </form>
+        </button>
       </div>
     </section>
   );

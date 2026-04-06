@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { AppointmentProvider } from "@/components/ui/AppointmentProvider";
+import { MobileApptButton } from "@/components/ui/MobileApptButton";
 
 export const metadata: Metadata = {
   title: "Dr. Benzakour - Chirurgien Spécialiste à Casablanca",
@@ -24,6 +26,8 @@ export default function RootLayout({
       <body>
         {children}
         <ScrollToTop />
+        <MobileApptButton />
+        <AppointmentProvider />
       </body>
     </html>
   );

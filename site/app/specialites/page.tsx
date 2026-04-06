@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Inquiry } from "@/components/sections/Inquiry";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
@@ -10,37 +9,29 @@ const services = [
     category: "Chirurgie Générale",
     title: "Chirurgie Viscérale et Digestive",
     href: "/specialites/chirurgie-viscerale",
-    image:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566d028eb2fa596842de_service-thumb-06.webp",
-    srcSet:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566d028eb2fa596842de_service-thumb-06-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566d028eb2fa596842de_service-thumb-06-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566d028eb2fa596842de_service-thumb-06.webp 872w",
+    image: "/images/spec-1.png",
+    srcSet: "",
   },
   {
     category: "Innovation Technologique",
     title: "Chirurgie Robotique",
     href: "/specialites/chirurgie-robotique",
-    image:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920565197ac2087c05dd64a_service-thumb-05.webp",
-    srcSet:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920565197ac2087c05dd64a_service-thumb-05-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920565197ac2087c05dd64a_service-thumb-05-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920565197ac2087c05dd64a_service-thumb-05.webp 872w",
+    image: "/images/spec-4.png",
+    srcSet: "",
   },
   {
     category: "Techniques Avancées",
     title: "Chirurgie Mini-Invasive",
     href: "/specialites/chirurgie-mini-invasive",
-    image:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920561454254efb790553bf_service-thumb-04.webp",
-    srcSet:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920561454254efb790553bf_service-thumb-04-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920561454254efb790553bf_service-thumb-04-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920561454254efb790553bf_service-thumb-04.webp 872w",
+    image: "/images/spec-2.png",
+    srcSet: "",
   },
   {
     category: "Oncologie",
     title: "Cancérologie Digestive",
     href: "/specialites/cancerologie-digestive",
-    image:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692055c158fd3270219f37dc_service-thumb-03.webp",
-    srcSet:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692055c158fd3270219f37dc_service-thumb-03-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692055c158fd3270219f37dc_service-thumb-03-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692055c158fd3270219f37dc_service-thumb-03.webp 872w",
+    image: "/images/spec-5.png",
+    srcSet: "",
   },
   {
     category: "Protocole Innovant",
@@ -116,7 +107,6 @@ export default function SpecialitesPage() {
         </section>
       </div>
 
-      <Inquiry />
 
       <Footer />
     </ScrollReveal>

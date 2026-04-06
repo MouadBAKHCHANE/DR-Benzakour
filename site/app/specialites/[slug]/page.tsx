@@ -23,7 +23,7 @@ const services: Record<string, ServiceData> = {
     title: "Chirurgie Visc\u00e9rale et Digestive",
     subtitle:
       "Prise en charge compl\u00e8te des pathologies de l\u2019appareil digestif, du diagnostic au suivi postop\u00e9ratoire.",
-    image: SERVICE_IMG,
+    image: "/images/spec-1.png",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -59,7 +59,7 @@ const services: Record<string, ServiceData> = {
     title: "Chirurgie Robotique",
     subtitle:
       "La pr\u00e9cision du robot Da Vinci au service de votre sant\u00e9 digestive.",
-    image: SERVICE_IMG,
+    image: "/images/spec-4.png",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -94,7 +94,7 @@ const services: Record<string, ServiceData> = {
     title: "Chirurgie Mini-Invasive",
     subtitle:
       "Des techniques laparoscopiques avanc\u00e9es pour une r\u00e9cup\u00e9ration plus rapide.",
-    image: SERVICE_IMG,
+    image: "/images/spec-2.png",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -131,7 +131,7 @@ const services: Record<string, ServiceData> = {
     title: "Canc\u00e9rologie Digestive",
     subtitle:
       "Prise en charge chirurgicale des cancers digestifs en coordination multidisciplinaire.",
-    image: SERVICE_IMG,
+    image: "/images/spec-5.png",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -274,10 +274,8 @@ export default async function ServiceDetailPage({
               <div className="service-main-img">
                 <img
                   src={service.image}
-                  loading="lazy"
+                  loading="eager"
                   alt={service.title}
-                  sizes="(max-width: 767px) 100vw, (max-width: 991px) 726.625px, 939.15625px"
-                  srcSet="https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06-p-1080.webp 1080w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06-p-1600.webp 1600w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06-p-2000.webp 2000w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06-p-2600.webp 2600w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06.webp 2720w"
                   className="service-main-image reveal"
                 />
               </div>
@@ -302,17 +300,17 @@ export default async function ServiceDetailPage({
                   ))}
                 </div>
 
-                <a href="/contact" className="primary-button w-inline-block">
+                <button type="button" data-appointment className="primary-button">
                   <div className="arrow-wrap _01">
                     <img loading="lazy" src={IC_ARROW_DOT} alt="Arrow" />
                   </div>
                   <div className="primary-text">
-                    <div>Prendre rendez-vous</div>
+                    <div>Prendre Rendez-vous</div>
                   </div>
                   <div className="arrow-wrap _02">
                     <img loading="lazy" src={IC_ARROW_DOT} alt="Arrow" />
                   </div>
-                </a>
+                </button>
               </div>
             </div>
           </section>
