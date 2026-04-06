@@ -23,7 +23,7 @@ const services: Record<string, ServiceData> = {
     title: "Chirurgie Visc\u00e9rale et Digestive",
     subtitle:
       "Prise en charge compl\u00e8te des pathologies de l\u2019appareil digestif, du diagnostic au suivi postop\u00e9ratoire.",
-    image: "/images/spec-1.png",
+    image: "/images/spec-1.webp",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -59,7 +59,7 @@ const services: Record<string, ServiceData> = {
     title: "Chirurgie Robotique",
     subtitle:
       "La pr\u00e9cision du robot Da Vinci au service de votre sant\u00e9 digestive.",
-    image: "/images/spec-4.png",
+    image: "/images/spec-4.webp",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -94,7 +94,7 @@ const services: Record<string, ServiceData> = {
     title: "Chirurgie Mini-Invasive",
     subtitle:
       "Des techniques laparoscopiques avanc\u00e9es pour une r\u00e9cup\u00e9ration plus rapide.",
-    image: "/images/spec-2.png",
+    image: "/images/spec-2.webp",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -131,7 +131,7 @@ const services: Record<string, ServiceData> = {
     title: "Canc\u00e9rologie Digestive",
     subtitle:
       "Prise en charge chirurgicale des cancers digestifs en coordination multidisciplinaire.",
-    image: "/images/spec-5.png",
+    image: "/images/spec-5.webp",
     sections: [
       {
         heading: "Pr\u00e9sentation",
@@ -283,18 +283,15 @@ export default async function ServiceDetailPage({
               <div className="service-main-details reveal">
                 <div className="service-details">
                   {service.sections.map((section, i) => (
-                    <div key={i}>
+                    <div key={i} className="service-content-section">
                       <h3>{section.heading}</h3>
                       <p>{section.content}</p>
                       {section.list && (
-                        <ul role="list">
+                        <ul className="service-feature-list" role="list">
                           {section.list.map((item, j) => (
                             <li key={j}>{item}</li>
                           ))}
                         </ul>
-                      )}
-                      {i < service.sections.length - 1 && (
-                        <p>{"\u200B"}</p>
                       )}
                     </div>
                   ))}

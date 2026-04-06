@@ -27,6 +27,7 @@ export function AppointmentForm() {
               <span className="appointment-call-text">Appelez-nous</span>
             </div>
           </div>
+
           <div className="appointment-contact">
             <div className="appointment-contact-images">
               <img className="appointment-contact-icon" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6926c1c11e3c5e430c5a5886_ic-msg.svg" alt="Email" />
@@ -36,32 +37,46 @@ export function AppointmentForm() {
               <span className="appointment-call-text">Envoyez-nous un email</span>
             </div>
           </div>
+
+          <button type="button" data-appointment className="primary-button" style={{ marginTop: '32px' }}>
+            <div className="arrow-wrap _01">
+              <img src={IC_ARROW_DOT} alt="Arrow" />
+            </div>
+            <div className="primary-text">
+              <div>Prendre Rendez-vous</div>
+            </div>
+            <div className="arrow-wrap _02">
+              <img src={IC_ARROW_DOT} alt="Arrow" />
+            </div>
+          </button>
         </div>
 
         {/* Right Side — Info */}
         <div className="appointment-right">
-          <div className="appointment-info-block">
-            <div className="appointment-info-heading">
-              <img src={IC_CALENDAR_STAR} alt="" />
-              <div>Jours de consultation</div>
+          <div className="appointment-info-row">
+            <div className="appointment-info-block">
+              <div className="appointment-info-heading">
+                <img src={IC_CALENDAR_STAR} alt="" />
+                <div>Jours de consultation</div>
+              </div>
+              <p className="appointment-info-text">Lundi au Vendredi, Samedi Matin</p>
             </div>
-            <p className="appointment-info-text">Lundi au Vendredi, Samedi Matin</p>
-          </div>
 
-          <div className="appointment-info-block">
-            <div className="appointment-info-heading">
-              <img src={IC_LOCATION} alt="" />
-              <div>Adresse du cabinet</div>
+            <div className="appointment-info-block">
+              <div className="appointment-info-heading">
+                <img src={IC_LOCATION} alt="" />
+                <div>Adresse du cabinet</div>
+              </div>
+              <p className="appointment-info-text">
+                Angle Bd. Sidi Abderrahmane,<br />Hay-Hassani, Casablanca
+              </p>
             </div>
-            <p className="appointment-info-text">
-              Angle Bd. Sidi Abderrahmane,<br />Hay-Hassani, Casablanca
-            </p>
           </div>
 
           <div className="appointment-map">
             <iframe
               width="100%"
-              height="220"
+              height="420"
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
@@ -70,21 +85,6 @@ export function AppointmentForm() {
             ></iframe>
           </div>
         </div>
-      </div>
-
-      {/* Bottom CTA */}
-      <div className="appointment-cta-wrap">
-        <button type="button" data-appointment className="primary-button">
-          <div className="arrow-wrap _01">
-            <img src={IC_ARROW_DOT} alt="Arrow" />
-          </div>
-          <div className="primary-text">
-            <div>Prendre Rendez-vous</div>
-          </div>
-          <div className="arrow-wrap _02">
-            <img src={IC_ARROW_DOT} alt="Arrow" />
-          </div>
-        </button>
       </div>
     </section>
   );

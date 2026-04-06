@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "Dr. Benzakour - Chirurgien Spécialiste à Casablanca",
   description:
     "Spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique & Robotique. Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

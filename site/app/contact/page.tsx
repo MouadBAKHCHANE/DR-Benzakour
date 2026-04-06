@@ -85,7 +85,7 @@ export default function ContactPage() {
                 <div className="contact-image">
                   <div className="section-img">
                     <img
-                      src="/images/contact us.png"
+                      src="/images/contact us.webp"
                       loading="lazy"
                       alt="Contact"
                       className="section-image"

@@ -29,13 +29,13 @@ export function OurStory() {
               <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/692680410d8a3395fdf7b9fe_story-01.webp" alt="Story 1" loading="lazy" />
             </div>
             <div className="story-img">
-              <img className="story-image" src="/images/apropos-section-1.png" alt="À Propos" loading="lazy" />
+              <img className="story-image" src="/images/apropos-section-1.webp" alt="À Propos" loading="lazy" />
             </div>
             <div className="story-img-02">
-              <img className="story-image" src="/images/spec-2.png" alt="Spécialité" loading="lazy" />
+              <img className="story-image" src="/images/spec-2.webp" alt="Spécialité" loading="lazy" />
             </div>
             <div className="story-img-04">
-              <img className="story-image story-image-zoom" src="/images/dr-davinci.png" alt="Dr. Benzakour" loading="lazy" />
+              <img className="story-image" src="/images/dr-davinci.webp" alt="Dr. Benzakour" loading="lazy" />
             </div>
           </div>
         </div>

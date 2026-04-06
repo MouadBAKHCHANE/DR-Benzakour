@@ -94,7 +94,7 @@ function HorizontalScroll() {
 
           {/* Panel 2: Image Da Vinci */}
           <div className="hscroll-panel hscroll-img-panel">
-            <img src="/images/dr-davinci.png" alt="Dr. Benzakour - Da Vinci" />
+            <img src="/images/dr-davinci.webp" alt="Dr. Benzakour - Da Vinci" />
           </div>
 
           {/* Panel 3: Text */}
@@ -121,7 +121,7 @@ function HorizontalScroll() {
 
           {/* Panel 4: Image MedBot */}
           <div className="hscroll-panel hscroll-img-panel">
-            <img src="/images/dr-medbot.png" alt="Dr. Benzakour - MedBot" />
+            <img src="/images/dr-medbot.webp" alt="Dr. Benzakour - MedBot" />
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
             <div className="doctor-profile-wrapper">
               <div className="doctor-profile-img reveal reveal-left">
                 <img
-                  src="/images/IMG_0025.jpg"
+                  src="/images/IMG_0025.webp"
                   alt="Dr. Mohammed Amal Benzakour"
                   loading="eager"
                 />

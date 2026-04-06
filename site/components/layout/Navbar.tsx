@@ -89,12 +89,19 @@ export function Navbar({ hasHero = false }: NavbarProps) {
             >
               <Link href="/" className="brand">
                 <img
-                  src="/images/Logo_Dr._Benzakour_Mohammed_Amal_horz-removebg.png"
+                  src="/images/Logo_Dr._Benzakour_Mohammed_Amal_horz-removebg.webp"
                   alt="Oncodigest - Dr. Benzakour Mohammed Amal"
                   className="brand-logo"
                 />
               </Link>
               <div className="nav-menu">
+                {/* Accueil */}
+                <Link href="/" className="nav-link">
+                  <div className="nav-top-line"></div>
+                  <span className="nav-text">Accueil</span>
+                  <div className="nav-bottom-line"></div>
+                </Link>
+
                 {/* À propos */}
                 <Link href="/a-propos" className="nav-link">
                   <div className="nav-top-line"></div>

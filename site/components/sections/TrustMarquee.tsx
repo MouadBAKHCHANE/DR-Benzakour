@@ -5,7 +5,7 @@ export function TrustMarquee() {
         <div className="trusted-wrapper">
           {/* Image */}
           <div className="trusted-img">
-            <img src="/images/IMG_0024.jpg" alt="Trusted" loading="lazy" />
+            <img src="/images/IMG_0024.webp" alt="Trusted" loading="lazy" />
           </div>
 
           {/* Texts and Values List */}

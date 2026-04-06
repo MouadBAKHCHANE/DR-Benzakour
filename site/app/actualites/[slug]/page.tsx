@@ -24,56 +24,83 @@ export default async function ArticlePage({
     <>
       <Navbar />
       <ScrollReveal>
-        <article className="article-page">
-          <div className="container">
-            <div className="article-header reveal">
-              <Link href="/actualites" className="article-back">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m15 18-6-6 6-6"/>
-                </svg>
-                Retour aux articles
-              </Link>
-              <div className="article-meta">
-                <Link
-                  href={`/actualites?cat=${encodeURIComponent(article.tag)}`}
-                  className="article-tag"
-                >
-                  {article.tag}
-                </Link>
-                <span className="article-date">{article.date}</span>
+        <article className="article-page-wrap">
+          <div className="article-hero-bg">
+            <div className="container">
+              <div className="article-hero-grid reveal">
+                <div className="article-hero-content">
+                  <div className="article-category-tag">{article.tag.toUpperCase()}</div>
+                  <h1 className="article-title">{article.title.toUpperCase()}</h1>
+                  <p className="article-excerpt">{article.excerpt}</p>
+                </div>
+                <div className="article-hero-img-wrap">
+                  <img src={article.img} alt={article.title} loading="eager" className="article-main-img" />
+                </div>
               </div>
-              <h1 className="article-title">{article.title}</h1>
-              <p className="article-excerpt">{article.excerpt}</p>
             </div>
+          </div>
 
-            <div className="article-hero reveal">
-              <img src={article.img} alt={article.title} loading="eager" />
-            </div>
+          <div className="container">
+            <div className="article-body-layout">
+              <aside className="article-social-sidebar reveal">
+                <div className="sidebar-sticky">
+                  <div className="publish-info">
+                    <span className="share-label">PUBLISHED</span>
+                    <div className="article-publish-date">{article.date}</div>
+                  </div>
+                  
+                  <div className="share-block" style={{ marginTop: '40px' }}>
+                    <span className="share-label">SHARE</span>
+                    <div className="share-links">
+                      <a href="#" className="share-link-circle">FB</a>
+                      <a href="#" className="share-link-circle">X</a>
+                      <a href="#" className="share-link-circle">LI</a>
+                    </div>
+                  </div>
+                </div>
+              </aside>
 
-            <div className="article-body reveal">
-              {article.content.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
+              <div className="article-main-body reveal">
+                <div className="article-content-rich">
+                  {article.content.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+                
+                <div className="article-footer-cta">
+                  <div className="cta-inner">
+                    <h3>Besoin d&rsquo;une consultation ?</h3>
+                    <p>Prenez rendez-vous directement avec le Dr. Benzakour pour un diagnostic précis.</p>
+                    <Link href="/contact" className="primary-button small">
+                      <div className="primary-text">Prendre Rendez-vous</div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {related.length > 0 && (
-            <div className="container">
-              <div className="article-related">
-                <h2 className="article-related-title">Articles similaires</h2>
-                <div className="post-list">
+            <div className="article-related-section">
+              <div className="container">
+                <div className="section-header align-between">
+                  <h2 className="related-title">Articles similaires</h2>
+                  <Link href="/actualites" className="view-all-link">Voir tout</Link>
+                </div>
+                <div className="related-post-grid">
                   {related.map((a) => (
-                    <div key={a.slug} className="post-item">
-                      <Link href={`/actualites/${a.slug}`} className="post-block">
-                        <div className="post-img">
-                          <img src={a.img} loading="lazy" alt={a.title} className="post-image" />
+                    <div key={a.slug} className="related-post-card">
+                      <Link href={`/actualites/${a.slug}`} className="post-card-link">
+                        <div className="post-card-img">
+                          <img src={a.img} loading="lazy" alt={a.title} />
                         </div>
-                        <div className="post-data">
-                          <div className="post-meta-wrap">
-                            <div className="post-tag">{a.tag}</div>
-                            <div className="post-date">{a.date}</div>
+                        <div className="post-card-info">
+                          <div className="post-card-meta">
+                            <span className="post-tag-simple">{a.tag.toUpperCase()}</span>
+                            <span className="post-dot"></span>
+                            <span className="post-date-simple">{a.date}</span>
                           </div>
-                          <h3 className="post-title">{a.title}</h3>
+                          <h3 className="post-card-title">{a.title}</h3>
                         </div>
                       </Link>
                     </div>

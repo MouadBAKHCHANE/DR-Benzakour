@@ -22,7 +22,7 @@ export function Footer() {
           <div className="footer-brand">
             <Link href="/" className="brand">
               <img
-                src="/images/Logo_Dr._Benzakour_Mohammed_Amal_horz-removebg.png"
+                src="/images/Logo_Dr._Benzakour_Mohammed_Amal_horz-removebg.webp"
                 alt="Oncodigest - Dr. Benzakour"
                 className="brand-logo footer-brand-logo"
               />
@@ -34,6 +34,15 @@ export function Footer() {
             <p className="footer-description">
               Spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique &amp; Robotique.<br />Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca
             </p>
+            {/* Socials - Mobile Only (Below Description) */}
+            <div className="footer-socials mobile-only">
+              <a href="#" className="footer-social-link yt">
+                <img src={IC_YOUTUBE} alt="YouTube" />
+              </a>
+              <a href="#" className="footer-social-link tw">
+                <img src={IC_TWITTER} alt="Twitter" />
+              </a>
+            </div>
           </div>
           <div className="footer-cta">
             <button type="button" data-appointment className="primary-button">
@@ -47,7 +56,7 @@ export function Footer() {
                 <img src={IC_ARROW_DOT} alt="Arrow" />
               </div>
             </button>
-            <div className="footer-socials">
+            <div className="footer-socials desktop-only">
               <a href="#" className="footer-social-link yt">
                 <img src={IC_YOUTUBE} alt="YouTube" />
               </a>
