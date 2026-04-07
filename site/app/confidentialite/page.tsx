@@ -81,7 +81,7 @@ export default function ConfidentialitePage() {
                     <li>Droit de suppression de vos données</li>
                     <li>Droit d&rsquo;opposition au traitement de vos données</li>
                   </ul>
-                  <p>Pour exercer ces droits, contactez-nous à l&rsquo;adresse : <a href="mailto:drbenzakouramal@gmail.com" style={{ color: "#0a2c35", textDecoration: "underline" }}>drbenzakouramal@gmail.com</a></p>
+                  <p>Pour exercer ces droits, contactez-nous à l&rsquo;adresse : <a href="mailto:drmohammedamalbenzakour@gmail.com" style={{ color: "#0a2c35", textDecoration: "underline" }}>drmohammedamalbenzakour@gmail.com</a></p>
                 </div>
               </div>
 
@@ -90,9 +90,11 @@ export default function ConfidentialitePage() {
                 <div className="details-content">
                   <p>Pour toute question relative à cette politique de confidentialité, vous pouvez nous contacter :</p>
                   <ul className="parcours-list">
-                    <li>Email : drbenzakouramal@gmail.com</li>
-                    <li>Téléphone : +212 661 143 123</li>
-                    <li>Adresse : Angle Bd. Sidi Abderrahmane et Route d&rsquo;Azemour, Hay-Hassani, Casablanca</li>
+                    <li>Email : drmohammedamalbenzakour@gmail.com</li>
+                    <li>Téléphone fixe : 05 22 89 44 19</li>
+                    <li>Téléphone portable : 07 67 49 49 16</li>
+                    <li>Instagram : @dr.benzakour.mohammedamal</li>
+                    <li>Adresse : Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca, Maroc</li>
                   </ul>
                 </div>
               </div>

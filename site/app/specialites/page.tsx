@@ -6,50 +6,28 @@ import Link from "next/link";
 
 const services = [
   {
-    category: "Chirurgie Générale",
-    title: "Chirurgie Viscérale et Digestive",
-    href: "/specialites/chirurgie-viscerale",
+    category: "Digestive",
+    title: "Chirurgie Digestive & Viscérale",
+    href: "/specialites/chirurgie-digestive-viscerale",
     image: "/images/spec-1.webp",
-    srcSet: "",
-  },
-  {
-    category: "Innovation Technologique",
-    title: "Chirurgie Robotique",
-    href: "/specialites/chirurgie-robotique",
-    image: "/images/spec-4.webp",
-    srcSet: "",
-  },
-  {
-    category: "Techniques Avancées",
-    title: "Chirurgie Mini-Invasive",
-    href: "/specialites/chirurgie-mini-invasive",
-    image: "/images/spec-2.webp",
-    srcSet: "",
   },
   {
     category: "Oncologie",
-    title: "Cancérologie Digestive",
-    href: "/specialites/cancerologie-digestive",
+    title: "Chirurgie Oncologique",
+    href: "/specialites/chirurgie-oncologique",
     image: "/images/spec-5.webp",
-    srcSet: "",
   },
   {
-    category: "Protocole Innovant",
-    title: "RAAC — Récupération Améliorée",
-    href: "/specialites/raac",
-    image:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204ed3536e9ba4c261d06d_service-thumb-02.webp",
-    srcSet:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204ed3536e9ba4c261d06d_service-thumb-02-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204ed3536e9ba4c261d06d_service-thumb-02-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204ed3536e9ba4c261d06d_service-thumb-02.webp 872w",
+    category: "Mini-Invasive",
+    title: "Chirurgie Laparoscopique & Robotique",
+    href: "/specialites/chirurgie-laparoscopique-robotique",
+    image: "/images/spec-4.webp",
   },
   {
-    category: "Suivi Médical",
-    title: "Consultation Spécialisée",
-    href: "/specialites/consultation",
-    image:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204edad03f115b68897d2a_service-thumb-01.webp",
-    srcSet:
-      "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204edad03f115b68897d2a_service-thumb-01-p-500.webp 500w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204edad03f115b68897d2a_service-thumb-01-p-800.webp 800w, https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/69204edad03f115b68897d2a_service-thumb-01.webp 872w",
+    category: "CHIP / HIPEC",
+    title: "Cytoréduction & CHIP (HIPEC)",
+    href: "/specialites/cytoreduction-chip-hipec",
+    image: "/images/spec-2.webp",
   },
 ];
 
@@ -89,8 +67,6 @@ export default function SpecialitesPage() {
                           src={svc.image}
                           loading="lazy"
                           alt={svc.title}
-                          sizes="(max-width: 767px) 100vw, (max-width: 991px) 726.625px, 939.15625px"
-                          srcSet={svc.srcSet}
                           className="service-image"
                         />
                       </div>

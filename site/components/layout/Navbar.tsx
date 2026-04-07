@@ -5,21 +5,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const specialitesItems = [
-  { label: "Chirurgie Viscérale & Digestive", href: "/specialites/chirurgie-viscerale" },
-  { label: "Chirurgie Robotique", href: "/specialites/chirurgie-robotique" },
-  { label: "Chirurgie Mini-Invasive", href: "/specialites/chirurgie-mini-invasive" },
-  { label: "Cancérologie Digestive", href: "/specialites/cancerologie-digestive" },
-  { label: "RAAC — Récupération Améliorée", href: "/specialites/raac" },
-  { label: "Consultation Spécialisée", href: "/specialites/consultation-specialisee" },
+  { label: "Chirurgie Digestive & Viscérale", href: "/specialites/chirurgie-digestive-viscerale" },
+  { label: "Chirurgie Oncologique", href: "/specialites/chirurgie-oncologique" },
+  { label: "Chirurgie Laparoscopique & Robotique", href: "/specialites/chirurgie-laparoscopique-robotique" },
+  { label: "Cytoréduction & CHIP (HIPEC)", href: "/specialites/cytoreduction-chip-hipec" },
 ];
 
 const actualitesItems = [
   { label: "Chirurgie Digestive", href: "/actualites?cat=Chirurgie+Digestive" },
-  { label: "Innovation", href: "/actualites?cat=Innovation" },
   { label: "Cancérologie", href: "/actualites?cat=Cancérologie" },
+  { label: "Innovation", href: "/actualites?cat=Innovation" },
   { label: "Récupération", href: "/actualites?cat=Récupération" },
-  { label: "Laparoscopie", href: "/actualites?cat=Laparoscopie" },
-  { label: "Prévention", href: "/actualites?cat=Prévention" },
 ];
 
 interface NavbarProps {
@@ -29,12 +25,14 @@ interface NavbarProps {
 export function Navbar({ hasHero = false }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(!hasHero);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileSpecOpen, setMobileSpecOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setMenuOpen(false);
+    setMobileSpecOpen(false);
     setOpenDropdown(null);
   }, [pathname]);
 
@@ -197,9 +195,34 @@ export function Navbar({ hasHero = false }: NavbarProps) {
           <Link href="/a-propos" className={`mobile-link ${pathname === "/a-propos" ? "active" : ""}`} onClick={() => setMenuOpen(false)}>
             À propos
           </Link>
-          <Link href="/specialites" className={`mobile-link ${pathname === "/specialites" ? "active" : ""}`} onClick={() => setMenuOpen(false)}>
-            Spécialités
-          </Link>
+          <div className={`mobile-dropdown ${mobileSpecOpen ? "open" : ""}`}>
+            <button
+              type="button"
+              className={`mobile-link mobile-link-toggle ${pathname.startsWith("/specialites") ? "active" : ""}`}
+              onClick={() => setMobileSpecOpen((v) => !v)}
+              aria-expanded={mobileSpecOpen}
+            >
+              <span>Spécialités</span>
+              <svg className="mobile-link-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div className="mobile-dropdown-list">
+              <Link href="/specialites" className="mobile-sublink" onClick={() => setMenuOpen(false)}>
+                Toutes nos spécialités
+              </Link>
+              {specialitesItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="mobile-sublink"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link href="/actualites" className={`mobile-link ${pathname === "/actualites" ? "active" : ""}`} onClick={() => setMenuOpen(false)}>
             Actualités
           </Link>

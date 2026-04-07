@@ -8,10 +8,6 @@ const IC_YOUTUBE =
   "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d4d00d6afd16dd6ff4d08_ic-youtube.svg";
 const IC_TWITTER =
   "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d4d00487cab9fb6978c8d_ic-twitter.svg";
-const IC_MSG =
-  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6926c1c11e3c5e430c5a5886_ic-msg.svg";
-const IC_CALL =
-  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6926c1c12be8b119d1077a19_ic-call.svg";
 
 export function Footer() {
   return (
@@ -36,10 +32,23 @@ export function Footer() {
             </p>
             {/* Socials - Mobile Only (Below Description) */}
             <div className="footer-socials mobile-only">
-              <a href="#" className="footer-social-link yt">
+              <a
+                href="https://www.instagram.com/dr.benzakour.mohammedamal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link ig"
+                aria-label="Instagram"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" className="footer-social-link yt" aria-label="YouTube">
                 <img src={IC_YOUTUBE} alt="YouTube" />
               </a>
-              <a href="#" className="footer-social-link tw">
+              <a href="#" className="footer-social-link tw" aria-label="X (Twitter)">
                 <img src={IC_TWITTER} alt="Twitter" />
               </a>
             </div>
@@ -57,10 +66,23 @@ export function Footer() {
               </div>
             </button>
             <div className="footer-socials desktop-only">
-              <a href="#" className="footer-social-link yt">
+              <a
+                href="https://www.instagram.com/dr.benzakour.mohammedamal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link ig"
+                aria-label="Instagram"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" className="footer-social-link yt" aria-label="YouTube">
                 <img src={IC_YOUTUBE} alt="YouTube" />
               </a>
-              <a href="#" className="footer-social-link tw">
+              <a href="#" className="footer-social-link tw" aria-label="X (Twitter)">
                 <img src={IC_TWITTER} alt="Twitter" />
               </a>
             </div>
@@ -102,23 +124,17 @@ export function Footer() {
                 <Link href="/specialites" className="footer-nav-link">
                   Nos Spécialités
                 </Link>
-                <Link href="/specialites/chirurgie-viscerale" className="footer-nav-link">
-                  Chirurgie Viscérale &amp; Digestive
+                <Link href="/specialites/chirurgie-digestive-viscerale" className="footer-nav-link">
+                  Chirurgie Digestive &amp; Viscérale
                 </Link>
-                <Link href="/specialites/chirurgie-robotique" className="footer-nav-link">
-                  Chirurgie Robotique
+                <Link href="/specialites/chirurgie-oncologique" className="footer-nav-link">
+                  Chirurgie Oncologique
                 </Link>
-                <Link href="/specialites/chirurgie-mini-invasive" className="footer-nav-link">
-                  Chirurgie Mini-Invasive
+                <Link href="/specialites/chirurgie-laparoscopique-robotique" className="footer-nav-link">
+                  Chirurgie Laparoscopique &amp; Robotique
                 </Link>
-                <Link href="/specialites/cancerologie-digestive" className="footer-nav-link">
-                  Cancérologie Digestive
-                </Link>
-                <Link href="/specialites/raac" className="footer-nav-link">
-                  RAAC &mdash; Récupération
-                </Link>
-                <Link href="/specialites/consultation-specialisee" className="footer-nav-link">
-                  Consultation Spécialisée
+                <Link href="/specialites/cytoreduction-chip-hipec" className="footer-nav-link">
+                  Cytoréduction &amp; CHIP (HIPEC)
                 </Link>
               </div>
             </div>
@@ -130,26 +146,49 @@ export function Footer() {
             </div>
             <div className="footer-contact-list">
               <a
-                href="mailto:drbenzakouramal@gmail.com"
+                href="mailto:drmohammedamalbenzakour@gmail.com"
                 className="footer-contact-item"
               >
-                <img className="footer-contact-icon" src={IC_MSG} alt="" />
-                <span>drbenzakouramal@gmail.com</span>
+                <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </span>
+                <span>drmohammedamalbenzakour@gmail.com</span>
               </a>
-              <a href="tel:+212661143123" className="footer-contact-item">
-                <img className="footer-contact-icon" src={IC_CALL} alt="" />
-                <span>+212 661 143 123</span>
+              <a href="tel:+212522894419" className="footer-contact-item">
+                <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </span>
+                <span>05 22 89 44 19</span>
+              </a>
+              <a href="tel:+212767494916" className="footer-contact-item">
+                <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="M12 18h.01" />
+                  </svg>
+                </span>
+                <span>07 67 49 49 16</span>
               </a>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Angle+Bd+Sidi+Abderrahmane+et+Route+d%27Azemour+Hay-Hassani+Casablanca"
+                href="https://www.google.com/maps/search/?api=1&query=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-contact-item"
               >
-                <img className="footer-contact-icon" src={IC_TITLE} alt="" />
+                <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
                 <span>
-                  Angle Bd. Sidi Abderrahmane et Route d&rsquo;Azemour,
-                  Hay-Hassani, Casablanca
+                  Uptown Business Center, 5e étage N°9,
+                  Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca
                 </span>
               </a>
             </div>

@@ -68,7 +68,7 @@ export const articles: Article[] = [
   {
     slug: "avantages-chirurgie-mini-invasive",
     title: "Les avantages de la chirurgie mini-invasive",
-    tag: "Laparoscopie",
+    tag: "Innovation",
     date: "Juillet 15, 2024",
     img: "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920430d8f976c682e998bae_blog-thumb-03.webp",
     excerpt:
@@ -82,7 +82,7 @@ export const articles: Article[] = [
   {
     slug: "bilan-digestif-depistage",
     title: "Bilan digestif : pourquoi un dépistage régulier",
-    tag: "Prévention",
+    tag: "Chirurgie Digestive",
     date: "Août 03, 2024",
     img: "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692042f4eb1b14e84fda4e4c_blog-thumb-02.webp",
     excerpt:
@@ -95,4 +95,13 @@ export const articles: Article[] = [
   },
 ];
 
-export const categories = Array.from(new Set(articles.map((a) => a.tag)));
+export const ALLOWED_CATEGORIES = [
+  "Chirurgie Digestive",
+  "Cancérologie",
+  "Innovation",
+  "Récupération",
+] as const;
+
+export const categories = ALLOWED_CATEGORIES.filter((c) =>
+  articles.some((a) => a.tag === c)
+);

@@ -109,22 +109,33 @@ export default function ContactPage() {
                         <div className="contact-info">
                           <div className="contact-text">Email&nbsp;:</div>
                           <a
-                            href="mailto:drbenzakouramal@gmail.com"
+                            href="mailto:drmohammedamalbenzakour@gmail.com"
                             className="contact-link w-inline-block"
                           >
                             <div className="nav-top-line _02"></div>
-                            <div>drbenzakouramal@gmail.com</div>
+                            <div>drmohammedamalbenzakour@gmail.com</div>
                             <div className="nav-bottom-line _02"></div>
                           </a>
                         </div>
                         <div className="contact-info">
-                          <div className="contact-text">Téléphone&nbsp;:</div>
+                          <div className="contact-text">Tél. fixe&nbsp;:</div>
                           <a
-                            href="tel:+212661143123"
+                            href="tel:+212522894419"
                             className="contact-link w-inline-block"
                           >
                             <div className="nav-top-line _02"></div>
-                            <div>+212 661 143 123</div>
+                            <div>05 22 89 44 19</div>
+                            <div className="nav-bottom-line _02"></div>
+                          </a>
+                        </div>
+                        <div className="contact-info">
+                          <div className="contact-text">Tél. portable&nbsp;:</div>
+                          <a
+                            href="tel:+212767494916"
+                            className="contact-link w-inline-block"
+                          >
+                            <div className="nav-top-line _02"></div>
+                            <div>07 67 49 49 16</div>
                             <div className="nav-bottom-line _02"></div>
                           </a>
                         </div>
@@ -141,7 +152,7 @@ export default function ContactPage() {
                         <div>Adresse du cabinet</div>
                       </div>
                       <div className="body-small">
-                        Angle Bd. Sidi Abderrahmane, Hay-Hassani, Casablanca
+                        Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca, Maroc
                       </div>
                     </div>
                   </div>
@@ -149,11 +160,11 @@ export default function ContactPage() {
                     <iframe
                       width="100%"
                       height="350"
-                      style={{ border: 0 }}
+                      style={{ border: 0, minHeight: 280 }}
                       loading="lazy"
                       allowFullScreen
                       referrerPolicy="no-referrer-when-downgrade"
-                      src="https://www.google.com/maps?q=Angle+Bd+Sidi+Abderrahmane,+Hay-Hassani,+Casablanca&hl=fr&z=15&output=embed"
+                      src="https://maps.google.com/maps?q=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca&hl=fr&z=16&t=m&ie=UTF8&iwloc=B&output=embed"
                     ></iframe>
                   </div>
                 </div>

@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
-// TODO: Replace with the doctor's email when provided
-const RECIPIENT_EMAIL = "drbenzakouramal@gmail.com";
+const RECIPIENT_EMAIL = "drmohammedamalbenzakour@gmail.com";
 
 export async function POST(request: Request) {
   try {

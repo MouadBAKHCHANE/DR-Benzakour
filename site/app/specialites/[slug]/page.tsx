@@ -7,232 +7,126 @@ import { AppointmentForm } from "@/components/sections/AppointmentForm";
 /* ── CDN assets ── */
 const IC_ARROW_DOT =
   "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691c5c75318d0e32ae92d71a_ic-arrow-dot.svg";
-const SERVICE_IMG =
-  "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920566fe381bd8491964e60_service-main-06.webp";
 
 /* ── Service data ── */
 interface ServiceData {
   title: string;
   subtitle: string;
   image: string;
-  sections: { heading: string; content: string; list?: string[] }[];
+  sections: { heading: string; content?: string; list?: string[]; quote?: string; stats?: { value: string; label: string }[] }[];
 }
 
+const SHARED_QUOTE =
+  "La chirurgie est un métier de transmission et d\u2019évolution. Mon rôle est de mettre trente ans de savoir-faire et les innovations de demain au service de votre guérison.";
+
 const services: Record<string, ServiceData> = {
-  "chirurgie-viscerale": {
-    title: "Chirurgie Visc\u00e9rale et Digestive",
+  "chirurgie-digestive-viscerale": {
+    title: "Chirurgie Digestive & Viscérale",
     subtitle:
-      "Prise en charge compl\u00e8te des pathologies de l\u2019appareil digestif, du diagnostic au suivi postop\u00e9ratoire.",
+      "Chirurgie du quotidien — prise en charge experte des pathologies bénignes et des urgences digestives.",
     image: "/images/spec-1.webp",
     sections: [
       {
-        heading: "Pr\u00e9sentation",
+        heading: "Pathologies bénignes",
         content:
-          "La chirurgie visc\u00e9rale et digestive couvre l\u2019ensemble des interventions portant sur les organes abdominaux\u00a0: estomac, intestin gr\u00eale, c\u00f4lon, rectum, foie, pancr\u00e9as, v\u00e9sicule biliaire et paroi abdominale. Le Dr\u00a0Benzakour propose une approche personnalis\u00e9e alliant expertise chirurgicale de pointe et accompagnement humain.",
+          "Prise en charge experte de la pathologie hépato-biliaire (kyste hydatique du foie, calculs de la vésicule biliaire), œsogastrique (ulcères, hernie hiatale et reflux gastro-œsophagien) et de la paroi abdominale : hernies inguinales, ombilicales et éventrations de la paroi abdominale.",
       },
       {
-        heading: "Pathologies trait\u00e9es",
+        heading: "Urgences digestives",
         content:
-          "Notre \u00e9quipe prend en charge un large \u00e9ventail de pathologies\u00a0:",
-        list: [
-          "Hernies inguinales, ombilicales et \u00e9ventrations",
-          "Lithiase biliaire et chol\u00e9cystectomie",
-          "Appendicite aigu\u00eb et p\u00e9ritonite",
-          "Pathologies colorectales (diverticulose, polypes)",
-          "Occlusions intestinales et adh\u00e9rences",
-        ],
+          "Les urgences sont également prises en charge dans les meilleures conditions, au sein d\u2019établissements parfaitement bien équipés : ulcères perforés, péritonites, occlusions intestinales et autres situations nécessitant une intervention rapide.",
       },
       {
-        heading: "Suivi & R\u00e9cup\u00e9ration",
-        content:
-          "Chaque patient b\u00e9n\u00e9ficie d\u2019un protocole de r\u00e9cup\u00e9ration am\u00e9lior\u00e9e apr\u00e8s chirurgie (RAAC) avec\u00a0:",
+        heading: "Domaines d\u2019expertise",
         list: [
-          "R\u00e9alimentation pr\u00e9coce et mobilisation rapide",
-          "Gestion optimis\u00e9e de la douleur",
-          "Consultations de suivi r\u00e9guli\u00e8res",
-          "Coordination avec votre m\u00e9decin traitant",
+          "Pathologie hépato-biliaire (kyste hydatique, calculs vésiculaires)",
+          "Chirurgie œsogastrique (ulcères, hernie hiatale, reflux)",
+          "Chirurgie de la paroi abdominale (hernies, éventrations)",
+          "Urgences digestives (péritonites, occlusions, ulcères perforés)",
         ],
+        quote: SHARED_QUOTE,
       },
     ],
   },
-  "chirurgie-robotique": {
-    title: "Chirurgie Robotique",
+  "chirurgie-oncologique": {
+    title: "Chirurgie Oncologique",
     subtitle:
-      "La pr\u00e9cision du robot Da Vinci au service de votre sant\u00e9 digestive.",
-    image: "/images/spec-4.webp",
-    sections: [
-      {
-        heading: "Pr\u00e9sentation",
-        content:
-          "La chirurgie robotique repr\u00e9sente l\u2019\u00e9volution la plus r\u00e9cente de la chirurgie mini-invasive. Gr\u00e2ce au syst\u00e8me Da Vinci, le Dr\u00a0Benzakour r\u00e9alise des interventions complexes avec une pr\u00e9cision millim\u00e9trique, une vision 3D haute d\u00e9finition et une amplitude de mouvement sup\u00e9rieure \u00e0 la main humaine.",
-      },
-      {
-        heading: "Avantages de la chirurgie robotique",
-        content: "Cette technologie offre de nombreux b\u00e9n\u00e9fices\u00a0:",
-        list: [
-          "Incisions plus petites et cicatrices r\u00e9duites",
-          "Moins de douleurs postop\u00e9ratoires",
-          "Dur\u00e9e d\u2019hospitalisation raccourcie",
-          "Pr\u00e9cision accrue pour les dissections d\u00e9licates",
-          "Retour plus rapide aux activit\u00e9s quotidiennes",
-        ],
-      },
-      {
-        heading: "Indications principales",
-        content:
-          "La chirurgie robotique est particuli\u00e8rement adapt\u00e9e aux interventions suivantes\u00a0:",
-        list: [
-          "Chirurgie colorectale canc\u00e9reuse",
-          "Chirurgie de l\u2019ob\u00e9sit\u00e9 (bypass, sleeve)",
-          "Chirurgie du reflux gastro-\u0153sophagien",
-          "Interventions h\u00e9patiques et pancr\u00e9atiques s\u00e9lectionn\u00e9es",
-        ],
-      },
-    ],
-  },
-  "chirurgie-mini-invasive": {
-    title: "Chirurgie Mini-Invasive",
-    subtitle:
-      "Des techniques laparoscopiques avanc\u00e9es pour une r\u00e9cup\u00e9ration plus rapide.",
-    image: "/images/spec-2.webp",
-    sections: [
-      {
-        heading: "Pr\u00e9sentation",
-        content:
-          "La chirurgie mini-invasive, ou laparoscopie, permet de r\u00e9aliser des interventions abdominales \u00e0 travers de petites incisions de 5 \u00e0 12\u00a0mm. Le Dr\u00a0Benzakour privil\u00e9gie syst\u00e9matiquement cette approche lorsqu\u2019elle est possible, afin de r\u00e9duire le traumatisme chirurgical et acc\u00e9l\u00e9rer la convalescence.",
-      },
-      {
-        heading: "B\u00e9n\u00e9fices pour le patient",
-        content:
-          "La chirurgie laparoscopique offre des avantages significatifs\u00a0:",
-        list: [
-          "Moins de douleur et de cicatrices",
-          "Hospitalisation r\u00e9duite (\u00e0 souvent ambulatoire)",
-          "Reprise d\u2019activit\u00e9 acc\u00e9l\u00e9r\u00e9e",
-          "Risque inf\u00e9rieur d\u2019infection postop\u00e9ratoire",
-          "R\u00e9sultat esth\u00e9tique am\u00e9lior\u00e9",
-        ],
-      },
-      {
-        heading: "Interventions propos\u00e9es",
-        content:
-          "Nous pratiquons en laparoscopie la majorit\u00e9 des interventions courantes\u00a0:",
-        list: [
-          "Chol\u00e9cystectomie (ablation de la v\u00e9sicule)",
-          "Appendicectomie",
-          "Cure de hernie (inguinale, ombilicale, hiatale)",
-          "Chirurgie anti-reflux (Nissen)",
-          "R\u00e9sections coliques et rectales",
-        ],
-      },
-    ],
-  },
-  "cancerologie-digestive": {
-    title: "Canc\u00e9rologie Digestive",
-    subtitle:
-      "Prise en charge chirurgicale des cancers digestifs en coordination multidisciplinaire.",
+      "Trois décennies d\u2019expérience en chirurgie cancérologique digestive et gynécologique.",
     image: "/images/spec-5.webp",
     sections: [
       {
-        heading: "Pr\u00e9sentation",
+        heading: "Une expertise au service de l\u2019oncologie",
         content:
-          "Le Dr\u00a0Benzakour intervient dans la prise en charge chirurgicale des cancers de l\u2019appareil digestif, en \u00e9troite collaboration avec les oncologues, gastro-ent\u00e9rologues et radiologues. Chaque dossier est discut\u00e9 en r\u00e9union de concertation pluridisciplinaire (RCP) pour garantir la meilleure strat\u00e9gie th\u00e9rapeutique.",
+          "Ma pratique est principalement orientée vers la chirurgie cancérologique, qu\u2019il s\u2019agisse de pathologies digestives ou gynécologiques. Ces trois décennies d\u2019activité m\u2019ont permis d\u2019accompagner de nombreux patients dans des parcours de soins complexes, avec une attention constante portée à la sécurité et à la qualité de vie post-opératoire.",
       },
       {
         heading: "Cancers pris en charge",
-        content:
-          "Notre expertise couvre l\u2019ensemble des cancers digestifs\u00a0:",
         list: [
-          "Cancer de l\u2019estomac",
-          "Cancer du c\u00f4lon et du rectum",
-          "Cancer du pancr\u00e9as",
-          "Cancer du foie et des voies biliaires",
-          "Carcinose p\u00e9riton\u00e9ale (CRS & CHIP / HIPEC)",
+          "Cancers œsogastriques",
+          "Cancers hépato-bilio-pancréatiques",
+          "Cancers colorectaux",
+          "Cancers de l\u2019ovaire",
+          "Tumeurs rares du péritoine (pseudomyxome, mésothéliome, sarcomes)",
         ],
+        quote: SHARED_QUOTE,
+      },
+    ],
+  },
+  "chirurgie-laparoscopique-robotique": {
+    title: "Chirurgie Laparoscopique & Robotique",
+    subtitle:
+      "Moins de cicatrices, plus de précision — l\u2019expertise mini-invasive au service de votre récupération.",
+    image: "/images/spec-4.webp",
+    sections: [
+      {
+        heading: "Une chirurgie sans ouvrir l\u2019abdomen",
+        content:
+          "La chirurgie digestive mini-invasive regroupe deux approches complémentaires — la cœlioscopie et la chirurgie robotique — qui permettent d\u2019opérer à travers de petites incisions, sans ouvrir l\u2019abdomen. Le patient bénéficie ainsi de suites opératoires plus simples, d\u2019une douleur réduite et d\u2019un retour plus rapide à la vie normale.",
       },
       {
-        heading: "Approche th\u00e9rapeutique",
+        heading: "Pionnier de la chirurgie robotique au Maroc",
         content:
-          "Nous combinons les derni\u00e8res avanc\u00e9es en chirurgie canc\u00e9rologique\u00a0:",
-        list: [
-          "Chirurgie carcinologique r\u00e9gl\u00e9e avec curage ganglionnaire",
-          "Techniques mini-invasives et robotiques quand indiqu\u00e9es",
-          "Chimio-hyperthermie intrap\u00e9riton\u00e9ale (CHIP / HIPEC)",
-          "Coordination avec chimioth\u00e9rapie n\u00e9o-adjuvante et adjuvante",
+          "J\u2019ai eu l\u2019honneur d\u2019être le pionnier de la chirurgie robotique digestive au Maroc, en étant le premier chirurgien digestif à introduire et pratiquer cette discipline dans notre pays. Cette innovation majeure permet aujourd\u2019hui d\u2019offrir une précision millimétrique au service de la sécurité du geste opératoire, particulièrement en oncologie.",
+        quote:
+          "Premier chirurgien marocain à réaliser une intervention digestive par robot au Maroc, je mets cette expertise au service de mes patients — pour des opérations plus précises, moins douloureuses et une récupération accélérée.",
+      },
+      {
+        heading: "Les bénéfices démontrés",
+        stats: [
+          { value: "−80%", label: "de douleurs post-opératoires" },
+          { value: "2×", label: "plus vite de retour à domicile" },
+          { value: "Minimes", label: "cicatrices discrètes" },
         ],
       },
     ],
   },
-  raac: {
-    title: "RAAC \u2014 R\u00e9cup\u00e9ration Am\u00e9lior\u00e9e",
+  "cytoreduction-chip-hipec": {
+    title: "Cytoréduction & CHIP (HIPEC)",
     subtitle:
-      "Un protocole de soins optimis\u00e9 pour une convalescence plus rapide et plus confortable.",
-    image: SERVICE_IMG,
+      "Un traitement combiné contre la carcinose péritonéale, alliant chirurgie et chimiothérapie hyperthermique.",
+    image: "/images/spec-2.webp",
     sections: [
       {
-        heading: "Pr\u00e9sentation",
+        heading: "Une stratégie en deux temps",
         content:
-          "La RAAC (R\u00e9cup\u00e9ration Am\u00e9lior\u00e9e Apr\u00e8s Chirurgie) est un ensemble de mesures p\u00e9riop\u00e9ratoires \u00e9prouv\u00e9es visant \u00e0 r\u00e9duire le stress chirurgical, acc\u00e9l\u00e9rer la gu\u00e9rison et am\u00e9liorer le confort du patient. Le Dr\u00a0Benzakour int\u00e8gre ces protocoles dans chacune de ses interventions.",
+          "Le cancer de l\u2019ovaire est souvent diagnostiqué à un stade avancé avec carcinose péritonéale. Face à cette réalité, la prise en charge moderne repose sur une stratégie en deux temps, particulièrement efficace : la chirurgie de cytoréduction suivie immédiatement de la chimiothérapie hyperthermique intrapéritonéale (CHIP/HIPEC).",
       },
       {
-        heading: "Principes cl\u00e9s",
+        heading: "1. La chirurgie de cytoréduction",
         content:
-          "Le programme RAAC repose sur plusieurs piliers\u00a0:",
-        list: [
-          "Information et pr\u00e9paration pr\u00e9op\u00e9ratoire du patient",
-          "Anesth\u00e9sie et analg\u00e9sie multimodale",
-          "Chirurgie mini-invasive privil\u00e9gi\u00e9e",
-          "R\u00e9alimentation et mobilisation pr\u00e9coces",
-          "Pr\u00e9vention des naus\u00e9es et des complications",
-        ],
+          "Première étape de la prise en charge. Son objectif est de retirer toutes les tumeurs visibles dans la cavité abdominale — nodules, portions d\u2019organes — afin d\u2019obtenir une cytoréduction complète (CC0), ne laissant aucune trace macroscopique de maladie. C\u2019est une intervention longue et techniquement exigeante.",
       },
       {
-        heading: "R\u00e9sultats observ\u00e9s",
+        heading: "2. La CHIP (HIPEC)",
         content:
-          "Gr\u00e2ce \u00e0 la RAAC, nos patients constatent\u00a0:",
-        list: [
-          "R\u00e9duction de la dur\u00e9e d\u2019hospitalisation de 30 \u00e0 50\u00a0%",
-          "Diminution des complications postop\u00e9ratoires",
-          "Meilleur confort et satisfaction globale",
-          "Retour plus rapide \u00e0 la vie normale",
-        ],
-      },
-    ],
-  },
-  consultation: {
-    title: "Consultation Sp\u00e9cialis\u00e9e",
-    subtitle:
-      "\u00c9valuation compl\u00e8te et orientation personnalis\u00e9e pour chaque patient.",
-    image: SERVICE_IMG,
-    sections: [
-      {
-        heading: "Pr\u00e9sentation",
-        content:
-          "La consultation sp\u00e9cialis\u00e9e est la premi\u00e8re \u00e9tape de votre parcours de soins. Le Dr\u00a0Benzakour prend le temps d\u2019\u00e9couter, d\u2019examiner et d\u2019expliquer chaque diagnostic afin que vous compreniez pleinement les options th\u00e9rapeutiques qui s\u2019offrent \u00e0 vous.",
+          "La chimiothérapie hyperthermique intrapéritonéale prend le relais immédiatement après. La maladie microscopique, invisible à l\u2019œil nu, est détruite par une chimiothérapie chauffée à environ 41–43°C, délivrée directement dans la cavité péritonéale juste après la chirurgie — avant que les adhérences post-opératoires ne se forment et ne piègent des cellules tumorales résiduelles. La chaleur améliore la pénétration dans les tissus cancéreux et renforce l\u2019action cytotoxique.",
       },
       {
-        heading: "D\u00e9roulement de la consultation",
+        heading: "Une approche multidisciplinaire",
         content:
-          "Chaque visite suit un processus structur\u00e9\u00a0:",
-        list: [
-          "Analyse de votre dossier m\u00e9dical et historique",
-          "Examen clinique approfondi",
-          "Interpr\u00e9tation des examens compl\u00e9mentaires (scanner, IRM, endoscopie)",
-          "Discussion claire du diagnostic et du plan de traitement",
-          "R\u00e9daction d\u2019un compte-rendu d\u00e9taill\u00e9 pour votre m\u00e9decin traitant",
-        ],
-      },
-      {
-        heading: "Motifs de consultation fr\u00e9quents",
-        content:
-          "Les patients nous consultent notamment pour\u00a0:",
-        list: [
-          "Douleurs abdominales chroniques ou aigu\u00ebs",
-          "Bilan pr\u00e9op\u00e9ratoire avant chirurgie digestive",
-          "Second avis chirurgical",
-          "Suivi postop\u00e9ratoire et contr\u00f4le",
-          "Prise en charge de l\u2019ob\u00e9sit\u00e9 morbide",
-        ],
+          "La CHIP est une chirurgie complexe et multidisciplinaire, impliquant chirurgiens, anesthésistes, oncologues et radiologues. Elle nécessite une sélection rigoureuse des patientes en réunion de concertation pluridisciplinaire (RCP) pour garantir les meilleures chances de succès.",
+        quote:
+          "La chirurgie est un équilibre entre le savoir-faire acquis par le temps et l\u2019audace des technologies de demain. Mon rôle est de mettre cette double expertise au service de votre guérison.",
       },
     ],
   },
@@ -285,13 +179,28 @@ export default async function ServiceDetailPage({
                   {service.sections.map((section, i) => (
                     <div key={i} className="service-content-section">
                       <h3>{section.heading}</h3>
-                      <p>{section.content}</p>
+                      {section.content && <p>{section.content}</p>}
                       {section.list && (
                         <ul className="service-feature-list" role="list">
                           {section.list.map((item, j) => (
                             <li key={j}>{item}</li>
                           ))}
                         </ul>
+                      )}
+                      {section.stats && (
+                        <div className="service-stats-grid">
+                          {section.stats.map((stat, k) => (
+                            <div key={k} className="service-stat">
+                              <div className="service-stat-value">{stat.value}</div>
+                              <div className="service-stat-label">{stat.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {section.quote && (
+                        <blockquote className="service-quote">
+                          {section.quote}
+                        </blockquote>
                       )}
                     </div>
                   ))}

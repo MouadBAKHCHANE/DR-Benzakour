@@ -85,7 +85,7 @@ function HorizontalScroll() {
               <li className="purpose-item">Formé aux Hôpitaux de Toulouse-Rangueil</li>
               <li className="purpose-item">Certifié Da Vinci Xi &amp; MedBot Shanghai</li>
               <li className="purpose-item">Protocole RAAC pour une récupération accélérée</li>
-              <li className="purpose-item">Nouveau cabinet &mdash; Cité de l&apos;Air, Casa Anfa</li>
+              <li className="purpose-item">Nouveau cabinet &mdash; Uptown Business Center, CFC, Casablanca</li>
             </ul>
             <p className="single-text" style={{ marginTop: 20 }}>
               La rigueur d&apos;hier, les technologies de demain &mdash; au service d&apos;une chirurgie plus humaine.
@@ -217,7 +217,7 @@ export default function AboutPage() {
                   <div className="details-content">
                     <h5>30 ans au service de la chirurgie digestive</h5>
                     <p>Formé à la Faculté de Toulouse-Rangueil, le Dr. Benzakour a consacré trois décennies à perfectionner son art. De la chirurgie classique à la robotique de dernière génération, son parcours reflète une conviction profonde : chaque patient mérite une prise en charge sur mesure, portée par l&rsquo;excellence technique et l&rsquo;écoute humaine.</p>
-                    <p>Aujourd&rsquo;hui, il exerce depuis son nouveau cabinet à la Cité de l&rsquo;Air, Casa Anfa &mdash; un espace conçu pour allier confort du patient et technologie de pointe.</p>
+                    <p>Aujourd&rsquo;hui, il exerce depuis son nouveau cabinet à l&rsquo;Uptown Business Center, au cœur de Casa Finance City &mdash; un espace conçu pour allier confort du patient et technologie de pointe.</p>
                   </div>
                 </div>
                 <div className="details-block reveal">

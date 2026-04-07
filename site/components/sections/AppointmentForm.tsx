@@ -20,20 +20,38 @@ export function AppointmentForm() {
 
           <div className="appointment-contact">
             <div className="appointment-contact-images">
-              <img className="appointment-contact-icon" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6926c1c12be8b119d1077a19_ic-call.svg" alt="Phone" />
+              <svg className="appointment-contact-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
             </div>
             <div className="appointment-contact-info">
-              <a href="tel:+212661143123" className="appointment-phone">+212 661 143 123</a>
-              <span className="appointment-call-text">Appelez-nous</span>
+              <a href="tel:+212522894419" className="appointment-phone">05 22 89 44 19</a>
+              <span className="appointment-call-text">Téléphone fixe</span>
             </div>
           </div>
 
           <div className="appointment-contact">
             <div className="appointment-contact-images">
-              <img className="appointment-contact-icon" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6926c1c11e3c5e430c5a5886_ic-msg.svg" alt="Email" />
+              <svg className="appointment-contact-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                <path d="M12 18h.01" />
+              </svg>
             </div>
             <div className="appointment-contact-info">
-              <a href="mailto:drbenzakouramal@gmail.com" className="appointment-phone">drbenzakouramal@gmail.com</a>
+              <a href="tel:+212767494916" className="appointment-phone">07 67 49 49 16</a>
+              <span className="appointment-call-text">Téléphone portable</span>
+            </div>
+          </div>
+
+          <div className="appointment-contact">
+            <div className="appointment-contact-images">
+              <svg className="appointment-contact-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </div>
+            <div className="appointment-contact-info">
+              <a href="mailto:drmohammedamalbenzakour@gmail.com" className="appointment-phone">drmohammedamalbenzakour@gmail.com</a>
               <span className="appointment-call-text">Envoyez-nous un email</span>
             </div>
           </div>
@@ -68,7 +86,10 @@ export function AppointmentForm() {
                 <div>Adresse du cabinet</div>
               </div>
               <p className="appointment-info-text">
-                Angle Bd. Sidi Abderrahmane,<br />Hay-Hassani, Casablanca
+                Uptown Business Center, 5e étage N°9,<br />
+                Immeuble D, CFC,<br />
+                Bd Moulay Abdellah Chérif,<br />
+                Casablanca, Maroc
               </p>
             </div>
           </div>
@@ -77,11 +98,11 @@ export function AppointmentForm() {
             <iframe
               width="100%"
               height="420"
-              style={{ border: 0 }}
+              style={{ border: 0, minHeight: 280 }}
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Angle+Bd+Sidi+Abderrahmane,+Hay-Hassani,+Casablanca&hl=fr&z=15&output=embed"
+              src="https://maps.google.com/maps?q=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca&hl=fr&z=16&t=m&ie=UTF8&iwloc=B&output=embed"
             ></iframe>
           </div>
         </div>
