@@ -9,8 +9,11 @@ export function Hero() {
           <div className="hero-wrapper">
             <h1 className="hero-heading">Votre Santé, Notre Mission</h1>
             <p className="hero-info">
-              Dr Benzakour Mohammed Amal, spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique &amp; Robotique.<br />
-              Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca.
+              Dr Benzakour Mohammed Amal, spécialiste<br />
+              en Chirurgie Digestive et Viscérale,<br />
+              Coelioscopique &amp; Robotique.<br />
+              Expert en Chirurgie Oncologique Viscérale<br />
+              et Péritonéale (HIPEC/CRS) à Casablanca.
             </p>
             <a href="/specialites" className="primary-button">
               <div className="arrow-wrap _01">

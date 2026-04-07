@@ -776,15 +776,29 @@ h6 {
     margin-bottom: 16px;
   }
 
+  .hero-main-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+    pointer-events: none;
+  }
+
   .hero-heading {
-    font-size: 32px;
+    font-size: 38px;
     line-height: 1.15;
   }
 
   .hero-info {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-    max-width: 90% !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    max-width: 92% !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   }
 
   .hero-inner {
@@ -803,13 +817,13 @@ h6 {
   }
 
   .hero-heading {
-    font-size: 26px;
+    font-size: 30px;
     line-height: 1.15;
   }
 
   .hero-info {
-    font-size: 12px !important;
-    line-height: 1.5 !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
   }
 }
 
