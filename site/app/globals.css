@@ -772,7 +772,7 @@ h6 {
 
 @media (max-width: 767px) {
   .hero {
-    height: 80vh;
+    height: 105vh;
     margin-bottom: 16px;
   }
 
@@ -812,7 +812,7 @@ h6 {
 
 @media (max-width: 479px) {
   .hero {
-    height: 70vh;
+    height: 100vh;
     margin-bottom: 12px;
   }
 
