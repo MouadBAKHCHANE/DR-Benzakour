@@ -2,36 +2,22 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
+import { getSpecialtiesPage, getAllSpecialties } from "@/lib/queries";
+import { urlForImage } from "@/lib/sanity";
 import Link from "next/link";
 
-const services = [
-  {
-    category: "Digestive",
-    title: "Chirurgie Digestive & Viscérale",
-    href: "/specialites/chirurgie-digestive-viscerale",
-    image: "/images/spec-1.webp",
-  },
-  {
-    category: "Oncologie",
-    title: "Chirurgie Oncologique",
-    href: "/specialites/chirurgie-oncologique",
-    image: "/images/spec-5.webp",
-  },
-  {
-    category: "Mini-Invasive",
-    title: "Chirurgie Laparoscopique & Robotique",
-    href: "/specialites/chirurgie-laparoscopique-robotique",
-    image: "/images/spec-4.webp",
-  },
-  {
-    category: "CHIP / HIPEC",
-    title: "Cytoréduction & CHIP (HIPEC)",
-    href: "/specialites/cytoreduction-chip-hipec",
-    image: "/images/spec-2.webp",
-  },
-];
+export const metadata = {
+  title: "Spécialités - Dr. Benzakour",
+  description: "Découvrez notre expertise en chirurgie viscérale, digestive et robotique.",
+};
 
-export default function SpecialitesPage() {
+export default async function SpecialitesPage() {
+  const pageData = await getSpecialtiesPage();
+  const specialties = await getAllSpecialties();
+
+  const title = pageData?.title || "Nos Spécialités";
+  const subtitle = pageData?.subtitle || "Découvrez notre expertise en chirurgie viscérale, digestive et robotique au service de votre santé.";
+
   return (
     <ScrollReveal>
       <Navbar />
@@ -40,10 +26,9 @@ export default function SpecialitesPage() {
       <div className="page-title">
         <div className="w-layout-blockcontainer container w-container">
           <div className="pg-inner">
-            <h1 className="main-heading reveal">Nos Spécialités</h1>
+            <h1 className="main-heading reveal">{title}</h1>
             <p className="pg-title-text">
-              Découvrez notre expertise en chirurgie viscérale, digestive et
-              robotique au service de votre santé.
+              {subtitle}
             </p>
           </div>
         </div>
@@ -55,24 +40,24 @@ export default function SpecialitesPage() {
           <div className="w-layout-blockcontainer container w-container">
             <div className="w-dyn-list">
               <div role="list" className="service-list w-dyn-items">
-                {services.map((svc) => (
+                {specialties.map((svc: any) => (
                   <div
-                    key={svc.href}
+                    key={svc._id}
                     role="listitem"
                     className="service-item w-dyn-item"
                   >
-                    <Link href={svc.href} className="service-block w-inline-block reveal">
+                    <Link href={`/specialites/${svc.slug?.current}`} className="service-block w-inline-block reveal">
                       <div className="service-img">
                         <img
-                          src={svc.image}
+                          src={svc.image ? urlForImage(svc.image).url() : "/images/spec-1.webp"}
                           loading="lazy"
-                          alt={svc.title}
+                          alt={svc.name}
                           className="service-image"
                         />
                       </div>
                       <div className="service-wrap">
-                        <div className="service-text">{svc.category}</div>
-                        <div className="service-text-02">{svc.title}</div>
+                        <div className="service-text">{svc.tag}</div>
+                        <div className="service-text-02">{svc.name}</div>
                       </div>
                     </Link>
                   </div>
@@ -82,7 +67,6 @@ export default function SpecialitesPage() {
           </div>
         </section>
       </div>
-
 
       <Footer />
     </ScrollReveal>
