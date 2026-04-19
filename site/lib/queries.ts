@@ -1,21 +1,23 @@
 import { client } from "./sanity";
 
+const REVALIDATE_OPTIONS = { next: { revalidate: 10 } }; // Revalidate every 10 seconds
+
 // — Homepage —
 
 export async function getHomePage() {
-  return client.fetch(`*[_type == "homePage"][0]`);
+  return client.fetch(`*[_type == "homePage"][0]`, {}, REVALIDATE_OPTIONS);
 }
 
 // — Settings —
 
 export async function getSettings() {
-  return client.fetch(`*[_type == "siteSettings"][0]`);
+  return client.fetch(`*[_type == "siteSettings"][0]`, {}, REVALIDATE_OPTIONS);
 }
 
 // — Spécialités —
 
 export async function getAllSpecialties() {
-  return client.fetch(`*[_type == "specialty"] | order(order asc)`);
+  return client.fetch(`*[_type == "specialty"] | order(order asc)`, {}, REVALIDATE_OPTIONS);
 }
 
 export async function getSpecialtyBySlug(slug: string) {
@@ -30,20 +32,21 @@ export async function getSpecialtyBySlug(slug: string) {
       },
       seoTitle, seoDescription, seoKeywords, ogImage, noIndex
     }`,
-    { slug }
+    { slug },
+    REVALIDATE_OPTIONS
   );
 }
 
 // — À Propos —
 
 export async function getAboutPage() {
-  return client.fetch(`*[_type == "aboutPage"][0]`);
+  return client.fetch(`*[_type == "aboutPage"][0]`, {}, REVALIDATE_OPTIONS);
 }
 
 // — Page Spécialités —
 
 export async function getSpecialtiesPage() {
-  return client.fetch(`*[_type == "specialtiesPage"][0]`);
+  return client.fetch(`*[_type == "specialtiesPage"][0]`, {}, REVALIDATE_OPTIONS);
 }
 
 // — Blog —
@@ -51,7 +54,7 @@ export async function getSpecialtiesPage() {
 export async function getAllBlogPosts() {
   return client.fetch(`*[_type == "post"] | order(publishedAt desc) {
     _id, title, slug, publishedAt, mainImage, categorie, excerpt
-  }`);
+  }`, {}, REVALIDATE_OPTIONS);
 }
 
 export async function getPostBySlug(slug: string) {
@@ -62,7 +65,8 @@ export async function getPostBySlug(slug: string) {
       "seoTitle": seo.title,
       "seoDescription": seo.description
     }`,
-    { slug }
+    { slug },
+    REVALIDATE_OPTIONS
   );
 }
 
@@ -71,6 +75,5 @@ export async function getPostBySlug(slug: string) {
 export async function getAllLegalPages() {
   return client.fetch(`*[_type == "legalPage"] {
     _id, title, slug
-  }`);
+  }`, {}, REVALIDATE_OPTIONS);
 }
-
