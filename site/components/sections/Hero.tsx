@@ -1,19 +1,29 @@
-export function Hero() {
+import { getHomePage } from "@/lib/queries";
+import { urlForImage } from "@/lib/sanity";
+
+export async function Hero() {
+  const data = await getHomePage();
+
   return (
     <section className="hero" id="hero">
       <div className="hero-main-img">
-        <img className="hero-main-image" src="/images/hero.webp" alt="Dr. Benzakour" loading="eager" />
+        <img 
+          className="hero-main-image" 
+          src={data?.heroImage ? urlForImage(data.heroImage).url() : "/images/hero.webp"} 
+          alt="Dr. Benzakour" 
+          loading="eager" 
+        />
       </div>
       <div className="hero-inner">
         <div className="container hero-content-area">
           <div className="hero-wrapper">
-            <h1 className="hero-heading">Votre Santé, Notre Mission</h1>
-            <p className="hero-info">
-              Dr Benzakour Mohammed Amal, spécialiste<br />
-              en Chirurgie Digestive et Viscérale,<br />
-              Coelioscopique &amp; Robotique.<br />
-              Expert en Chirurgie Oncologique Viscérale<br />
-              et Péritonéale (HIPEC/CRS) à Casablanca.
+            <h1 className="hero-heading">{data?.heroTitle || "Votre Santé, Notre Mission"}</h1>
+            <p className="hero-info" style={{ whiteSpace: "pre-wrap" }}>
+              {data?.heroDescription || `Dr Benzakour Mohammed Amal, spécialiste
+en Chirurgie Digestive et Viscérale,
+Coelioscopique & Robotique.
+Expert en Chirurgie Oncologique Viscérale
+et Péritonéale (HIPEC/CRS) à Casablanca.`}
             </p>
             <a href="/specialites" className="primary-button">
               <div className="arrow-wrap _01">
@@ -32,55 +42,25 @@ export function Hero() {
         <div className="hero-service-wrapper">
           <div className="hero-service-wrap">
             {/* Original services */}
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Robotique</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Oncologique</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">CRS &amp; HIPEC</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Digestive</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Bariatrique</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie HBP</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
+            {(data?.heroMarquee?.length ? data.heroMarquee : [
+              "Chirurgie Robotique", "Chirurgie Oncologique", "CRS & HIPEC", 
+              "Chirurgie Digestive", "Chirurgie Bariatrique", "Chirurgie HBP"
+            ]).map((service: string, index: number) => (
+              <div className="hero-block" key={`orig-${index}`}>
+                <a href="#" className="service-link">{service}</a>
+                <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
+              </div>
+            ))}
             {/* Duplicated services for seamless loop */}
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Robotique</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Oncologique</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">CRS &amp; HIPEC</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Digestive</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie Bariatrique</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
-            <div className="hero-block">
-              <a href="#" className="service-link">Chirurgie HBP</a>
-              <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-            </div>
+            {(data?.heroMarquee?.length ? data.heroMarquee : [
+               "Chirurgie Robotique", "Chirurgie Oncologique", "CRS & HIPEC", 
+               "Chirurgie Digestive", "Chirurgie Bariatrique", "Chirurgie HBP"
+            ]).map((service: string, index: number) => (
+              <div className="hero-block" key={`dup-${index}`}>
+                <a href="#" className="service-link">{service}</a>
+                <img className="ic-title" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,4 +1,9 @@
-export function OurStory() {
+import { getHomePage } from "@/lib/queries";
+import { urlForImage } from "@/lib/sanity";
+
+export async function OurStory() {
+  const data = await getHomePage();
+
   return (
     <section className="our-story">
       <div className="container">
@@ -7,10 +12,12 @@ export function OurStory() {
             <div className="story-wrapper">
               <div className="sub-title">
                 <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg" alt="" />
-                À Propos
+                {data?.storyTagline || "À Propos"}
               </div>
-              <h2 className="section-heading">L&rsquo;excellence chirurgicale au service de votre santé</h2>
-              <p>Le Dr Mohammed Amal Benzakour est un chirurgien de renom basé à Casablanca, spécialisé dans la chirurgie viscérale, digestive et oncologique. Il se distingue par sa chirurgie coelioscopique et robotique.</p>
+              <h2 className="section-heading">{data?.storyHeading || "L'excellence chirurgicale au service de votre santé"}</h2>
+              <p style={{ whiteSpace: "pre-wrap" }}>
+                {data?.storyText || "Le Dr Mohammed Amal Benzakour est un chirurgien de renom basé à Casablanca, spécialisé dans la chirurgie viscérale, digestive et oncologique. Il se distingue par sa chirurgie coelioscopique et robotique."}
+              </p>
             </div>
             <a href="/a-propos" className="primary-button">
               <div className="arrow-wrap _01">
@@ -26,16 +33,36 @@ export function OurStory() {
           </div>
           <div className="story-bottom">
             <div className="story-img">
-              <img className="story-image" src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/692680410d8a3395fdf7b9fe_story-01.webp" alt="Story 1" loading="lazy" />
+              <img 
+                className="story-image" 
+                src={data?.storyImages?.[0] ? urlForImage(data.storyImages[0]).url() : "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/692680410d8a3395fdf7b9fe_story-01.webp"} 
+                alt="Story 1" 
+                loading="lazy" 
+              />
             </div>
             <div className="story-img">
-              <img className="story-image" src="/images/apropos-section-1.webp" alt="À Propos" loading="lazy" />
+              <img 
+                className="story-image" 
+                src={data?.storyImages?.[1] ? urlForImage(data.storyImages[1]).url() : "/images/apropos-section-1.webp"} 
+                alt="À Propos" 
+                loading="lazy" 
+              />
             </div>
             <div className="story-img-02">
-              <img className="story-image" src="/images/spec-2.webp" alt="Spécialité" loading="lazy" />
+              <img 
+                className="story-image" 
+                src={data?.storyImages?.[2] ? urlForImage(data.storyImages[2]).url() : "/images/spec-2.webp"} 
+                alt="Spécialité" 
+                loading="lazy" 
+              />
             </div>
             <div className="story-img-04">
-              <img className="story-image" src="/images/dr-davinci.webp" alt="Dr. Benzakour" loading="lazy" />
+              <img 
+                className="story-image" 
+                src={data?.storyImages?.[3] ? urlForImage(data.storyImages[3]).url() : "/images/dr-davinci.webp"} 
+                alt="Dr. Benzakour" 
+                loading="lazy" 
+              />
             </div>
           </div>
         </div>
@@ -43,3 +70,4 @@ export function OurStory() {
     </section>
   );
 }
+
