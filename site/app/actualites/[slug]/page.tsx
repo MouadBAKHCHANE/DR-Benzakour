@@ -3,10 +3,13 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { articles } from "@/lib/articles";
+import { getAllBlogPosts, getPostBySlug } from "@/lib/queries";
+import { urlForImage } from "@/lib/sanity";
+import { PortableText } from "@portabletext/react";
 
-export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts();
+  return posts.map((p: any) => ({ slug: p.slug?.current }));
 }
 
 export default async function ArticlePage({
@@ -15,10 +18,17 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = articles.find((a) => a.slug === slug);
+  const article = await getPostBySlug(slug);
   if (!article) notFound();
 
-  const related = articles.filter((a) => a.slug !== slug).slice(0, 3);
+  const allPosts = await getAllBlogPosts();
+  const related = allPosts.filter((a: any) => a.slug?.current !== slug).slice(0, 3);
+
+  const publishDate = new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
 
   return (
     <>
@@ -29,12 +39,14 @@ export default async function ArticlePage({
             <div className="container">
               <div className="article-hero-grid reveal">
                 <div className="article-hero-content">
-                  <div className="article-category-tag">{article.tag.toUpperCase()}</div>
+                  <div className="article-category-tag">{article.categorie?.toUpperCase() || "ARTICLE"}</div>
                   <h1 className="article-title">{article.title.toUpperCase()}</h1>
                   <p className="article-excerpt">{article.excerpt}</p>
                 </div>
                 <div className="article-hero-img-wrap">
-                  <img src={article.img} alt={article.title} loading="eager" className="article-main-img" />
+                  {article.mainImage && (
+                    <img src={urlForImage(article.mainImage).url()} alt={article.title} loading="eager" className="article-main-img" />
+                  )}
                 </div>
               </div>
             </div>
@@ -46,7 +58,7 @@ export default async function ArticlePage({
                 <div className="sidebar-sticky">
                   <div className="publish-info">
                     <span className="share-label">PUBLISHED</span>
-                    <div className="article-publish-date">{article.date}</div>
+                    <div className="article-publish-date">{publishDate}</div>
                   </div>
                   
                   <div className="share-block" style={{ marginTop: '40px' }}>
@@ -62,9 +74,11 @@ export default async function ArticlePage({
 
               <div className="article-main-body reveal">
                 <div className="article-content-rich">
-                  {article.content.map((para, i) => (
-                    <p key={i}>{para}</p>
-                  ))}
+                  {article.body ? (
+                    <PortableText value={article.body} />
+                  ) : (
+                    <p>Aucun contenu disponible pour cet article.</p>
+                  )}
                 </div>
                 
                 <div className="article-footer-cta">
@@ -88,17 +102,23 @@ export default async function ArticlePage({
                   <Link href="/actualites" className="view-all-link">Voir tout</Link>
                 </div>
                 <div className="related-post-grid">
-                  {related.map((a) => (
-                    <div key={a.slug} className="related-post-card">
-                      <Link href={`/actualites/${a.slug}`} className="post-card-link">
+                  {related.map((a: any) => (
+                    <div key={a.slug?.current} className="related-post-card">
+                      <Link href={`/actualites/${a.slug?.current}`} className="post-card-link">
                         <div className="post-card-img">
-                          <img src={a.img} loading="lazy" alt={a.title} />
+                          <img src={a.mainImage ? urlForImage(a.mainImage).url() : "/images/placeholder.webp"} loading="lazy" alt={a.title} />
                         </div>
                         <div className="post-card-info">
                           <div className="post-card-meta">
-                            <span className="post-tag-simple">{a.tag.toUpperCase()}</span>
+                            <span className="post-tag-simple">{a.categorie?.toUpperCase() || "ARTICLE"}</span>
                             <span className="post-dot"></span>
-                            <span className="post-date-simple">{a.date}</span>
+                            <span className="post-date-simple">
+                              {new Date(a.publishedAt).toLocaleDateString('fr-FR', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              })}
+                            </span>
                           </div>
                           <h3 className="post-card-title">{a.title}</h3>
                         </div>
