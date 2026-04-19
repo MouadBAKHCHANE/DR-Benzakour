@@ -8,13 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sanity/client": "^7.21.0",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.21.0",
     "jsdom": "^29.0.1",
     "next": "16.2.1",
+    "next-sanity": "^12.3.0",
+    "nodemailer": "^8.0.5",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "sanity": "^5.21.0"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "playwright": "^1.59.1",
