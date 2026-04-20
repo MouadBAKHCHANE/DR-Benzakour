@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: process.env.SMTP_FROM,
+      from: `"Contact Site Dr Benzakour" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: "drmohammedamalbenzakour@gmail.com",
       replyTo: email,
       subject: `Nouveau message - ${service || "Contact"} — ${name}`,

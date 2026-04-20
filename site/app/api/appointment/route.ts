@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
+      from: `"Rendez-vous Site Dr Benzakour" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: RECIPIENT_EMAIL,
       replyTo: email || undefined,
       subject: `Nouvelle demande de rendez-vous — ${name}`,
