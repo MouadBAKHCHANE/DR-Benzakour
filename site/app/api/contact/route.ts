@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
+      from: process.env.SMTP_USER || "drmohammedamalbenzakour@gmail.com",
       to: "drmohammedamalbenzakour@gmail.com",
       replyTo: email,
       subject: `Nouveau message - ${service || "Contact"} — ${name}`,
@@ -38,7 +38,10 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json(
+      { success: true, version: "2.1" },
+      { headers: { "X-API-Version": "2.1" } }
+    );
   } catch (err: any) {
     console.error("Contact form error:", err);
     return NextResponse.json(

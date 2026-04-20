@@ -50,11 +50,36 @@ export default function ContactPage() {
   const toggle = (i: number) =>
     setOpenIndex((prev) => (prev === i ? null : i));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormStatus("idle");
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: `${formData.get("First-Name")} ${formData.get("Last-Name")}`.trim(),
+      phone: formData.get("Phone"),
+      email: formData.get("Email"),
+      message: formData.get("Message"),
+      service: "Contact Direct",
+    };
+
     try {
-      setFormStatus("success");
-    } catch {
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (resp.ok) {
+        setFormStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        const errData = await resp.json();
+        console.error("Erreur envoi:", errData);
+        setFormStatus("error");
+      }
+    } catch (err) {
+      console.error("Network error:", err);
       setFormStatus("error");
     }
   };
