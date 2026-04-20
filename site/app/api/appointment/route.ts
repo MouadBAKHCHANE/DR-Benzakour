@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: `"Rendez-vous Site Dr Benzakour" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+      from: process.env.SMTP_USER,
       to: RECIPIENT_EMAIL,
       replyTo: email || undefined,
       subject: `Nouvelle demande de rendez-vous — ${name}`,
@@ -41,10 +41,14 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Appointment submission error:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { 
+        error: "Internal server error",
+        details: error.message,
+        code: error.code
+      },
       { status: 500 }
     );
   }

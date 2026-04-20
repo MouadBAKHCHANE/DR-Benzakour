@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: `"Contact Site Dr Benzakour" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+      from: process.env.SMTP_USER,
       to: "drmohammedamalbenzakour@gmail.com",
       replyTo: email,
       subject: `Nouveau message - ${service || "Contact"} — ${name}`,
@@ -39,10 +39,14 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (err) {
+  } catch (err: any) {
     console.error("Contact form error:", err);
     return NextResponse.json(
-      { error: "Erreur lors de l'envoi du message." },
+      { 
+        error: "Erreur lors de l'envoi du message.", 
+        details: err.message,
+        code: err.code 
+      },
       { status: 500 }
     );
   }
