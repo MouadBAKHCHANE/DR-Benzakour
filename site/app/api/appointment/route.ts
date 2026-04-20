@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 const RECIPIENT_EMAIL = "drmohammedamalbenzakour@gmail.com";
 
@@ -14,35 +15,30 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Integrate with an email service (Resend, SendGrid, Nodemailer, etc.)
-    // For now, log the submission — replace this with actual email sending.
-    console.log("New appointment request:", {
-      to: RECIPIENT_EMAIL,
-      name,
-      phone,
-      email: email || "not provided",
-      date,
-      time,
-      receivedAt: new Date().toISOString(),
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: process.env.SMTP_PORT === "465",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
     });
 
-    // Example with Resend (uncomment and configure when ready):
-    //
-    // import { Resend } from "resend";
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: "noreply@votre-domaine.com",
-    //   to: RECIPIENT_EMAIL,
-    //   subject: `Nouvelle demande de rendez-vous — ${name}`,
-    //   html: `
-    //     <h2>Nouvelle demande de rendez-vous</h2>
-    //     <p><strong>Nom :</strong> ${name}</p>
-    //     <p><strong>Téléphone :</strong> ${phone}</p>
-    //     <p><strong>Email :</strong> ${email || "—"}</p>
-    //     <p><strong>Date souhaitée :</strong> ${date}</p>
-    //     <p><strong>Heure :</strong> ${time}</p>
-    //   `,
-    // });
+    await transporter.sendMail({
+      from: process.env.SMTP_FROM || process.env.SMTP_USER,
+      to: RECIPIENT_EMAIL,
+      replyTo: email || undefined,
+      subject: `Nouvelle demande de rendez-vous — ${name}`,
+      html: `
+        <h2>Nouvelle demande de rendez-vous depuis le site</h2>
+        <p><strong>Nom :</strong> ${name}</p>
+        <p><strong>Téléphone :</strong> ${phone}</p>
+        <p><strong>Email :</strong> ${email || "Non renseigné"}</p>
+        <p><strong>Date souhaitée :</strong> ${date}</p>
+        <p><strong>Heure souhaitée :</strong> ${time}</p>
+      `,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
