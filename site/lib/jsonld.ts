@@ -15,7 +15,7 @@ export function localBusinessJsonLd(settings: any) {
           addressCountry: settings.address.country || "MA",
         }
       : undefined,
-    url: "https://www.drbenzakour.ma",
+    url: "https://www.cabinetdrbenzakour.ma",
   };
 }
 
@@ -24,7 +24,7 @@ export function organizationJsonLd(settings: any) {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
     name: settings?.siteName || "Cabinet Dr Benzakour",
-    url: "https://www.drbenzakour.ma",
+    url: "https://www.cabinetdrbenzakour.ma",
     telephone: settings?.phone,
     email: settings?.email,
   };
@@ -36,7 +36,7 @@ export function medicalServiceJsonLd(specialty: any) {
     "@type": "MedicalProcedure",
     name: specialty?.name,
     description: specialty?.intro,
-    url: `https://www.drbenzakour.ma/specialites/${specialty?.slug?.current}`,
+    url: `https://www.cabinetdrbenzakour.ma/specialites/${specialty?.slug?.current}`,
   };
 }
 
@@ -68,7 +68,7 @@ export function blogPostingJsonLd(post: any) {
           name: post.author.name,
         }
       : undefined,
-    url: `https://www.drbenzakour.ma/actualites/${post?.slug?.current}`,
+    url: `https://www.cabinetdrbenzakour.ma/actualites/${post?.slug?.current}`,
   };
 }
 
@@ -90,6 +90,6 @@ export function websiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Cabinet Dr Benzakour",
-    url: "https://www.drbenzakour.ma",
+    url: "https://www.cabinetdrbenzakour.ma",
   };
 }

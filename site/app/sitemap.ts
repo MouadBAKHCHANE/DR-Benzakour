@@ -1,6 +1,6 @@
 import { getAllSpecialties, getAllBlogPosts, getAllLegalPages } from "@/lib/queries";
 
-const BASE_URL = "https://www.drbenzakour.ma";
+const BASE_URL = "https://www.cabinetdrbenzakour.ma";
 
 export default async function sitemap() {
   const [specialties, blogPosts, legalPages] = await Promise.all([

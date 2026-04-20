@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ["/studio", "/api/"],
       },
     ],
-    sitemap: "https://www.drbenzakour.ma/sitemap.xml",
+    sitemap: "https://www.cabinetdrbenzakour.ma/sitemap.xml",
   };
 }

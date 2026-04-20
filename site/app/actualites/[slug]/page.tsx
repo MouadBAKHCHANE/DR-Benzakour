@@ -6,6 +6,31 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { getAllBlogPosts, getPostBySlug } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
+import { blogPostingJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) return { title: "Article non trouvé" };
+
+  return {
+    title: post.seoTitle || `${post.title} | Actualités Dr. Benzakour`,
+    description: post.seoDescription || post.excerpt,
+    openGraph: {
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.excerpt,
+      type: "article",
+      publishedTime: post.publishedAt,
+      images: post.mainImage ? [urlForImage(post.mainImage).url()] : [],
+    }
+  };
+}
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
@@ -30,8 +55,21 @@ export default async function ArticlePage({
     day: 'numeric'
   });
 
+  const jsonLd = [
+    blogPostingJsonLd(article),
+    breadcrumbJsonLd([
+      { name: "Accueil", url: "https://www.cabinetdrbenzakour.ma" },
+      { name: "Actualités", url: "https://www.cabinetdrbenzakour.ma/actualites" },
+      { name: article.title, url: `https://www.cabinetdrbenzakour.ma/actualites/${slug}` },
+    ])
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <ScrollReveal>
         <article className="article-page-wrap">

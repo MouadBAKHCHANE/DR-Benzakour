@@ -6,6 +6,31 @@ import { AppointmentForm } from "@/components/sections/AppointmentForm";
 import { getSpecialtyBySlug, getAllSpecialties } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
+import { medicalServiceJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = await getSpecialtyBySlug(slug);
+
+  if (!service) return { title: "Spécialité non trouvée" };
+
+  return {
+    title: service.seoTitle || service.name,
+    description: service.seoDescription || service.intro || `Expertise en ${service.name} à Casablanca.`,
+    keywords: service.seoKeywords || [service.name, "Chirurgien Casablanca", "Expertise"],
+    robots: service.noIndex ? "noindex, nofollow" : "index, follow",
+    openGraph: {
+      title: service.seoTitle || service.name,
+      description: service.seoDescription,
+      images: service.ogImage ? [urlForImage(service.ogImage).url()] : [],
+    }
+  };
+}
 
 /* ── CDN assets ── */
 const IC_ARROW_DOT =
@@ -27,8 +52,21 @@ export default async function ServiceDetailPage({
   const service = await getSpecialtyBySlug(slug);
   if (!service) notFound();
 
+  const jsonLd = [
+    medicalServiceJsonLd(service),
+    breadcrumbJsonLd([
+      { name: "Accueil", url: "https://www.cabinetdrbenzakour.ma" },
+      { name: "Spécialités", url: "https://www.cabinetdrbenzakour.ma/specialites" },
+      { name: service.name, url: `https://www.cabinetdrbenzakour.ma/specialites/${slug}` },
+    ])
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <ScrollReveal>
         {/* ── Page Title ── */}
