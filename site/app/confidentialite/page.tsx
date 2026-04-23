@@ -1,6 +1,21 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de Confidentialité - Dr. Benzakour",
+  description:
+    "Politique de confidentialité du cabinet du Dr. Benzakour : collecte, utilisation et protection de vos données personnelles conformément à la loi marocaine 09-08.",
+  alternates: { canonical: "/confidentialite" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Politique de Confidentialité - Dr. Benzakour",
+    description: "Politique de confidentialité du cabinet du Dr. Benzakour.",
+    url: "/confidentialite",
+    type: "website",
+  },
+};
 
 export default function ConfidentialitePage() {
   return (

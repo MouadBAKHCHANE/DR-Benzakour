@@ -5,11 +5,39 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { getSpecialtiesPage, getAllSpecialties } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 
-export const metadata = {
-  title: "Spécialités - Dr. Benzakour",
-  description: "Découvrez notre expertise en chirurgie viscérale, digestive et robotique.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await getSpecialtiesPage();
+  const title = data?.seoTitle || data?.title || "Spécialités - Dr. Benzakour";
+  const description =
+    data?.seoDescription ||
+    data?.subtitle ||
+    "Découvrez notre expertise en chirurgie viscérale, digestive et robotique.";
+  const ogImage = data?.ogImage ? urlForImage(data.ogImage).width(1200).height(630).url() : undefined;
+
+  return {
+    title,
+    description,
+    keywords: data?.seoKeywords,
+    alternates: { canonical: "/specialites" },
+    robots: data?.noIndex ? { index: false, follow: false } : undefined,
+    openGraph: {
+      title,
+      description,
+      url: "/specialites",
+      type: "website",
+      images: ogImage ? [ogImage] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
+  };
+}
 
 export default async function SpecialitesPage() {
   const pageData = await getSpecialtiesPage();
@@ -18,8 +46,17 @@ export default async function SpecialitesPage() {
   const title = pageData?.title || "Nos Spécialités";
   const subtitle = pageData?.subtitle || "Découvrez notre expertise en chirurgie viscérale, digestive et robotique au service de votre santé.";
 
+  const jsonLd = breadcrumbJsonLd([
+    { name: "Accueil", url: "https://www.cabinetdrbenzakour.ma" },
+    { name: "Spécialités", url: "https://www.cabinetdrbenzakour.ma/specialites" },
+  ]);
+
   return (
     <ScrollReveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       {/* ── Page Title ── */}

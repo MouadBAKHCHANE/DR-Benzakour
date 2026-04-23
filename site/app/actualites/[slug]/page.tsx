@@ -19,16 +19,31 @@ export async function generateMetadata({
 
   if (!post) return { title: "Article non trouvé" };
 
+  const title = post.seoTitle || `${post.title} | Actualités Dr. Benzakour`;
+  const description = post.seoDescription || post.excerpt;
+  const ogImage = post.mainImage
+    ? urlForImage(post.mainImage).width(1200).height(630).url()
+    : undefined;
+  const url = `/actualites/${slug}`;
+
   return {
-    title: post.seoTitle || `${post.title} | Actualités Dr. Benzakour`,
-    description: post.seoDescription || post.excerpt,
+    title,
+    description,
+    alternates: { canonical: url },
     openGraph: {
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.excerpt,
+      description,
+      url,
       type: "article",
       publishedTime: post.publishedAt,
-      images: post.mainImage ? [urlForImage(post.mainImage).url()] : [],
-    }
+      images: ogImage ? [ogImage] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle || post.title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
   };
 }
 

@@ -1,0 +1,371 @@
+"use client";
+
+import { useState } from "react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
+const IC_INFO =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d8e3386838f9d0ddc27cb_ic-info.svg";
+const IC_MAIL =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d8ede455edc5e0ef4c1bc_ic-mail.svg";
+const IC_LOCATION =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d8eded5d539bcc7ecac20_ic-location.svg";
+const IC_TITLE =
+  "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
+
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface ContactClientProps {
+  faqItems: FAQItem[];
+}
+
+export function ContactClient({ faqItems }: ContactClientProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const toggle = (i: number) =>
+    setOpenIndex((prev) => (prev === i ? null : i));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus("idle");
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: `${formData.get("First-Name")} ${formData.get("Last-Name")}`.trim(),
+      phone: formData.get("Phone"),
+      email: formData.get("Email"),
+      message: formData.get("Message"),
+      service: "Contact Direct",
+    };
+
+    try {
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (resp.ok) {
+        setFormStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        const errData = await resp.json();
+        console.error("Erreur envoi:", errData);
+        setFormStatus("error");
+      }
+    } catch (err) {
+      console.error("Network error:", err);
+      setFormStatus("error");
+    }
+  };
+
+  return (
+    <>
+      <Navbar />
+      <ScrollReveal>
+        {/* ── Page Title ── */}
+        <div className="page-title">
+          <div className="w-layout-blockcontainer container w-container">
+            <div className="pg-inner">
+              <h1 className="main-heading reveal">Nous Contacter</h1>
+              <p className="pg-title-text">
+                Une question ou besoin d&apos;assistance&nbsp;? Nous sommes
+                l&agrave; pour vous aider&nbsp;&mdash;&nbsp;contactez-nous
+                d&egrave;s aujourd&apos;hui.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="page-wrap">
+          {/* ── Contact Section ── */}
+          <section className="contact">
+            <div className="w-layout-blockcontainer container w-container">
+              <div className="contact-inner">
+                <div className="contact-image">
+                  <div className="section-img">
+                    <img
+                      src="/images/contact us.webp"
+                      loading="lazy"
+                      alt="Contact"
+                      className="section-image"
+                    />
+                  </div>
+                </div>
+
+                <div className="contact-right reveal">
+                  <div className="contact-top">
+                    <img src={IC_INFO} loading="lazy" alt="Info" />
+                    <div>Le moyen le plus rapide est de nous envoyer un message.</div>
+                  </div>
+
+                  <div className="contact-wrapper contact-two-cols">
+                    <div className="contact-wrap">
+                      <div className="contact-heading-wrap">
+                        <img src={IC_MAIL} loading="lazy" alt="Mail" />
+                        <div>Nous joindre</div>
+                      </div>
+                      <div className="contact-data">
+                        <div className="contact-info">
+                          <div className="contact-text">Email&nbsp;:</div>
+                          <a
+                            href="mailto:drmohammedamalbenzakour@gmail.com"
+                            className="contact-link w-inline-block"
+                          >
+                            <div className="nav-top-line _02"></div>
+                            <div>drmohammedamalbenzakour@gmail.com</div>
+                            <div className="nav-bottom-line _02"></div>
+                          </a>
+                        </div>
+                        <div className="contact-info">
+                          <div className="contact-text">Tél. fixe&nbsp;:</div>
+                          <a
+                            href="tel:+212522894419"
+                            className="contact-link w-inline-block"
+                          >
+                            <div className="nav-top-line _02"></div>
+                            <div>05 22 89 44 19</div>
+                            <div className="nav-bottom-line _02"></div>
+                          </a>
+                        </div>
+                        <div className="contact-info">
+                          <div className="contact-text">Tél. portable&nbsp;:</div>
+                          <a
+                            href="tel:+212767494916"
+                            className="contact-link w-inline-block"
+                          >
+                            <div className="nav-top-line _02"></div>
+                            <div>07 67 49 49 16</div>
+                            <div className="nav-bottom-line _02"></div>
+                          </a>
+                        </div>
+                        <div className="contact-info">
+                          <div className="contact-text">Jours de consultation&nbsp;:</div>
+                          <div>Lundi au Vendredi, Samedi Matin</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="contact-wrap">
+                      <div className="contact-heading-wrap">
+                        <img src={IC_LOCATION} loading="lazy" alt="Adresse" />
+                        <div>Adresse du cabinet</div>
+                      </div>
+                      <div className="body-small">
+                        Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca, Maroc
+                      </div>
+                    </div>
+                  </div>
+                  <div className="map w-embed w-iframe">
+                    <iframe
+                      width="100%"
+                      height="350"
+                      style={{ border: 0, minHeight: 280 }}
+                      loading="lazy"
+                      allowFullScreen
+                      referrerPolicy="no-referrer-when-downgrade"
+                      src="https://maps.google.com/maps?q=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca&hl=fr&z=16&t=m&ie=UTF8&iwloc=B&output=embed"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── Contact Form ── */}
+          <section className="contact-form">
+            <div className="w-layout-blockcontainer container w-container">
+              <div className="form-wrapper">
+                <div className="overflow-hidden">
+                  <div className="form-heading reveal">
+                    Contactez-nous pour toute demande, nous sommes &agrave;
+                    votre &eacute;coute&nbsp;!
+                  </div>
+                </div>
+                <div className="form-block w-form">
+                  <form
+                    id="wf-form-Contact-Form"
+                    name="wf-form-Contact-Form"
+                    data-name="Contact Form"
+                    className="form"
+                    onSubmit={handleSubmit}
+                  >
+                    <div className="form-inner">
+                      <input
+                        className="input w-input"
+                        maxLength={256}
+                        name="First-Name"
+                        data-name="First Name"
+                        placeholder="Pr&eacute;nom*"
+                        type="text"
+                        id="first-name"
+                        required
+                      />
+                      <input
+                        className="input w-input"
+                        maxLength={256}
+                        name="Last-Name"
+                        data-name="Last Name"
+                        placeholder="Nom"
+                        type="text"
+                        id="last-name"
+                      />
+                      <input
+                        className="input w-input"
+                        maxLength={256}
+                        name="Phone"
+                        data-name="Phone"
+                        placeholder="T&eacute;l&eacute;phone*"
+                        type="tel"
+                        id="phone"
+                        required
+                      />
+                      <input
+                        className="input w-input"
+                        maxLength={256}
+                        name="Email"
+                        data-name="Email"
+                        placeholder="Email"
+                        type="email"
+                        id="Email"
+                      />
+                      <textarea
+                        className="message w-input"
+                        maxLength={5000}
+                        name="Message"
+                        data-name="Message"
+                        placeholder="&Eacute;crivez votre message ici *"
+                        id="message"
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit" className="contact-submit-btn">
+                      Envoyez le message
+                    </button>
+                  </form>
+                  {formStatus === "success" && (
+                    <div className="success-message">
+                      <div>Merci&nbsp;! Votre demande a bien &eacute;t&eacute; envoy&eacute;e.</div>
+                    </div>
+                  )}
+                  {formStatus === "error" && (
+                    <div className="error-message">
+                      <div>
+                        Oups&nbsp;! Une erreur est survenue lors de l&apos;envoi du
+                        formulaire.
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── FAQ Section ── */}
+          <section className="faq">
+            <div className="w-layout-blockcontainer container w-container">
+              <div className="section-title">
+                <div className="sub-title">
+                  <img src={IC_TITLE} loading="lazy" alt="Sub Title" />
+                  <div>FAQ</div>
+                </div>
+                <h2 className="section-heading">Questions Fr&eacute;quentes</h2>
+              </div>
+
+              <div className="faq-wrapper">
+                {faqItems.map((item, i) => (
+                  <div key={i} className={`faq-data w-dropdown ${openIndex === i ? "open" : ""}`}>
+                    <div
+                      className={`que${i === 0 ? " top" : ""} w-dropdown-toggle`}
+                      onClick={() => toggle(i)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") toggle(i);
+                      }}
+                    >
+                      <div>
+                        <div className="faq-small-text">Q.{i + 1}</div>
+                        <div>{item.q}</div>
+                      </div>
+                      <div className="que-icon">
+                        <div className="vartical-line"></div>
+                        <div className="horizontal-line"></div>
+                      </div>
+                    </div>
+                    <nav
+                      className="ans w-dropdown-list"
+                      style={{
+                        height: openIndex === i ? "auto" : "0",
+                        overflow: "hidden",
+                        transition: "height 0.3s ease",
+                      }}
+                    >
+                      <div className="ans-box">
+                        <p className="ans-text">{item.a}</p>
+                      </div>
+                    </nav>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+          {/* ── Feature Bento Grid ── */}
+          <section className="feature-grid">
+            <div className="container">
+              <div className="feature-top">
+                <div className="feature-wrap">
+                  <div className="feature-block _dark reveal">
+                    <div className="feature-icon-wrap">
+                      <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db628df1656aa61ae1df5_ic-feature-01.svg" alt="" className="feature-icon" />
+                    </div>
+                    <div>
+                      <div className="feature-text white">Cabinet Moderne</div>
+                      <div className="body-small" style={{ color: "rgba(255,255,255,0.7)" }}>Infrastructure de pointe pour une prise en charge efficace et sécurisée.</div>
+                    </div>
+                  </div>
+                  <div className="feature-block _light reveal">
+                    <div className="feature-icon-wrap">
+                      <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db628a09a478062829583_ic-feature-02.svg" alt="" className="feature-icon" />
+                    </div>
+                    <div>
+                      <div className="feature-text">Suivi Personnalisé</div>
+                      <div className="body-small">Accompagnement attentif avant, pendant et après chaque intervention.</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="feature-main-img reveal">
+                  <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db6282353ce6a70d93685_feature-img-01.webp" alt="Cabinet" className="feature-image" />
+                </div>
+              </div>
+              <div className="feature-bottom">
+                <div className="feature-img reveal">
+                  <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db628dffb49f913be9f59_feature-img-03.webp" alt="Chirurgie" className="feature-image" />
+                </div>
+                <div className="feature-block _accent reveal">
+                  <div className="feature-icon-wrap">
+                    <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db62981c44291c4ff04dc_ic-feature-03.svg" alt="" className="feature-icon" />
+                  </div>
+                  <div>
+                    <div className="feature-text">Expertise Chirurgicale</div>
+                    <div className="body-small">30 ans d&rsquo;expérience et une maîtrise des techniques les plus innovantes au service de chaque patient.</div>
+                  </div>
+                </div>
+                <div className="feature-img reveal">
+                  <img src="https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db6288d67674e64a07a23_feature-img-02.webp" alt="Équipe" className="feature-image" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </ScrollReveal>
+      <Footer />
+    </>
+  );
+}

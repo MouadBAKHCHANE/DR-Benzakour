@@ -19,16 +19,35 @@ export async function generateMetadata({
 
   if (!service) return { title: "Spécialité non trouvée" };
 
+  const title = service.seoTitle || service.name;
+  const description =
+    service.seoDescription || service.intro || `Expertise en ${service.name} à Casablanca.`;
+  const ogImage = service.ogImage
+    ? urlForImage(service.ogImage).width(1200).height(630).url()
+    : service.heroImage
+      ? urlForImage(service.heroImage).width(1200).height(630).url()
+      : undefined;
+  const url = `/specialites/${slug}`;
+
   return {
-    title: service.seoTitle || service.name,
-    description: service.seoDescription || service.intro || `Expertise en ${service.name} à Casablanca.`,
+    title,
+    description,
     keywords: service.seoKeywords || [service.name, "Chirurgien Casablanca", "Expertise"],
-    robots: service.noIndex ? "noindex, nofollow" : "index, follow",
+    alternates: { canonical: url },
+    robots: service.noIndex ? { index: false, follow: false } : undefined,
     openGraph: {
-      title: service.seoTitle || service.name,
-      description: service.seoDescription,
-      images: service.ogImage ? [urlForImage(service.ogImage).url()] : [],
-    }
+      title,
+      description,
+      url,
+      type: "article",
+      images: ogImage ? [ogImage] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
   };
 }
 

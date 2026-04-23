@@ -98,9 +98,21 @@ export const siteSettings = defineType({
       type: "object",
       group: "contact",
       fields: [
-        defineField({ name: "street",  title: "Rue / Bâtiment", type: "text", rows: 2 }),
-        defineField({ name: "city",    title: "Ville",          type: "string" }),
-        defineField({ name: "country", title: "Pays",           type: "string" }),
+        defineField({ name: "street",     title: "Rue / Bâtiment",  type: "text", rows: 2 }),
+        defineField({ name: "city",       title: "Ville",           type: "string" }),
+        defineField({ name: "postalCode", title: "Code postal",     type: "string" }),
+        defineField({ name: "country",    title: "Pays (code ISO)", type: "string", description: "Ex: MA" }),
+      ],
+    }),
+    defineField({
+      name: "geo",
+      title: "Coordonnées GPS (SEO local)",
+      type: "object",
+      group: "contact",
+      description: "Utilisé pour le SEO local et Google Maps",
+      fields: [
+        defineField({ name: "latitude",  title: "Latitude",  type: "number" }),
+        defineField({ name: "longitude", title: "Longitude", type: "number" }),
       ],
     }),
     defineField({
@@ -131,6 +143,48 @@ export const siteSettings = defineType({
       type: "string",
       group: "hours",
       description: "Ex: 09h00 – 18h00",
+    }),
+    defineField({
+      name: "openingHoursSpecification",
+      title: "Horaires structurés (SEO)",
+      type: "array",
+      group: "hours",
+      description: "Horaires précis par plage — utilisés pour le schéma SEO schema.org",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "dayOfWeek",
+              title: "Jours",
+              type: "array",
+              of: [{ type: "string" }],
+              options: {
+                list: [
+                  { title: "Lundi",    value: "Monday" },
+                  { title: "Mardi",    value: "Tuesday" },
+                  { title: "Mercredi", value: "Wednesday" },
+                  { title: "Jeudi",    value: "Thursday" },
+                  { title: "Vendredi", value: "Friday" },
+                  { title: "Samedi",   value: "Saturday" },
+                  { title: "Dimanche", value: "Sunday" },
+                ],
+              },
+            }),
+            defineField({ name: "opens",  title: "Ouvre (HH:MM)",  type: "string", description: "Ex: 09:00" }),
+            defineField({ name: "closes", title: "Ferme (HH:MM)", type: "string", description: "Ex: 18:00" }),
+          ],
+          preview: {
+            select: { days: "dayOfWeek", opens: "opens", closes: "closes" },
+            prepare({ days, opens, closes }: any) {
+              return {
+                title: days?.join(", ") || "(jours non définis)",
+                subtitle: opens && closes ? `${opens} – ${closes}` : "",
+              };
+            },
+          },
+        },
+      ],
     }),
 
     // ── Réseaux sociaux ───────────────────────────────────────
@@ -174,8 +228,17 @@ export const siteSettings = defineType({
       fields: [
         defineField({ name: "metaTitle", title: "Meta Title par défaut",        type: "string" }),
         defineField({ name: "metaDesc",  title: "Meta Description par défaut",  type: "text", rows: 3 }),
-        defineField({ name: "ogImage",   title: "Image de partage (OG Image)",  type: "image" }),
+        defineField({ name: "ogImage",   title: "Image de partage (OG Image)",  type: "image", options: { hotspot: true } }),
       ],
+    }),
+    defineField({
+      name: "medicalSpecialties",
+      title: "Spécialités médicales (SEO schema)",
+      type: "array",
+      group: "seo",
+      description: "Spécialités listées dans le JSON-LD Physician (ex: Chirurgie Digestive)",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
     }),
 
     // ── Marketing ─────────────────────────────────────────────

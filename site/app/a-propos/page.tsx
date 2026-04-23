@@ -5,13 +5,39 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { HorizontalScroll } from "./HorizontalScroll";
+import type { Metadata } from "next";
 
 const IC_TITLE = "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
 
-export const metadata = {
-  title: "À Propos - Dr. Benzakour",
-  description: "Découvrez le parcours du Dr. Mohammed Amal Benzakour.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await getAboutPage();
+  const title = data?.seoTitle || "À Propos - Dr. Benzakour";
+  const description =
+    data?.seoDescription ||
+    "Découvrez le parcours du Dr. Mohammed Amal Benzakour, chirurgien spécialiste à Casablanca.";
+  const ogImage = data?.ogImage ? urlForImage(data.ogImage).width(1200).height(630).url() : undefined;
+
+  return {
+    title,
+    description,
+    keywords: data?.seoKeywords,
+    alternates: { canonical: "/a-propos" },
+    robots: data?.noIndex ? { index: false, follow: false } : undefined,
+    openGraph: {
+      title,
+      description,
+      url: "/a-propos",
+      type: "profile",
+      images: ogImage ? [ogImage] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
+  };
+}
 
 export default async function AboutPage() {
   const data = await getAboutPage();
