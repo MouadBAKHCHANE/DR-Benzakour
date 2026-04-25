@@ -1,3 +1,5 @@
+import { urlForImage } from "./sanity";
+
 const SITE_URL = "https://www.cabinetdrbenzakour.ma";
 
 const DEFAULT_ADDRESS = {
@@ -70,7 +72,9 @@ export function physicianJsonLd(settings: any) {
       settings?.tagline ||
       "Chirurgien Spécialiste en Chirurgie Digestive, Viscérale, Coelioscopique et Robotique à Casablanca.",
     url: SITE_URL,
-    image: settings?.seo?.ogImage ? undefined : `${SITE_URL}/favicon.png`,
+    image: settings?.seo?.ogImage
+      ? urlForImage(settings.seo.ogImage).width(1200).height(630).url()
+      : `${SITE_URL}/images/Logo Dr. Benzakour Mohammed Amal horz.webp`,
     telephone: settings?.phone || settings?.phoneFixe,
     email: settings?.email,
     medicalSpecialty: settings?.medicalSpecialties?.length
@@ -126,12 +130,17 @@ export function faqPageJsonLd(faqs: { question: string; answer: string }[]) {
 export function blogPostingJsonLd(post: any) {
   const authorName =
     typeof post?.author === "string" ? post.author : post?.author?.name;
+  const image = post?.mainImage
+    ? urlForImage(post.mainImage).width(1200).height(630).url()
+    : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post?.title,
     description: post?.excerpt,
+    image,
     datePublished: post?.publishedAt,
+    dateModified: post?._updatedAt || post?.publishedAt,
     author: authorName ? { "@type": "Person", name: authorName } : undefined,
     url: `${SITE_URL}/actualites/${post?.slug?.current}`,
     mainEntityOfPage: {
@@ -142,6 +151,10 @@ export function blogPostingJsonLd(post: any) {
       "@type": "Organization",
       name: "Cabinet Dr Benzakour",
       url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/Logo Dr. Benzakour Mohammed Amal horz.webp`,
+      },
     },
   };
 }

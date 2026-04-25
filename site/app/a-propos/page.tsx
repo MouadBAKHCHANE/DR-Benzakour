@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: "/a-propos",
-      type: "profile",
+      type: "website",
       images: ogImage ? [ogImage] : undefined,
     },
     twitter: {

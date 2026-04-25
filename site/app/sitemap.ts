@@ -14,6 +14,8 @@ export default async function sitemap() {
     { url: `${BASE_URL}/a-propos`, priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/contact`, priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/specialites`, priority: 0.8, changeFrequency: "monthly" as const },
+    { url: `${BASE_URL}/actualites`, priority: 0.7, changeFrequency: "weekly" as const },
+    { url: `${BASE_URL}/confidentialite`, priority: 0.2, changeFrequency: "yearly" as const },
     ...specialties.map((s: any) => ({
       url: `${BASE_URL}/specialites/${s.slug.current}`,
       lastModified: s._updatedAt,

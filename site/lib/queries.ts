@@ -1,6 +1,6 @@
 import { client } from "./sanity";
 
-const REVALIDATE_OPTIONS = { next: { revalidate: 10 } }; // Revalidate every 10 seconds
+const REVALIDATE_OPTIONS = { next: { revalidate: 3600 } }; // Revalidate hourly; pair with Sanity webhooks for instant updates
 
 // — Homepage —
 
@@ -60,7 +60,7 @@ export async function getAllBlogPosts() {
 export async function getPostBySlug(slug: string) {
   return client.fetch(
     `*[_type == "post" && slug.current == $slug][0]{
-      _id, title, slug, publishedAt, mainImage, categorie,
+      _id, _updatedAt, title, slug, publishedAt, mainImage, categorie,
       excerpt, author, body,
       "seoTitle": seo.title,
       "seoDescription": seo.description

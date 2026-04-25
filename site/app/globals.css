@@ -1562,12 +1562,14 @@ h6 {
 
 .doctors-img-wrap {
   position: absolute;
-  top: -106px;
+  top: 50%;
   right: 0;
-  max-width: 245px;
+  transform: translateY(-50%);
+  max-width: 320px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -1583,12 +1585,19 @@ h6 {
   background: white;
   border-radius: 0;
   overflow: hidden;
+  flex-shrink: 0;
+  max-width: 96px;
 }
 
 .doctor-image {
-  object-fit: cover;
-  min-height: 285px;
-  width: 100%;
+  object-fit: contain;
+  max-height: 56px;
+  width: auto;
+  max-width: 96px;
+}
+
+.doctor-data {
+  text-align: right;
 }
 
 .doctor-data {

@@ -68,6 +68,8 @@ export default async function RootLayout({
   return (
     <html lang="fr">
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap"
