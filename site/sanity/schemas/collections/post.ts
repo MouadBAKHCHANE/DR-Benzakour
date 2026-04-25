@@ -60,6 +60,14 @@ export const post = defineType({
       initialValue: "Chirurgie Digestive",
     }),
     defineField({
+      name: "views",
+      title: "Nombre de vues",
+      type: "number",
+      initialValue: 0,
+      description: "Utilisé pour le tri 'Plus vus' sur la page d'accueil",
+      validation: (Rule) => Rule.min(0).integer(),
+    }),
+    defineField({
       name: "body",
       title: "Contenu",
       type: "array",

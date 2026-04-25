@@ -57,6 +57,17 @@ export async function getAllBlogPosts() {
   }`, {}, REVALIDATE_OPTIONS);
 }
 
+export async function getLatestPosts(count: number, sort: "recent" | "mostViewed") {
+  const order = sort === "mostViewed" ? "views desc, publishedAt desc" : "publishedAt desc";
+  return client.fetch(
+    `*[_type == "post"] | order(${order})[0...$count]{
+      _id, title, slug, publishedAt, mainImage, categorie
+    }`,
+    { count },
+    REVALIDATE_OPTIONS
+  );
+}
+
 export async function getPostBySlug(slug: string) {
   return client.fetch(
     `*[_type == "post" && slug.current == $slug][0]{

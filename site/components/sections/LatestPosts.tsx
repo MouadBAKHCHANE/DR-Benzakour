@@ -1,71 +1,82 @@
 import Link from "next/link";
+import { getHomePage, getLatestPosts } from "@/lib/queries";
+import { urlForImage } from "@/lib/sanity";
 
 const IC_TITLE = "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
 const IC_ARROW_BLACK = "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6921538e227be2cec8f60124_ic-arrow-black.svg";
 
-const articles = [
-  {
-    tag: "Chirurgie Digestive",
-    date: "Mars 2026",
-    title: "Quand consulter un chirurgien digestif ?",
-    slug: "quand-consulter-chirurgien-digestif",
-    image: "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692043767b164b60cbdc8e93_blog-thumb-06.webp",
-  },
-  {
-    tag: "Innovation",
-    date: "Mars 2026",
-    title: "La chirurgie robotique : révolution au bloc opératoire",
-    slug: "chirurgie-robotique-revolution",
-    image: "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/692042f4eb1b14e84fda4e4c_blog-thumb-02.webp",
-  },
-  {
-    tag: "Récupération",
-    date: "Mars 2026",
-    title: "RAAC : récupérer plus vite après une chirurgie",
-    slug: "raac-recuperation-amelioree",
-    image: "https://cdn.prod.website-files.com/691efb76a43669d5b9e04d7e/6920479c5449ad2c1f67e104_blog-thumb-05.webp",
-  },
-];
+function formatFrenchDate(iso?: string): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "";
+  const formatted = new Intl.DateTimeFormat("fr-FR", { month: "long", year: "numeric" }).format(d);
+  return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+}
 
-export function LatestPosts() {
+export async function LatestPosts() {
+  const home = await getHomePage();
+
+  if (home?.latestPostsEnabled === false) return null;
+
+  const tagline = home?.latestPostsTagline;
+  const heading = home?.latestPostsHeading;
+  const count = typeof home?.latestPostsCount === "number" ? home.latestPostsCount : 3;
+  const sort: "recent" | "mostViewed" = home?.latestPostsSort === "mostViewed" ? "mostViewed" : "recent";
+
+  const posts: any[] = await getLatestPosts(count, sort);
+
+  if ((!posts || posts.length === 0) && !tagline && !heading) return null;
+
   return (
     <section className="posts">
       <div className="container">
-        <div className="section-title">
-          <div className="sub-title">
-            <img src={IC_TITLE} alt="" />
-            <div>Actualités</div>
+        {(tagline || heading) && (
+          <div className="section-title">
+            {tagline && (
+              <div className="sub-title">
+                <img src={IC_TITLE} alt="" />
+                <div>{tagline}</div>
+              </div>
+            )}
+            {heading && <h2 className="section-heading">{heading}</h2>}
           </div>
-          <h2 className="section-heading">Derniers Articles</h2>
-        </div>
-        <div className="post-list-02">
-          {articles.map((article, i) => (
-            <div key={i} className="post-item">
-              <Link
-                href={`/actualites/${article.slug}`}
-                className="post-block-02 reveal"
-              >
-                <div className="post-meta-02">
-                  <div className="post-tag-02">{article.tag}</div>
-                  <div className="post-date-02">{article.date}</div>
+        )}
+        {posts && posts.length > 0 && (
+          <div className="post-list-02">
+            {posts.map((article) => {
+              const slug = article?.slug?.current;
+              const imgUrl = article?.mainImage?.asset
+                ? urlForImage(article.mainImage).width(800).height(600).url()
+                : null;
+              return (
+                <div key={article._id} className="post-item">
+                  <Link
+                    href={slug ? `/actualites/${slug}` : "/actualites"}
+                    className="post-block-02 reveal"
+                  >
+                    <div className="post-meta-02">
+                      {article?.categorie && <div className="post-tag-02">{article.categorie}</div>}
+                      {article?.publishedAt && (
+                        <div className="post-date-02">{formatFrenchDate(article.publishedAt)}</div>
+                      )}
+                    </div>
+                    {imgUrl && (
+                      <div className="post-img-02">
+                        <img src={imgUrl} alt={article.title} className="post-image-02" />
+                      </div>
+                    )}
+                    <div className="post-title-wrapper-02">
+                      <h3 className="post-title-02">{article.title}</h3>
+                    </div>
+                    <div className="post-arrow-02">
+                      <img src={IC_ARROW_BLACK} alt="Go" />
+                    </div>
+                  </Link>
                 </div>
-                <div className="post-img-02">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="post-image-02"
-                  />
-                </div>
-                <div className="post-title-wrapper-02">
-                  <h3 className="post-title-02">{article.title}</h3>
-                </div>
-                <div className="post-arrow-02">
-                  <img src={IC_ARROW_BLACK} alt="Go" />
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );

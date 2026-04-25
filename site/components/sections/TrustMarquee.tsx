@@ -12,7 +12,7 @@ export async function TrustMarquee() {
   const highlight: string = data?.trustHighlight || "";
   const image: string | null = data?.trustImage ? urlForImage(data.trustImage).url() : null;
 
-  const commitments = Array.isArray(data?.commitments)
+  const commitments: Array<{ id: string; label: string; iconUrl: string | null }> = Array.isArray(data?.commitments)
     ? data.commitments.map((c: any) => ({
         id: c?.id || "",
         label: c?.label || "",

@@ -13,6 +13,7 @@ export const homePage = defineType({
     { name: "services", title: "Spécialités (Section)" },
     { name: "credentials", title: "Parcours / Formation" },
     { name: "trust", title: "Confiance / Engagement" },
+    { name: "latestPosts", title: "Derniers Articles" },
     { name: "appointment", title: "Rendez-vous" },
     { name: "seo", title: "SEO" },
   ],
@@ -180,6 +181,51 @@ export const homePage = defineType({
           ],
         },
       ],
+    }),
+
+    // --- LATEST POSTS ---
+    defineField({
+      name: "latestPostsEnabled",
+      title: "Afficher la section",
+      type: "boolean",
+      group: "latestPosts",
+      initialValue: true,
+    }),
+    defineField({
+      name: "latestPostsTagline",
+      title: "Tagline",
+      type: "string",
+      group: "latestPosts",
+      initialValue: "Actualités",
+    }),
+    defineField({
+      name: "latestPostsHeading",
+      title: "Titre de la section",
+      type: "string",
+      group: "latestPosts",
+      initialValue: "Derniers Articles",
+    }),
+    defineField({
+      name: "latestPostsCount",
+      title: "Nombre d'articles à afficher",
+      type: "number",
+      group: "latestPosts",
+      initialValue: 3,
+      validation: (Rule) => Rule.min(1).max(12).integer(),
+    }),
+    defineField({
+      name: "latestPostsSort",
+      title: "Trier par",
+      type: "string",
+      group: "latestPosts",
+      initialValue: "recent",
+      options: {
+        list: [
+          { title: "Plus récents", value: "recent" },
+          { title: "Plus vus", value: "mostViewed" },
+        ],
+        layout: "radio",
+      },
     }),
 
     // --- APPOINTMENT ---
