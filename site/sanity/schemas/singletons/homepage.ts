@@ -132,7 +132,6 @@ export const homePage = defineType({
             { name: "title", title: "Titre (ex: Médecine)", type: "string" },
             { name: "description", title: "Description longue", type: "string" },
             { name: "institution", title: "Institution", type: "string" },
-            { name: "image", title: "Logo institution", type: "image" },
           ],
         },
       ],
