@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getSettings } from "@/lib/queries";
 
 const IC_TITLE =
   "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
@@ -9,7 +10,10 @@ const IC_YOUTUBE =
 const IC_TWITTER =
   "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691d4d00487cab9fb6978c8d_ic-twitter.svg";
 
-export function Footer() {
+export async function Footer() {
+  const settings = await getSettings();
+  const youtubeUrl: string | undefined = settings?.youtube;
+  const twitterUrl: string | undefined = settings?.twitter;
   return (
     <footer className="footer">
       <div className="footer-main">
@@ -45,12 +49,28 @@ export function Footer() {
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                 </svg>
               </a>
-              <a href="#" className="footer-social-link yt" aria-label="YouTube">
-                <img src={IC_YOUTUBE} alt="YouTube" />
-              </a>
-              <a href="#" className="footer-social-link tw" aria-label="X (Twitter)">
-                <img src={IC_TWITTER} alt="Twitter" />
-              </a>
+              {youtubeUrl && (
+                <a
+                  href={youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-link yt"
+                  aria-label="YouTube"
+                >
+                  <img src={IC_YOUTUBE} alt="YouTube" />
+                </a>
+              )}
+              {twitterUrl && (
+                <a
+                  href={twitterUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-link tw"
+                  aria-label="X (Twitter)"
+                >
+                  <img src={IC_TWITTER} alt="Twitter" />
+                </a>
+              )}
             </div>
           </div>
           <div className="footer-cta">
@@ -79,12 +99,28 @@ export function Footer() {
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                 </svg>
               </a>
-              <a href="#" className="footer-social-link yt" aria-label="YouTube">
-                <img src={IC_YOUTUBE} alt="YouTube" />
-              </a>
-              <a href="#" className="footer-social-link tw" aria-label="X (Twitter)">
-                <img src={IC_TWITTER} alt="Twitter" />
-              </a>
+              {youtubeUrl && (
+                <a
+                  href={youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-link yt"
+                  aria-label="YouTube"
+                >
+                  <img src={IC_YOUTUBE} alt="YouTube" />
+                </a>
+              )}
+              {twitterUrl && (
+                <a
+                  href={twitterUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-link tw"
+                  aria-label="X (Twitter)"
+                >
+                  <img src={IC_TWITTER} alt="Twitter" />
+                </a>
+              )}
             </div>
           </div>
         </div>
