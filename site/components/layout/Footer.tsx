@@ -238,8 +238,12 @@ export async function Footer() {
         </span>
         <div className="footer-credits">
           <span>Conçu par</span>
-          <a href="https://wa.me/212611714711" target="_blank">
+          <a href="https://wa.me/212611714711" target="_blank" rel="noopener noreferrer">
             MouaDev
+          </a>
+          <span>-</span>
+          <a href="https://www.instagram.com/hosniayoub_?utm_source=qr" target="_blank" rel="noopener noreferrer">
+            Ayoub HOSNI
           </a>
         </div>
       </div>
