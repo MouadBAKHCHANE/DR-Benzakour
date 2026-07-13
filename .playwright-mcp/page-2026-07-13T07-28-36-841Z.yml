@@ -1,0 +1,217 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - link [ref=f1e6] [cursor=pointer]:
+        - /url: /
+        - img "Oncodigest - Dr. Benzakour Mohammed Amal" [ref=f1e7]
+      - generic [ref=f1e8]:
+        - link "Accueil" [ref=f1e9] [cursor=pointer]:
+          - /url: /
+        - link "À propos" [ref=f1e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link [ref=f1e14] [cursor=pointer]:
+          - /url: /specialites
+        - link [ref=f1e19] [cursor=pointer]:
+          - /url: /actualites
+        - link "Contact" [ref=f1e23] [cursor=pointer]:
+          - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow" [ref=f1e25] [cursor=pointer]:
+        - img "Arrow" [ref=f1e27]
+        - generic [ref=f1e28]: Prendre Rendez-vous
+        - img "Arrow" [ref=f1e31]
+  - generic:
+    - generic:
+      - link "Accueil":
+        - /url: /
+      - link "À propos":
+        - /url: /a-propos
+      - generic:
+        - button "Spécialités"
+        - generic:
+          - link "Toutes nos spécialités":
+            - /url: /specialites
+          - link "Chirurgie Digestive & Viscérale":
+            - /url: /specialites/chirurgie-digestive-viscerale
+          - link "Chirurgie Oncologique":
+            - /url: /specialites/chirurgie-oncologique
+          - link "Chirurgie Laparoscopique & Robotique":
+            - /url: /specialites/chirurgie-laparoscopique-robotique
+          - link "Cytoréduction & CHIP (HIPEC)":
+            - /url: /specialites/cytoreduction-chip-hipec
+      - link "Actualités":
+        - /url: /actualites
+      - link "Contact":
+        - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow":
+        - generic:
+          - img "Arrow"
+        - generic: Prendre Rendez-vous
+        - generic:
+          - img "Arrow"
+  - generic [ref=f1e34]:
+    - heading "Nous Contacter" [level=1] [ref=f1e35]
+    - paragraph [ref=f1e36]: Une question ou besoin d'assistance ? Nous sommes là pour vous aider — contactez-nous dès aujourd'hui.
+  - generic [ref=f1e37]:
+    - generic [ref=f1e40]:
+      - img "Contact" [ref=f1e43]
+      - generic [ref=f1e44]:
+        - generic [ref=f1e45]:
+          - img "Info" [ref=f1e46]
+          - generic [ref=f1e47]: Le moyen le plus rapide est de nous envoyer un message.
+        - generic [ref=f1e48]:
+          - generic [ref=f1e49]:
+            - generic [ref=f1e50]:
+              - img "Mail" [ref=f1e51]
+              - generic [ref=f1e52]: Nous joindre
+            - generic [ref=f1e53]:
+              - generic [ref=f1e54]:
+                - generic [ref=f1e55]: "Email :"
+                - link "drmohammedamalbenzakour@gmail.com" [ref=f1e56] [cursor=pointer]:
+                  - /url: mailto:drmohammedamalbenzakour@gmail.com
+              - generic [ref=f1e58]:
+                - generic [ref=f1e59]: "Tél. fixe :"
+                - link "05 22 89 44 19" [ref=f1e60] [cursor=pointer]:
+                  - /url: tel:+212522894419
+              - generic [ref=f1e62]:
+                - generic [ref=f1e63]: "Tél. portable :"
+                - link "07 67 49 49 16" [ref=f1e64] [cursor=pointer]:
+                  - /url: tel:+212767494916
+              - generic [ref=f1e66]:
+                - generic [ref=f1e67]: "Jours de consultation :"
+                - generic [ref=f1e68]: Lundi au Vendredi, Samedi Matin
+          - generic [ref=f1e69]:
+            - generic [ref=f1e70]:
+              - img "Adresse" [ref=f1e71]
+              - generic [ref=f1e72]: Adresse du cabinet
+            - generic [ref=f1e73]: Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca, Maroc
+        - iframe [ref=f1e75]:
+          
+    - generic [ref=f1e78]:
+      - generic [ref=f1e79]: Contactez-nous pour toute demande, nous sommes à votre écoute !
+      - generic [ref=f1e82]:
+        - generic [ref=f1e83]:
+          - textbox "Prénom*" [ref=f1e84]
+          - textbox "Nom" [ref=f1e85]
+          - textbox "Téléphone*" [ref=f1e86]
+          - textbox "Email" [ref=f1e87]
+          - textbox "Écrivez votre message ici *" [ref=f1e88]
+        - button "Envoyez le message" [ref=f1e89] [cursor=pointer]
+    - generic [ref=f1e91]:
+      - generic [ref=f1e92]:
+        - generic [ref=f1e93]:
+          - img "Sub Title" [ref=f1e94]
+          - generic [ref=f1e95]: FAQ
+        - heading "Questions Fréquentes" [level=2] [ref=f1e96]
+      - generic [ref=f1e97]:
+        - generic [ref=f1e98]:
+          - button "Q.1 Comment prendre rendez-vous ?" [ref=f1e99]:
+            - generic [ref=f1e100]:
+              - generic [ref=f1e101]: Q.1
+              - generic [ref=f1e102]: Comment prendre rendez-vous ?
+          - navigation:
+            - paragraph [ref=f1e107]: Contactez-nous par téléphone au 05 22 89 44 19 ou via le formulaire en ligne.
+        - generic [ref=f1e108]:
+          - button "Q.2 Que dois-je apporter lors de ma première visite ?" [ref=f1e109]:
+            - generic [ref=f1e110]:
+              - generic [ref=f1e111]: Q.2
+              - generic [ref=f1e112]: Que dois-je apporter lors de ma première visite ?
+          - navigation:
+            - paragraph [ref=f1e117]: Résultats d’examens récents, dossier médical et pièce d’identité.
+        - generic [ref=f1e118]:
+          - button "Q.3 Proposez-vous des consultations en télémédecine ?" [ref=f1e119]:
+            - generic [ref=f1e120]:
+              - generic [ref=f1e121]: Q.3
+              - generic [ref=f1e122]: Proposez-vous des consultations en télémédecine ?
+          - navigation:
+            - paragraph [ref=f1e127]: Oui, pour les suivis et avis préliminaires. Contactez-nous pour en savoir plus.
+        - generic [ref=f1e128]:
+          - button "Q.4 Quels sont vos jours de consultation ?" [ref=f1e129]:
+            - generic [ref=f1e130]:
+              - generic [ref=f1e131]: Q.4
+              - generic [ref=f1e132]: Quels sont vos jours de consultation ?
+          - navigation:
+            - paragraph [ref=f1e137]: Le cabinet est ouvert du Lundi au Vendredi, ainsi que le Samedi matin.
+    - generic [ref=f1e139]:
+      - generic [ref=f1e140]:
+        - generic [ref=f1e141]:
+          - generic [ref=f1e144]:
+            - generic [ref=f1e145]: Cabinet Moderne
+            - generic [ref=f1e146]: Infrastructure de pointe pour une prise en charge efficace et sécurisée.
+          - generic [ref=f1e149]:
+            - generic [ref=f1e150]: Suivi Personnalisé
+            - generic [ref=f1e151]: Accompagnement attentif avant, pendant et après chaque intervention.
+        - img "Cabinet" [ref=f1e153]
+      - generic [ref=f1e154]:
+        - img "Chirurgie" [ref=f1e156]
+        - generic [ref=f1e159]:
+          - generic [ref=f1e160]: Expertise Chirurgicale
+          - generic [ref=f1e161]: 30 ans d’expérience et une maîtrise des techniques les plus innovantes au service de chaque patient.
+        - img "Équipe" [ref=f1e163]
+  - contentinfo [ref=f1e164]:
+    - generic [ref=f1e165]:
+      - generic [ref=f1e166]:
+        - generic [ref=f1e167]:
+          - link [ref=f1e168] [cursor=pointer]:
+            - /url: /
+            - img "Oncodigest - Dr. Benzakour" [ref=f1e169]
+          - generic [ref=f1e170]: À PROPOS
+          - paragraph [ref=f1e171]: Spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique & Robotique.Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca
+        - generic [ref=f1e172]:
+          - button "Arrow Prendre Rendez-vous Arrow" [ref=f1e173] [cursor=pointer]:
+            - img "Arrow" [ref=f1e175]
+            - generic [ref=f1e176]: Prendre Rendez-vous
+            - img "Arrow" [ref=f1e179]
+          - generic [ref=f1e180]:
+            - link "Instagram" [ref=f1e181] [cursor=pointer]:
+              - /url: https://www.instagram.com/dr.benzakour.mohammedamal/
+            - link "YouTube" [ref=f1e185] [cursor=pointer]:
+              - /url: https://www.youtube.com/@DrABMOncoDigest
+              - img "YouTube" [ref=f1e186]
+      - generic [ref=f1e187]:
+        - generic [ref=f1e188]:
+          - generic [ref=f1e189]:
+            - generic [ref=f1e190]: NAVIGATION
+            - generic [ref=f1e191]:
+              - link "Accueil" [ref=f1e192] [cursor=pointer]:
+                - /url: /
+              - link "À Propos" [ref=f1e193] [cursor=pointer]:
+                - /url: /a-propos
+              - link "Actualités" [ref=f1e194] [cursor=pointer]:
+                - /url: /actualites
+              - link "Contact" [ref=f1e195] [cursor=pointer]:
+                - /url: /contact
+              - link "Politique de Confidentialité" [ref=f1e196] [cursor=pointer]:
+                - /url: /confidentialite
+          - generic [ref=f1e197]:
+            - generic [ref=f1e198]: SPÉCIALITÉS
+            - generic [ref=f1e199]:
+              - link "Nos Spécialités" [ref=f1e200] [cursor=pointer]:
+                - /url: /specialites
+              - link "Chirurgie Digestive & Viscérale" [ref=f1e201] [cursor=pointer]:
+                - /url: /specialites/chirurgie-digestive-viscerale
+              - link "Chirurgie Oncologique" [ref=f1e202] [cursor=pointer]:
+                - /url: /specialites/chirurgie-oncologique
+              - link "Chirurgie Laparoscopique & Robotique" [ref=f1e203] [cursor=pointer]:
+                - /url: /specialites/chirurgie-laparoscopique-robotique
+              - link "Cytoréduction & CHIP (HIPEC)" [ref=f1e204] [cursor=pointer]:
+                - /url: /specialites/cytoreduction-chip-hipec
+        - generic [ref=f1e205]:
+          - generic [ref=f1e206]: NOUS CONTACTER
+          - generic [ref=f1e207]:
+            - link "drmohammedamalbenzakour@gmail.com" [ref=f1e208] [cursor=pointer]:
+              - /url: mailto:drmohammedamalbenzakour@gmail.com
+            - link "05 22 89 44 19" [ref=f1e214] [cursor=pointer]:
+              - /url: tel:+212522894419
+            - link "07 67 49 49 16" [ref=f1e219] [cursor=pointer]:
+              - /url: tel:+212767494916
+            - link "Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca" [ref=f1e224] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca
+    - generic [ref=f1e230]:
+      - generic [ref=f1e231]: © 2025 Dr. Benzakour - Casablanca
+      - generic [ref=f1e232]:
+        - generic [ref=f1e233]: Conçu par
+        - link "MouaDev" [ref=f1e234] [cursor=pointer]:
+          - /url: https://wa.me/212611714711
+        - generic [ref=f1e235]: "-"
+        - link "Ayoub HOSNI" [ref=f1e236] [cursor=pointer]:
+          - /url: https://www.instagram.com/hosniayoub_?utm_source=qr

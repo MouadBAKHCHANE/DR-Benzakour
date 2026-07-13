@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ContactClient } from "./ContactClient";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { faqPageJsonLd } from "@/lib/jsonld";
 
 const contactTitle = "Contactez le Dr. Benzakour | Cabinet de Chirurgie à Casablanca";
@@ -58,6 +59,7 @@ export default function Page() {
         }}
       />
       <ContactClient faqItems={faqItems} />
+      <FooterServer />
     </>
   );
 }

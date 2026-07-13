@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const IC_INFO =
@@ -365,7 +364,6 @@ export function ContactClient({ faqItems }: ContactClientProps) {
 
         </div>
       </ScrollReveal>
-      <Footer />
     </>
   );
 }

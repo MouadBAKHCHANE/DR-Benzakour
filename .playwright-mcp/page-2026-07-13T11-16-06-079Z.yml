@@ -1,0 +1,345 @@
+- generic [active] [ref=f10e1]:
+  - navigation [ref=f10e3]:
+    - generic [ref=f10e5]:
+      - link [ref=f10e6] [cursor=pointer]:
+        - /url: /
+        - img "Oncodigest - Dr. Benzakour Mohammed Amal" [ref=f10e7]
+      - generic [ref=f10e8]:
+        - link "Accueil" [ref=f10e9] [cursor=pointer]:
+          - /url: /
+        - link "À propos" [ref=f10e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link [ref=f10e14] [cursor=pointer]:
+          - /url: /specialites
+        - link [ref=f10e19] [cursor=pointer]:
+          - /url: /actualites
+        - link "Contact" [ref=f10e23] [cursor=pointer]:
+          - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow" [ref=f10e25] [cursor=pointer]:
+        - img "Arrow" [ref=f10e27]
+        - generic [ref=f10e28]: Prendre Rendez-vous
+        - img "Arrow" [ref=f10e31]
+  - generic:
+    - generic:
+      - link "Accueil":
+        - /url: /
+      - link "À propos":
+        - /url: /a-propos
+      - generic:
+        - button "Spécialités"
+        - generic:
+          - link "Toutes nos spécialités":
+            - /url: /specialites
+          - link "Chirurgie Digestive & Viscérale":
+            - /url: /specialites/chirurgie-digestive-viscerale
+          - link "Chirurgie Oncologique":
+            - /url: /specialites/chirurgie-oncologique
+          - link "Chirurgie Laparoscopique & Robotique":
+            - /url: /specialites/chirurgie-laparoscopique-robotique
+          - link "Cytoréduction & CHIP (HIPEC)":
+            - /url: /specialites/cytoreduction-chip-hipec
+      - link "Actualités":
+        - /url: /actualites
+      - link "Contact":
+        - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow":
+        - generic:
+          - img "Arrow"
+        - generic: Prendre Rendez-vous
+        - generic:
+          - img "Arrow"
+  - main [ref=f10e32]:
+    - generic [ref=f10e33]:
+      - img "Dr. Benzakour" [ref=f10e35]
+      - generic [ref=f10e36]:
+        - generic [ref=f10e38]:
+          - heading "Votre Santé, Notre Mission" [level=1] [ref=f10e39]
+          - paragraph [ref=f10e40]: Dr Benzakour Mohammed Amal, spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique & Robotique. Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca.
+          - link "Arrow Nos Spécialités Arrow" [ref=f10e41] [cursor=pointer]:
+            - /url: /specialites
+            - img "Arrow" [ref=f10e43]
+            - generic [ref=f10e44]: Nos Spécialités
+            - img "Arrow" [ref=f10e47]
+        - generic [ref=f10e49]:
+          - link "Chirurgie Digestive" [ref=f10e51] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Oncologique" [ref=f10e53] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Robotique" [ref=f10e55] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie HBP" [ref=f10e57] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Bariatrique" [ref=f10e59] [cursor=pointer]:
+            - /url: "#"
+          - link "CRS & HIPEC" [ref=f10e61] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Digestive" [ref=f10e63] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Oncologique" [ref=f10e65] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Robotique" [ref=f10e67] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie HBP" [ref=f10e69] [cursor=pointer]:
+            - /url: "#"
+          - link "Chirurgie Bariatrique" [ref=f10e71] [cursor=pointer]:
+            - /url: "#"
+          - link "CRS & HIPEC" [ref=f10e73] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=f10e76]:
+      - generic [ref=f10e77]:
+        - generic [ref=f10e78]:
+          - generic [ref=f10e79]: À Propos
+          - heading "L'excellence chirurgicale au service de votre santé" [level=2] [ref=f10e80]
+          - paragraph [ref=f10e81]: Le Dr Mohammed Amal Benzakour est un chirurgien de renom basé à Casablanca, spécialisé dans la chirurgie viscérale, digestive et oncologique. Il se distingue par la chirurgie coelioscopique et robotique.
+        - link "Arrow En Savoir Plus Arrow" [ref=f10e82] [cursor=pointer]:
+          - /url: /a-propos
+          - img "Arrow" [ref=f10e84]
+          - generic [ref=f10e85]: En Savoir Plus
+          - img "Arrow" [ref=f10e88]
+      - generic [ref=f10e89]:
+        - img "Story 1" [ref=f10e91]
+        - img "À Propos" [ref=f10e93]
+        - img "Spécialité" [ref=f10e95]
+        - img "Dr. Benzakour" [ref=f10e97]
+    - generic [ref=f10e99]:
+      - generic [ref=f10e100]:
+        - generic [ref=f10e101]: Nos Spécialités
+        - heading "Domaines d'Expertise" [level=2] [ref=f10e102]
+      - generic [ref=f10e103]:
+        - generic [ref=f10e104]:
+          - generic [ref=f10e105]:
+            - generic [ref=f10e106]: Digestive
+            - img "Chirurgie Digestive & Viscérale" [ref=f10e108]
+          - generic [ref=f10e109]:
+            - generic [ref=f10e110]: Chirurgie Digestive & Viscérale
+            - generic [ref=f10e112]: Pathologies hépato-biliaires, œsogastriques, paroi abdominale et urgences digestives.
+          - link "Voir Détails" [ref=f10e114] [cursor=pointer]:
+            - /url: /specialites/chirurgie-digestive-viscerale
+        - generic [ref=f10e115]:
+          - generic [ref=f10e116]:
+            - generic [ref=f10e117]: Oncologie
+            - img "Chirurgie Oncologique" [ref=f10e119]
+          - generic [ref=f10e120]:
+            - generic [ref=f10e121]: Chirurgie Oncologique
+            - generic [ref=f10e123]: Cancers digestifs et gynécologiques pris en charge avec une expertise de trois décennies.
+          - link "Voir Détails" [ref=f10e125] [cursor=pointer]:
+            - /url: /specialites/chirurgie-oncologique
+        - generic [ref=f10e126]:
+          - generic [ref=f10e127]:
+            - generic [ref=f10e128]: Mini-Invasive
+            - img "Chirurgie Laparoscopique & Robotique" [ref=f10e130]
+          - generic [ref=f10e131]:
+            - generic [ref=f10e132]: Chirurgie Laparoscopique & Robotique
+            - generic [ref=f10e134]: "Coelioscopie et robotique : moins de cicatrices, plus de précision, récupération accélérée."
+          - link "Voir Détails" [ref=f10e136] [cursor=pointer]:
+            - /url: /specialites/chirurgie-laparoscopique-robotique
+        - generic [ref=f10e137]:
+          - generic [ref=f10e138]:
+            - generic [ref=f10e139]: CHIP
+            - img "Cytoréduction & CHIP (HIPEC)" [ref=f10e141]
+          - generic [ref=f10e142]:
+            - generic [ref=f10e143]: Cytoréduction & CHIP (HIPEC)
+            - generic [ref=f10e145]: Traitement combiné de la carcinose péritonéale par chirurgie et chimiothérapie hyperthermique.
+          - link "Voir Détails" [ref=f10e147] [cursor=pointer]:
+            - /url: /specialites/cytoreduction-chip-hipec
+    - generic [ref=f10e149]:
+      - generic [ref=f10e150]:
+        - generic [ref=f10e151]: Formation
+        - heading "Parcours Académique" [level=2] [ref=f10e152]
+      - generic [ref=f10e153]:
+        - generic [ref=f10e154]:
+          - generic [ref=f10e155]:
+            - generic [ref=f10e156]: Doctorat
+            - generic [ref=f10e157]: Médecine
+          - generic:
+            - generic:
+              - generic: Doctorat en Médecine
+              - generic: Université de Lorraine
+        - generic [ref=f10e158]:
+          - generic [ref=f10e159]:
+            - generic [ref=f10e160]: Spécialisation
+            - generic [ref=f10e161]: Chirurgie Viscérale
+          - generic:
+            - generic:
+              - generic: Chirurgie Viscérale et Digestive
+              - generic: Formation Complète
+        - generic [ref=f10e162]:
+          - generic [ref=f10e163]:
+            - generic [ref=f10e164]: DU Paris
+            - generic [ref=f10e165]: Chirurgie Robotique
+          - generic:
+            - generic:
+              - generic: Diplôme Universitaire Chirurgie Robotique Digestive
+              - generic: Université de Paris
+        - generic [ref=f10e166]:
+          - generic [ref=f10e167]:
+            - generic [ref=f10e168]: DIU Paris
+            - generic [ref=f10e169]: Chirurgie HBP
+          - generic:
+            - generic:
+              - generic: Diplôme Inter-Universitaire Chirurgie Hépato-Bilio-Pancréatique
+              - generic: Université de Paris
+        - generic [ref=f10e170]:
+          - generic [ref=f10e171]:
+            - generic [ref=f10e172]: DUCLA
+            - generic [ref=f10e173]: Laparoscopie
+          - generic:
+            - generic:
+              - generic: DUCLA - Paris Chirurgie Laparoscopique
+              - generic: Paris
+    - generic [ref=f10e176]:
+      - img "Trusted" [ref=f10e178]
+      - generic [ref=f10e179]:
+        - generic [ref=f10e181]:
+          - generic [ref=f10e182]: Excellence Chirurgicale
+          - generic [ref=f10e184]: Innovation Médicale
+          - generic [ref=f10e186]: Soins de Confiance
+          - generic [ref=f10e188]: Expertise Reconnue
+          - generic [ref=f10e190]: Excellence Chirurgicale
+          - generic [ref=f10e192]: Innovation Médicale
+          - generic [ref=f10e194]: Soins de Confiance
+          - generic [ref=f10e196]: Expertise Reconnue
+        - paragraph [ref=f10e199]: Le Dr Benzakour s'engage à offrir des soins chirurgicaux avancés et accessibles, combinant expertise médicale et attention personnalisée.
+        - generic [ref=f10e201]:
+          - generic [ref=f10e202]: "01"
+          - generic [ref=f10e203]: Diagnostic Précis
+        - generic [ref=f10e205]:
+          - generic [ref=f10e206]: "02"
+          - generic [ref=f10e207]: Prévention Santé
+        - generic [ref=f10e209]:
+          - generic [ref=f10e210]: "03"
+          - generic [ref=f10e211]: Pratique Éthique
+        - generic [ref=f10e213]:
+          - generic [ref=f10e214]: "04"
+          - generic [ref=f10e215]: Suivi à Vie
+        - generic [ref=f10e217]:
+          - generic [ref=f10e218]: "05"
+          - generic [ref=f10e219]: Soins Bienveillants
+    - generic [ref=f10e221]:
+      - generic [ref=f10e222]:
+        - generic [ref=f10e223]: Actualités
+        - heading "Derniers Articles" [level=2] [ref=f10e225]
+      - generic [ref=f10e226]:
+        - 'link "○ Chirurgie Digestive Mars 2026 Bilan digestif : pourquoi un dépistage régulier est essentiel Bilan digestif : pourquoi un dépistage régulier est essentiel Go" [ref=f10e228] [cursor=pointer]':
+          - /url: /actualites/bilan-digestif-depistage
+          - generic [ref=f10e229]:
+            - generic [ref=f10e230]: ○ Chirurgie Digestive
+            - generic [ref=f10e231]: Mars 2026
+          - 'img "Bilan digestif : pourquoi un dépistage régulier est essentiel" [ref=f10e233]'
+          - 'heading "Bilan digestif : pourquoi un dépistage régulier est essentiel" [level=3] [ref=f10e235]'
+          - img "Go" [ref=f10e237]
+        - link "○ Innovation Janvier 2026 Les avantages de la chirurgie mini-invasive Les avantages de la chirurgie mini-invasive Go" [ref=f10e239] [cursor=pointer]:
+          - /url: /actualites/avantages-chirurgie-mini-invasive
+          - generic [ref=f10e240]:
+            - generic [ref=f10e241]: ○ Innovation
+            - generic [ref=f10e242]: Janvier 2026
+          - img "Les avantages de la chirurgie mini-invasive" [ref=f10e244]
+          - heading "Les avantages de la chirurgie mini-invasive" [level=3] [ref=f10e246]
+          - img "Go" [ref=f10e248]
+        - 'link "○ Récupération Octobre 2025 RAAC : récupérer plus vite après une chirurgie RAAC : récupérer plus vite après une chirurgie Go" [ref=f10e250] [cursor=pointer]':
+          - /url: /actualites/raac-recuperation-amelioree
+          - generic [ref=f10e251]:
+            - generic [ref=f10e252]: ○ Récupération
+            - generic [ref=f10e253]: Octobre 2025
+          - 'img "RAAC : récupérer plus vite après une chirurgie" [ref=f10e255]'
+          - 'heading "RAAC : récupérer plus vite après une chirurgie" [level=3] [ref=f10e257]'
+          - img "Go" [ref=f10e259]
+    - generic [ref=f10e261]:
+      - generic [ref=f10e262]:
+        - generic [ref=f10e263]: Rendez-vous
+        - heading "Demander une consultation." [level=2] [ref=f10e265]
+        - paragraph [ref=f10e266]: Vos coordonnées seront transmises à notre secrétariatqui vous contactera rapidement.
+        - generic [ref=f10e271]:
+          - link "05 22 89 44 19" [ref=f10e272] [cursor=pointer]:
+            - /url: tel:+212522894419
+          - generic [ref=f10e273]: Téléphone fixe
+        - generic [ref=f10e278]:
+          - link "07 67 49 49 16" [ref=f10e279] [cursor=pointer]:
+            - /url: tel:+212767494916
+          - generic [ref=f10e280]: Téléphone portable
+        - generic [ref=f10e286]:
+          - link "drmohammedamalbenzakour@gmail.com" [ref=f10e287] [cursor=pointer]:
+            - /url: mailto:drmohammedamalbenzakour@gmail.com
+          - generic [ref=f10e288]: Envoyez-nous un email
+        - button "Arrow Prendre Rendez-vous Arrow" [ref=f10e289] [cursor=pointer]:
+          - img "Arrow" [ref=f10e291]
+          - generic [ref=f10e292]: Prendre Rendez-vous
+          - img "Arrow" [ref=f10e295]
+      - generic [ref=f10e296]:
+        - generic [ref=f10e297]:
+          - generic [ref=f10e298]:
+            - generic [ref=f10e299]: Jours de consultation
+            - paragraph [ref=f10e301]: Lundi au Vendredi, Samedi Matin
+          - generic [ref=f10e302]:
+            - generic [ref=f10e303]: Adresse du cabinet
+            - paragraph [ref=f10e305]: Uptown Business Center, 5e étage N°9,Immeuble D, CFC,Bd Moulay Abdellah Chérif,Casablanca, Maroc
+        - iframe [ref=f10e307]
+  - contentinfo [ref=f10e308]:
+    - generic [ref=f10e309]:
+      - generic [ref=f10e310]:
+        - generic [ref=f10e311]:
+          - link [ref=f10e312] [cursor=pointer]:
+            - /url: /
+            - img "Oncodigest - Dr. Benzakour" [ref=f10e313]
+          - generic [ref=f10e314]: À PROPOS
+          - paragraph [ref=f10e315]: Spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique & Robotique.Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca
+        - generic [ref=f10e316]:
+          - button "Arrow Prendre Rendez-vous Arrow" [ref=f10e317] [cursor=pointer]:
+            - img "Arrow" [ref=f10e319]
+            - generic [ref=f10e320]: Prendre Rendez-vous
+            - img "Arrow" [ref=f10e323]
+          - generic [ref=f10e324]:
+            - link "Instagram" [ref=f10e325] [cursor=pointer]:
+              - /url: https://www.instagram.com/dr.benzakour.mohammedamal/
+            - link "YouTube" [ref=f10e329] [cursor=pointer]:
+              - /url: https://www.youtube.com/@DrABMOncoDigest
+              - img "YouTube" [ref=f10e330]
+      - generic [ref=f10e331]:
+        - generic [ref=f10e332]:
+          - generic [ref=f10e333]:
+            - generic [ref=f10e334]: NAVIGATION
+            - generic [ref=f10e335]:
+              - link "Accueil" [ref=f10e336] [cursor=pointer]:
+                - /url: /
+              - link "À Propos" [ref=f10e337] [cursor=pointer]:
+                - /url: /a-propos
+              - link "Actualités" [ref=f10e338] [cursor=pointer]:
+                - /url: /actualites
+              - link "Contact" [ref=f10e339] [cursor=pointer]:
+                - /url: /contact
+              - link "Politique de Confidentialité" [ref=f10e340] [cursor=pointer]:
+                - /url: /confidentialite
+          - generic [ref=f10e341]:
+            - generic [ref=f10e342]: SPÉCIALITÉS
+            - generic [ref=f10e343]:
+              - link "Nos Spécialités" [ref=f10e344] [cursor=pointer]:
+                - /url: /specialites
+              - link "Chirurgie Digestive & Viscérale" [ref=f10e345] [cursor=pointer]:
+                - /url: /specialites/chirurgie-digestive-viscerale
+              - link "Chirurgie Oncologique" [ref=f10e346] [cursor=pointer]:
+                - /url: /specialites/chirurgie-oncologique
+              - link "Chirurgie Laparoscopique & Robotique" [ref=f10e347] [cursor=pointer]:
+                - /url: /specialites/chirurgie-laparoscopique-robotique
+              - link "Cytoréduction & CHIP (HIPEC)" [ref=f10e348] [cursor=pointer]:
+                - /url: /specialites/cytoreduction-chip-hipec
+        - generic [ref=f10e349]:
+          - generic [ref=f10e350]: NOUS CONTACTER
+          - generic [ref=f10e351]:
+            - link "drmohammedamalbenzakour@gmail.com" [ref=f10e352] [cursor=pointer]:
+              - /url: mailto:drmohammedamalbenzakour@gmail.com
+            - link "05 22 89 44 19" [ref=f10e358] [cursor=pointer]:
+              - /url: tel:+212522894419
+            - link "07 67 49 49 16" [ref=f10e363] [cursor=pointer]:
+              - /url: tel:+212767494916
+            - link "Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca" [ref=f10e368] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca
+    - generic [ref=f10e374]:
+      - generic [ref=f10e375]: © 2025 Dr. Benzakour - Casablanca
+      - generic [ref=f10e376]:
+        - generic [ref=f10e377]: Conçu par
+        - link "MouaDev" [ref=f10e378] [cursor=pointer]:
+          - /url: https://wa.me/212611714711
+        - generic [ref=f10e379]: "-"
+        - link "Ayoub HOSNI" [ref=f10e380] [cursor=pointer]:
+          - /url: https://www.instagram.com/hosniayoub_?utm_source=qr
+  - alert [ref=f10e381]

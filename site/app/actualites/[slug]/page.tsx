@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { getAllBlogPosts, getPostBySlug } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
@@ -184,7 +184,7 @@ export default async function ArticlePage({
           )}
         </article>
       </ScrollReveal>
-      <Footer />
+      <FooterServer />
     </>
   );
 }

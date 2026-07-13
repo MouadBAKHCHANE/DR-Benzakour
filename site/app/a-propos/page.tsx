@@ -2,7 +2,7 @@ import { getAboutPage } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { HorizontalScroll } from "./HorizontalScroll";
 import type { Metadata } from "next";
@@ -159,7 +159,7 @@ export default async function AboutPage() {
           {purposePanels.length > 0 && <HorizontalScroll panels={purposePanels} />}
         </div>
       </main>
-      <Footer />
+      <FooterServer />
     </ScrollReveal>
   );
 }

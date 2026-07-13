@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { AppointmentForm } from "@/components/sections/AppointmentForm";
 import { getSpecialtyBySlug, getAllSpecialties } from "@/lib/queries";
@@ -170,7 +170,7 @@ export default async function ServiceDetailPage({
           <AppointmentForm />
         </div>
       </ScrollReveal>
-      <Footer />
+      <FooterServer />
     </>
   );
 }

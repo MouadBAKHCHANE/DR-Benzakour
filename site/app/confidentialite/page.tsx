@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import type { Metadata } from "next";
 
@@ -118,7 +118,7 @@ export default function ConfidentialitePage() {
         </section>
       </div>
 
-      <Footer />
+      <FooterServer />
     </ScrollReveal>
   );
 }

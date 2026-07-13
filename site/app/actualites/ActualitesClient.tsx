@@ -1,29 +1,48 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { urlForImage } from "@/lib/sanity";
 
-// We receive the posts as props rather than importing static data
-function ActualitesContent({ posts, categories }: { posts: any[], categories: string[] }) {
+// Reads ?cat= from the URL and syncs it to the filter state. Isolated in its
+// own component so the Suspense boundary required by useSearchParams only
+// covers this (renders nothing) instead of the whole page.
+function CategoryParamSync({
+  categories,
+  onChange,
+}: {
+  categories: string[];
+  onChange: (cat: string) => void;
+}) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("cat");
-  const [selected, setSelected] = useState<string>("Tous");
 
   useEffect(() => {
     if (categoryParam) {
       const match = categories.find(
         (c) => c.toLowerCase() === categoryParam.toLowerCase()
       );
-      setSelected(match || "Tous");
+      onChange(match || "Tous");
     } else {
-      setSelected("Tous");
+      onChange("Tous");
     }
-  }, [categoryParam, categories]);
+  }, [categoryParam, categories, onChange]);
+
+  return null;
+}
+
+export function ActualitesPageClient({ posts }: { posts: any[] }) {
+  const categories = useMemo(
+    () =>
+      Array.from(
+        new Set(posts.map((p) => p.categorie).filter(Boolean))
+      ) as string[],
+    [posts]
+  );
+  const [selected, setSelected] = useState<string>("Tous");
 
   const filtered =
     selected === "Tous"
@@ -32,6 +51,9 @@ function ActualitesContent({ posts, categories }: { posts: any[], categories: st
 
   return (
     <>
+      <Suspense fallback={null}>
+        <CategoryParamSync categories={categories} onChange={setSelected} />
+      </Suspense>
       <Navbar />
       <ScrollReveal>
         {/* Page Title */}
@@ -111,18 +133,6 @@ function ActualitesContent({ posts, categories }: { posts: any[], categories: st
           </section>
         </div>
       </ScrollReveal>
-      <Footer />
     </>
-  );
-}
-
-export function ActualitesPageClient({ posts }: { posts: any[] }) {
-  // Extract unique categories
-  const categories = Array.from(new Set(posts.map(p => p.categorie).filter(Boolean))) as string[];
-
-  return (
-    <Suspense fallback={null}>
-      <ActualitesContent posts={posts} categories={categories} />
-    </Suspense>
   );
 }

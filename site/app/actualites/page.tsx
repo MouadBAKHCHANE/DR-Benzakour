@@ -1,5 +1,6 @@
 import { getAllBlogPosts } from "@/lib/queries";
 import { ActualitesPageClient } from "./ActualitesClient";
+import { FooterServer } from "@/components/layout/FooterServer";
 import type { Metadata } from "next";
 
 const title = "Actualités - Dr. Benzakour";
@@ -26,5 +27,10 @@ export const metadata: Metadata = {
 export default async function ActualitesPage() {
   const posts = await getAllBlogPosts();
 
-  return <ActualitesPageClient posts={posts} />;
+  return (
+    <>
+      <ActualitesPageClient posts={posts} />
+      <FooterServer />
+    </>
+  );
 }

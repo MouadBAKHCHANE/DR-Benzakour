@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Hero } from "@/components/sections/Hero";
 import { OurStory } from "@/components/sections/OurStory";
@@ -65,7 +65,7 @@ export default function Home() {
         <LatestPosts />
         <AppointmentForm />
       </main>
-      <Footer />
+      <FooterServer />
     </ScrollReveal>
   );
 }

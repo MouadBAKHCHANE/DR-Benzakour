@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 import { getSpecialtiesPage, getAllSpecialties } from "@/lib/queries";
@@ -105,7 +105,7 @@ export default async function SpecialitesPage() {
         </section>
       </div>
 
-      <Footer />
+      <FooterServer />
     </ScrollReveal>
   );
 }

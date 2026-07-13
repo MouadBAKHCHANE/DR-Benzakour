@@ -1,0 +1,136 @@
+- generic [active] [ref=f5e1]:
+  - navigation [ref=f5e3]:
+    - generic [ref=f5e5]:
+      - link [ref=f5e6] [cursor=pointer]:
+        - /url: /
+        - img "Oncodigest - Dr. Benzakour Mohammed Amal" [ref=f5e7]
+      - generic [ref=f5e8]:
+        - link "Accueil" [ref=f5e9] [cursor=pointer]:
+          - /url: /
+        - link "À propos" [ref=f5e11] [cursor=pointer]:
+          - /url: /a-propos
+        - link [ref=f5e14] [cursor=pointer]:
+          - /url: /specialites
+        - link [ref=f5e19] [cursor=pointer]:
+          - /url: /actualites
+        - link "Contact" [ref=f5e23] [cursor=pointer]:
+          - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow" [ref=f5e25] [cursor=pointer]:
+        - img "Arrow" [ref=f5e27]
+        - generic [ref=f5e28]: Prendre Rendez-vous
+        - img "Arrow" [ref=f5e31]
+  - generic:
+    - generic:
+      - link "Accueil":
+        - /url: /
+      - link "À propos":
+        - /url: /a-propos
+      - generic:
+        - button "Spécialités"
+        - generic:
+          - link "Toutes nos spécialités":
+            - /url: /specialites
+          - link "Chirurgie Digestive & Viscérale":
+            - /url: /specialites/chirurgie-digestive-viscerale
+          - link "Chirurgie Oncologique":
+            - /url: /specialites/chirurgie-oncologique
+          - link "Chirurgie Laparoscopique & Robotique":
+            - /url: /specialites/chirurgie-laparoscopique-robotique
+          - link "Cytoréduction & CHIP (HIPEC)":
+            - /url: /specialites/cytoreduction-chip-hipec
+      - link "Actualités":
+        - /url: /actualites
+      - link "Contact":
+        - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow":
+        - generic:
+          - img "Arrow"
+        - generic: Prendre Rendez-vous
+        - generic:
+          - img "Arrow"
+  - generic [ref=f5e34]:
+    - heading "Derniers Articles" [level=1] [ref=f5e35]
+    - paragraph [ref=f5e36]: Découvrez les dernières actualités en chirurgie digestive et cancérologique.
+  - generic [ref=f5e38]:
+    - button "Tous" [ref=f5e39] [cursor=pointer]
+    - button "Chirurgie Digestive" [ref=f5e40] [cursor=pointer]
+    - button "Innovation" [ref=f5e41] [cursor=pointer]
+    - button "Récupération" [ref=f5e42] [cursor=pointer]
+    - button "Cancérologie" [ref=f5e43] [cursor=pointer]
+  - 'link "Carcinose péritonéale : la technique CHIP (HIPEC) Cancérologie 6 août 2025 Carcinose péritonéale : la technique CHIP (HIPEC)" [ref=f5e49] [cursor=pointer]':
+    - /url: /actualites/carcinose-peritoneale-chip
+    - 'img "Carcinose péritonéale : la technique CHIP (HIPEC)" [ref=f5e51]'
+    - generic [ref=f5e52]:
+      - generic [ref=f5e53]:
+        - generic [ref=f5e54]: Cancérologie
+        - generic [ref=f5e55]: 6 août 2025
+      - 'heading "Carcinose péritonéale : la technique CHIP (HIPEC)" [level=2] [ref=f5e56]'
+  - contentinfo [ref=f5e57]:
+    - generic [ref=f5e58]:
+      - generic [ref=f5e59]:
+        - generic [ref=f5e60]:
+          - link [ref=f5e61] [cursor=pointer]:
+            - /url: /
+            - img "Oncodigest - Dr. Benzakour" [ref=f5e62]
+          - generic [ref=f5e63]: À PROPOS
+          - paragraph [ref=f5e64]: Spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique & Robotique.Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca
+        - generic [ref=f5e65]:
+          - button "Arrow Prendre Rendez-vous Arrow" [ref=f5e66] [cursor=pointer]:
+            - img "Arrow" [ref=f5e68]
+            - generic [ref=f5e69]: Prendre Rendez-vous
+            - img "Arrow" [ref=f5e72]
+          - generic [ref=f5e73]:
+            - link "Instagram" [ref=f5e74] [cursor=pointer]:
+              - /url: https://www.instagram.com/dr.benzakour.mohammedamal/
+            - link "YouTube" [ref=f5e78] [cursor=pointer]:
+              - /url: https://www.youtube.com/@DrABMOncoDigest
+              - img "YouTube" [ref=f5e79]
+      - generic [ref=f5e80]:
+        - generic [ref=f5e81]:
+          - generic [ref=f5e82]:
+            - generic [ref=f5e83]: NAVIGATION
+            - generic [ref=f5e84]:
+              - link "Accueil" [ref=f5e85] [cursor=pointer]:
+                - /url: /
+              - link "À Propos" [ref=f5e86] [cursor=pointer]:
+                - /url: /a-propos
+              - link "Actualités" [ref=f5e87] [cursor=pointer]:
+                - /url: /actualites
+              - link "Contact" [ref=f5e88] [cursor=pointer]:
+                - /url: /contact
+              - link "Politique de Confidentialité" [ref=f5e89] [cursor=pointer]:
+                - /url: /confidentialite
+          - generic [ref=f5e90]:
+            - generic [ref=f5e91]: SPÉCIALITÉS
+            - generic [ref=f5e92]:
+              - link "Nos Spécialités" [ref=f5e93] [cursor=pointer]:
+                - /url: /specialites
+              - link "Chirurgie Digestive & Viscérale" [ref=f5e94] [cursor=pointer]:
+                - /url: /specialites/chirurgie-digestive-viscerale
+              - link "Chirurgie Oncologique" [ref=f5e95] [cursor=pointer]:
+                - /url: /specialites/chirurgie-oncologique
+              - link "Chirurgie Laparoscopique & Robotique" [ref=f5e96] [cursor=pointer]:
+                - /url: /specialites/chirurgie-laparoscopique-robotique
+              - link "Cytoréduction & CHIP (HIPEC)" [ref=f5e97] [cursor=pointer]:
+                - /url: /specialites/cytoreduction-chip-hipec
+        - generic [ref=f5e98]:
+          - generic [ref=f5e99]: NOUS CONTACTER
+          - generic [ref=f5e100]:
+            - link "drmohammedamalbenzakour@gmail.com" [ref=f5e101] [cursor=pointer]:
+              - /url: mailto:drmohammedamalbenzakour@gmail.com
+            - link "05 22 89 44 19" [ref=f5e107] [cursor=pointer]:
+              - /url: tel:+212522894419
+            - link "07 67 49 49 16" [ref=f5e112] [cursor=pointer]:
+              - /url: tel:+212767494916
+            - link "Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca" [ref=f5e117] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca
+    - generic [ref=f5e123]:
+      - generic [ref=f5e124]: © 2025 Dr. Benzakour - Casablanca
+      - generic [ref=f5e125]:
+        - generic [ref=f5e126]: Conçu par
+        - link "MouaDev" [ref=f5e127] [cursor=pointer]:
+          - /url: https://wa.me/212611714711
+        - generic [ref=f5e128]: "-"
+        - link "Ayoub HOSNI" [ref=f5e129] [cursor=pointer]:
+          - /url: https://www.instagram.com/hosniayoub_?utm_source=qr
+  - alert [ref=f5e130]

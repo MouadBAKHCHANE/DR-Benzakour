@@ -1,0 +1,168 @@
+- generic [active] [ref=f16e1]:
+  - navigation [ref=f16e560]:
+    - generic [ref=f16e562]:
+      - link [ref=f16e563] [cursor=pointer]:
+        - /url: /
+        - img "Oncodigest - Dr. Benzakour Mohammed Amal" [ref=f16e564]
+      - button "Menu" [ref=f16e565] [cursor=pointer]
+  - generic:
+    - generic:
+      - link "Accueil":
+        - /url: /
+      - link "À propos":
+        - /url: /a-propos
+      - generic:
+        - button "Spécialités"
+        - generic:
+          - link "Toutes nos spécialités":
+            - /url: /specialites
+          - link "Chirurgie Digestive & Viscérale":
+            - /url: /specialites/chirurgie-digestive-viscerale
+          - link "Chirurgie Oncologique":
+            - /url: /specialites/chirurgie-oncologique
+          - link "Chirurgie Laparoscopique & Robotique":
+            - /url: /specialites/chirurgie-laparoscopique-robotique
+          - link "Cytoréduction & CHIP (HIPEC)":
+            - /url: /specialites/cytoreduction-chip-hipec
+      - link "Actualités":
+        - /url: /actualites
+      - link "Contact":
+        - /url: /contact
+      - button "Arrow Prendre Rendez-vous Arrow":
+        - generic:
+          - img "Arrow"
+        - generic: Prendre Rendez-vous
+        - generic:
+          - img "Arrow"
+  - generic [ref=f16e571]:
+    - heading "Chirurgie Oncologique" [level=1] [ref=f16e572]
+    - paragraph [ref=f16e573]: Prise en charge chirurgicale experte des cancers digestifs et gynécologiques, au service de votre guérison depuis 30 ans.
+  - generic [ref=f16e574]:
+    - generic [ref=f16e576]:
+      - img "Chirurgie Oncologique" [ref=f16e578]
+      - generic [ref=f16e579]:
+        - generic [ref=f16e580]:
+          - generic [ref=f16e581]:
+            - heading "Une expertise au service de l'oncologie" [level=3] [ref=f16e582]
+            - paragraph [ref=f16e583]: Ma pratique est principalement orientée vers la chirurgie cancérologique, qu'il s'agisse de pathologies digestives ou gynécologiques. Trois décennies d'activité m'ont permis d'accompagner de nombreux patients dans des parcours de soins complexes, avec une attention constante portée à la sécurité opératoire et à la qualité de vie post-opératoire. Chaque cas est discuté en réunion de concertation pluridisciplinaire (RCP) pour garantir la meilleure stratégie thérapeutique.
+          - generic [ref=f16e584]:
+            - heading "Cancers pris en charge" [level=3] [ref=f16e585]
+            - list [ref=f16e586]:
+              - listitem [ref=f16e587]: → Cancers œsogastriques (estomac, œsophage)
+              - listitem [ref=f16e588]: → Cancers hépato-bilio-pancréatiques (foie, vésicule, pancréas)
+              - listitem [ref=f16e589]: → Cancers colorectaux (côlon, rectum)
+              - listitem [ref=f16e590]: → Cancer de l'ovaire avec ou sans carcinose péritonéale
+              - listitem [ref=f16e591]: → Tumeurs rares du péritoine (pseudomyxome, mésothéliome, sarcomes)
+          - generic [ref=f16e592]:
+            - heading "Approche chirurgicale moderne" [level=3] [ref=f16e593]
+            - paragraph [ref=f16e594]: La chirurgie cancérologique a considérablement évolué grâce aux approches mini-invasives. La cœlioscopie et la chirurgie robotique permettent d'opérer avec une précision millimétrique, de réduire les pertes sanguines et d'accélérer la reprise des traitements médicaux complémentaires (chimiothérapie, radiothérapie).
+            - generic [ref=f16e595]:
+              - generic [ref=f16e596]:
+                - generic [ref=f16e597]: 30+
+                - generic [ref=f16e598]: années d'expérience en oncologie
+              - generic [ref=f16e599]:
+                - generic [ref=f16e600]: RCP
+                - generic [ref=f16e601]: concertation pluridisciplinaire systématique
+              - generic [ref=f16e602]:
+                - generic [ref=f16e603]: Mini-invasive
+                - generic [ref=f16e604]: approche privilégiée quand possible
+          - generic [ref=f16e605]:
+            - heading "Coordination des soins" [level=3] [ref=f16e606]
+            - paragraph [ref=f16e607]: La prise en charge oncologique ne se limite pas à l'acte chirurgical. Elle s'inscrit dans un parcours de soins coordonné avec des oncologues médicaux, des radiothérapeutes et des spécialistes en soins de support, garantissant une continuité optimale tout au long du traitement.
+            - blockquote [ref=f16e608]: “ La chirurgie est un métier de transmission et d'évolution. Mon rôle est de mettre trente ans de savoir-faire et les innovations de demain au service de votre guérison.
+        - button "Arrow Prendre Rendez-vous Arrow" [ref=f16e609] [cursor=pointer]:
+          - img "Arrow" [ref=f16e611]
+          - generic [ref=f16e612]: Prendre Rendez-vous
+          - img "Arrow" [ref=f16e615]
+    - generic [ref=f16e617]:
+      - generic [ref=f16e618]:
+        - generic [ref=f16e619]: Rendez-vous
+        - heading "Demander une consultation." [level=2] [ref=f16e621]
+        - paragraph [ref=f16e622]: Vos coordonnées seront transmises à notre secrétariatqui vous contactera rapidement.
+        - generic [ref=f16e627]:
+          - link "05 22 89 44 19" [ref=f16e628] [cursor=pointer]:
+            - /url: tel:+212522894419
+          - generic [ref=f16e629]: Téléphone fixe
+        - generic [ref=f16e634]:
+          - link "07 67 49 49 16" [ref=f16e635] [cursor=pointer]:
+            - /url: tel:+212767494916
+          - generic [ref=f16e636]: Téléphone portable
+        - generic [ref=f16e642]:
+          - link "drmohammedamalbenzakour@gmail.com" [ref=f16e643] [cursor=pointer]:
+            - /url: mailto:drmohammedamalbenzakour@gmail.com
+          - generic [ref=f16e644]: Envoyez-nous un email
+        - button "Arrow Prendre Rendez-vous Arrow" [ref=f16e645] [cursor=pointer]:
+          - img "Arrow" [ref=f16e647]
+          - generic [ref=f16e648]: Prendre Rendez-vous
+          - img "Arrow" [ref=f16e651]
+      - generic [ref=f16e652]:
+        - generic [ref=f16e653]:
+          - generic [ref=f16e654]:
+            - generic [ref=f16e655]: Jours de consultation
+            - paragraph [ref=f16e657]: Lundi au Vendredi, Samedi Matin
+          - generic [ref=f16e658]:
+            - generic [ref=f16e659]: Adresse du cabinet
+            - paragraph [ref=f16e661]: Uptown Business Center, 5e étage N°9,Immeuble D, CFC,Bd Moulay Abdellah Chérif,Casablanca, Maroc
+        - iframe [ref=f16e663]
+  - contentinfo [ref=f16e664]:
+    - generic [ref=f16e665]:
+      - generic [ref=f16e667]:
+        - link [ref=f16e668] [cursor=pointer]:
+          - /url: /
+          - img "Oncodigest - Dr. Benzakour" [ref=f16e669]
+        - paragraph [ref=f16e670]: Spécialiste en Chirurgie Digestive et Viscérale, Coelioscopique & Robotique.Expert en Chirurgie Oncologique Viscérale et Péritonéale (HIPEC/CRS) à Casablanca
+        - generic [ref=f16e671]:
+          - link "Instagram" [ref=f16e672] [cursor=pointer]:
+            - /url: https://www.instagram.com/dr.benzakour.mohammedamal/
+          - link "YouTube" [ref=f16e676] [cursor=pointer]:
+            - /url: https://www.youtube.com/@DrABMOncoDigest
+            - img "YouTube" [ref=f16e677]
+      - generic [ref=f16e678]:
+        - generic [ref=f16e679]:
+          - generic [ref=f16e680]:
+            - generic [ref=f16e681]: NAVIGATION
+            - generic [ref=f16e682]:
+              - link "Accueil" [ref=f16e683] [cursor=pointer]:
+                - /url: /
+              - link "À Propos" [ref=f16e684] [cursor=pointer]:
+                - /url: /a-propos
+              - link "Actualités" [ref=f16e685] [cursor=pointer]:
+                - /url: /actualites
+              - link "Contact" [ref=f16e686] [cursor=pointer]:
+                - /url: /contact
+              - link "Politique de Confidentialité" [ref=f16e687] [cursor=pointer]:
+                - /url: /confidentialite
+          - generic [ref=f16e688]:
+            - generic [ref=f16e689]: SPÉCIALITÉS
+            - generic [ref=f16e690]:
+              - link "Nos Spécialités" [ref=f16e691] [cursor=pointer]:
+                - /url: /specialites
+              - link "Chirurgie Digestive & Viscérale" [ref=f16e692] [cursor=pointer]:
+                - /url: /specialites/chirurgie-digestive-viscerale
+              - link "Chirurgie Oncologique" [ref=f16e693] [cursor=pointer]:
+                - /url: /specialites/chirurgie-oncologique
+              - link "Chirurgie Laparoscopique & Robotique" [ref=f16e694] [cursor=pointer]:
+                - /url: /specialites/chirurgie-laparoscopique-robotique
+              - link "Cytoréduction & CHIP (HIPEC)" [ref=f16e695] [cursor=pointer]:
+                - /url: /specialites/cytoreduction-chip-hipec
+        - generic [ref=f16e696]:
+          - generic [ref=f16e697]: NOUS CONTACTER
+          - generic [ref=f16e698]:
+            - link "drmohammedamalbenzakour@gmail.com" [ref=f16e699] [cursor=pointer]:
+              - /url: mailto:drmohammedamalbenzakour@gmail.com
+            - link "05 22 89 44 19" [ref=f16e705] [cursor=pointer]:
+              - /url: tel:+212522894419
+            - link "07 67 49 49 16" [ref=f16e710] [cursor=pointer]:
+              - /url: tel:+212767494916
+            - link "Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca" [ref=f16e715] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca
+    - generic [ref=f16e721]:
+      - generic [ref=f16e722]: © 2025 Dr. Benzakour - Casablanca
+      - generic [ref=f16e723]:
+        - generic [ref=f16e724]: Conçu par
+        - link "MouaDev" [ref=f16e725] [cursor=pointer]:
+          - /url: https://wa.me/212611714711
+        - generic [ref=f16e726]: "-"
+        - link "Ayoub HOSNI" [ref=f16e727] [cursor=pointer]:
+          - /url: https://www.instagram.com/hosniayoub_?utm_source=qr
+  - alert [ref=f16e381]: Chirurgie Oncologique Casablanca | Cancers Digestifs MA | Dr. Benzakour
