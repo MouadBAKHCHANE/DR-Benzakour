@@ -5,17 +5,20 @@ export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, service, message } = await req.json();
 
-    if (!name || !email || !message) {
+    // Email is optional on the front-end form (only name, phone and message
+    // are required), so don't require it here or valid submissions 400.
+    if (!name || !message) {
       return NextResponse.json(
-        { error: "Nom, email et message sont requis." },
+        { error: "Nom et message sont requis." },
         { status: 400 }
       );
     }
 
+    const port = Number(process.env.SMTP_PORT) || 587;
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
+      port,
+      secure: port === 465, // 465 = implicit SSL, 587 = STARTTLS
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -25,7 +28,7 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: process.env.SMTP_USER || "contact@cabinetdrbenzakour.ma",
       to: "contact@cabinetdrbenzakour.ma",
-      replyTo: email,
+      replyTo: email || undefined,
       subject: `Nouveau message - ${service || "Contact"} — ${name}`,
       html: `
         <h2>Nouveau message depuis le site</h2>
