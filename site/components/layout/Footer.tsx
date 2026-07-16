@@ -183,7 +183,7 @@ export function Footer({ youtubeUrl, twitterUrl }: FooterProps) {
             </div>
             <div className="footer-contact-list">
               <a
-                href="mailto:drmohammedamalbenzakour@gmail.com"
+                href="mailto:contact@cabinetdrbenzakour.ma"
                 className="footer-contact-item"
               >
                 <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">
@@ -192,7 +192,7 @@ export function Footer({ youtubeUrl, twitterUrl }: FooterProps) {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                 </span>
-                <span>drmohammedamalbenzakour@gmail.com</span>
+                <span>contact@cabinetdrbenzakour.ma</span>
               </a>
               <a href="tel:+212522894419" className="footer-contact-item">
                 <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">

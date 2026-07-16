@@ -113,11 +113,11 @@ export function ContactClient({ faqItems }: ContactClientProps) {
                         <div className="contact-info">
                           <div className="contact-text">Email&nbsp;:</div>
                           <a
-                            href="mailto:drmohammedamalbenzakour@gmail.com"
+                            href="mailto:contact@cabinetdrbenzakour.ma"
                             className="contact-link w-inline-block"
                           >
                             <div className="nav-top-line _02"></div>
-                            <div>drmohammedamalbenzakour@gmail.com</div>
+                            <div>contact@cabinetdrbenzakour.ma</div>
                             <div className="nav-bottom-line _02"></div>
                           </a>
                         </div>

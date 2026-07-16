@@ -51,7 +51,7 @@ export function AppointmentForm() {
               </svg>
             </div>
             <div className="appointment-contact-info">
-              <a href="mailto:drmohammedamalbenzakour@gmail.com" className="appointment-phone">drmohammedamalbenzakour@gmail.com</a>
+              <a href="mailto:contact@cabinetdrbenzakour.ma" className="appointment-phone">contact@cabinetdrbenzakour.ma</a>
               <span className="appointment-call-text">Envoyez-nous un email</span>
             </div>
           </div>
