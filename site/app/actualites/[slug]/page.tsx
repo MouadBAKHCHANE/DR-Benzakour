@@ -5,6 +5,7 @@ import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { getAllBlogPosts, getPostBySlug } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
+import { DABADOC_URL } from "@/lib/constants";
 import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
 import { blogPostingJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
@@ -138,9 +139,9 @@ export default async function ArticlePage({
                   <div className="cta-inner">
                     <h3>Besoin d&rsquo;une consultation ?</h3>
                     <p>Prenez rendez-vous directement avec le Dr. Benzakour pour un diagnostic précis.</p>
-                    <Link href="/contact" className="primary-button small">
+                    <a href={DABADOC_URL} target="_blank" rel="noopener noreferrer" className="primary-button small">
                       <div className="primary-text">Prendre Rendez-vous</div>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

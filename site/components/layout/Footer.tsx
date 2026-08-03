@@ -211,6 +211,15 @@ export function Footer({ youtubeUrl, twitterUrl }: FooterProps) {
                 </span>
                 <span>07 67 49 49 16</span>
               </a>
+              <a href="tel:+212660117277" className="footer-contact-item">
+                <span className="footer-contact-icon footer-icon-svg" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="M12 18h.01" />
+                  </svg>
+                </span>
+                <span>06 60 11 72 77</span>
+              </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Uptown+Business+Center+CFC+Bd+Moulay+Abdellah+Cherif+Casablanca"
                 target="_blank"

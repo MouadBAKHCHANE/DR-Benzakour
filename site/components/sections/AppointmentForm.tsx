@@ -46,6 +46,19 @@ export function AppointmentForm() {
           <div className="appointment-contact">
             <div className="appointment-contact-images">
               <svg className="appointment-contact-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                <path d="M12 18h.01" />
+              </svg>
+            </div>
+            <div className="appointment-contact-info">
+              <a href="tel:+212660117277" className="appointment-phone">06 60 11 72 77</a>
+              <span className="appointment-call-text">Téléphone portable</span>
+            </div>
+          </div>
+
+          <div className="appointment-contact">
+            <div className="appointment-contact-images">
+              <svg className="appointment-contact-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="16" x="2" y="4" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>

@@ -144,6 +144,17 @@ export function ContactClient({ faqItems }: ContactClientProps) {
                           </a>
                         </div>
                         <div className="contact-info">
+                          <div className="contact-text">Tél. portable&nbsp;:</div>
+                          <a
+                            href="tel:+212660117277"
+                            className="contact-link w-inline-block"
+                          >
+                            <div className="nav-top-line _02"></div>
+                            <div>06 60 11 72 77</div>
+                            <div className="nav-bottom-line _02"></div>
+                          </a>
+                        </div>
+                        <div className="contact-info">
                           <div className="contact-text">Jours de consultation&nbsp;:</div>
                           <div>Lundi au Vendredi, Samedi Matin</div>
                         </div>

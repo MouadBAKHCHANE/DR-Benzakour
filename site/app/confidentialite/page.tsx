@@ -108,6 +108,7 @@ export default function ConfidentialitePage() {
                     <li>Email : contact@cabinetdrbenzakour.ma</li>
                     <li>Téléphone fixe : 05 22 89 44 19</li>
                     <li>Téléphone portable : 07 67 49 49 16</li>
+                    <li>Téléphone portable : 06 60 11 72 77</li>
                     <li>Instagram : @dr.benzakour.mohammedamal</li>
                     <li>Adresse : Uptown Business Center, 5e étage N°9, Immeuble D, CFC, Bd Moulay Abdellah Chérif, Casablanca, Maroc</li>
                   </ul>
