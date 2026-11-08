@@ -3686,7 +3686,7 @@ h6 {
 
 /* ===== FEATURE BENTO GRID ===== */
 .feature-grid {
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 
 .feature-top {

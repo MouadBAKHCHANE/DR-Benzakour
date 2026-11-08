@@ -74,7 +74,7 @@ export function ContactClient({ faqItems }: ContactClientProps) {
               <h1 className="main-heading reveal">Nous Contacter</h1>
               <p className="pg-title-text">
                 Une question ou besoin d&apos;assistance&nbsp;? Nous sommes
-                l&agrave; pour vous aider&nbsp;&mdash;&nbsp;contactez-nous
+                l&agrave; pour vous aider, contactez-nous
                 d&egrave;s aujourd&apos;hui.
               </p>
             </div>
