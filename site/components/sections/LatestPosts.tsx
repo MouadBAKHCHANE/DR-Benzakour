@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getHomePage, getLatestPosts } from "@/lib/queries";
-import { urlForImage } from "@/lib/sanity";
+import { sanityImageUrl, hotspotPosition } from "@/lib/sanity";
 
 const IC_TITLE = "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/691db30b09f7df66c548ed80_ic-title.svg";
 const IC_ARROW_BLACK = "https://cdn.prod.website-files.com/6879d758d1319ce9a5b7b343/6921538e227be2cec8f60124_ic-arrow-black.svg";
@@ -46,7 +46,7 @@ export async function LatestPosts() {
             {posts.map((article) => {
               const slug = article?.slug?.current;
               const imgUrl = article?.mainImage?.asset
-                ? urlForImage(article.mainImage).width(800).height(600).url()
+                ? sanityImageUrl(article.mainImage, 900)
                 : null;
               return (
                 <div key={article._id} className="post-item">
@@ -62,7 +62,12 @@ export async function LatestPosts() {
                     </div>
                     {imgUrl && (
                       <div className="post-img-02">
-                        <img src={imgUrl} alt={article.title} className="post-image-02" />
+                        <img
+                          src={imgUrl}
+                          alt={article.title}
+                          className="post-image-02"
+                          style={{ objectPosition: hotspotPosition(article.mainImage) }}
+                        />
                       </div>
                     )}
                     <div className="post-title-wrapper-02">

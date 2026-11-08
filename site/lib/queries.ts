@@ -72,7 +72,8 @@ export async function getPostBySlug(slug: string) {
   return client.fetch(
     `*[_type == "post" && slug.current == $slug][0]{
       _id, _updatedAt, title, slug, publishedAt, mainImage, categorie,
-      excerpt, author, body,
+      excerpt, author,
+      body,
       "seoTitle": seo.title,
       "seoDescription": seo.description
     }`,

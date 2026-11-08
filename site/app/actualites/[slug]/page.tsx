@@ -4,7 +4,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { FooterServer } from "@/components/layout/FooterServer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { getAllBlogPosts, getPostBySlug } from "@/lib/queries";
-import { urlForImage } from "@/lib/sanity";
+import { urlForImage, sanityImageUrl, hotspotPosition } from "@/lib/sanity";
+import { articleComponents } from "@/components/blog/articleComponents";
 import { DABADOC_URL } from "@/lib/constants";
 import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
@@ -99,7 +100,13 @@ export default async function ArticlePage({
                 </div>
                 <div className="article-hero-img-wrap">
                   {article.mainImage && (
-                    <img src={urlForImage(article.mainImage).url()} alt={article.title} loading="eager" className="article-main-img" />
+                    <img
+                      src={sanityImageUrl(article.mainImage, 1400)}
+                      alt={article.title}
+                      loading="eager"
+                      className="article-main-img"
+                      style={{ objectPosition: hotspotPosition(article.mainImage) }}
+                    />
                   )}
                 </div>
               </div>
@@ -129,7 +136,7 @@ export default async function ArticlePage({
               <div className="article-main-body reveal">
                 <div className="article-content-rich">
                   {article.body ? (
-                    <PortableText value={article.body} />
+                    <PortableText value={article.body} components={articleComponents} />
                   ) : (
                     <p>Aucun contenu disponible pour cet article.</p>
                   )}
@@ -160,7 +167,12 @@ export default async function ArticlePage({
                     <div key={a.slug?.current} className="related-post-card">
                       <Link href={`/actualites/${a.slug?.current}`} className="post-card-link">
                         <div className="post-card-img">
-                          <img src={a.mainImage ? urlForImage(a.mainImage).url() : "/images/placeholder.webp"} loading="lazy" alt={a.title} />
+                          <img
+                            src={a.mainImage ? sanityImageUrl(a.mainImage, 800) : "/images/placeholder.webp"}
+                            loading="lazy"
+                            alt={a.title}
+                            style={{ objectPosition: hotspotPosition(a.mainImage) }}
+                          />
                         </div>
                         <div className="post-card-info">
                           <div className="post-card-meta">

@@ -12219,6 +12219,41 @@ h3.reveal-auto + p.reveal-auto,
   margin-bottom: 32px !important;
 }
 
+/* Images & videos inserted by the admin in the article body */
+.article-figure {
+  margin: 48px 0;
+}
+
+.article-body-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+
+.article-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.article-figure figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #777;
+  text-align: center;
+}
+
 .article-footer-cta {
   margin-top: 80px !important;
   padding: 60px !important;

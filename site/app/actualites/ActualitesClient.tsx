@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { urlForImage } from "@/lib/sanity";
+import { sanityImageUrl, hotspotPosition } from "@/lib/sanity";
 
 // Reads ?cat= from the URL and syncs it to the filter state. Isolated in its
 // own component so the Suspense boundary required by useSearchParams only
@@ -105,10 +105,11 @@ export function ActualitesPageClient({ posts }: { posts: any[] }) {
                       >
                         <div className="post-img">
                           <img
-                            src={article.mainImage ? urlForImage(article.mainImage).url() : "/images/placeholder.webp"}
+                            src={article.mainImage ? sanityImageUrl(article.mainImage, 900) : "/images/placeholder.webp"}
                             loading="lazy"
                             alt={article.title}
                             className="post-image"
+                            style={{ objectPosition: hotspotPosition(article.mainImage) }}
                           />
                         </div>
                         <div className="post-data">

@@ -1,4 +1,5 @@
 import { blockContent } from "./helpers/blockContent";
+import { videoEmbed } from "./helpers/videoEmbed";
 import { homePage } from "./singletons/homepage";
 import { aboutPage } from "./singletons/aboutPage";
 import { siteSettings } from "./singletons/siteSettings";
@@ -9,6 +10,7 @@ import { legalPage } from "./collections/legalPage";
 
 export const schemaTypes = [
   blockContent,
+  videoEmbed,
   homePage,
   aboutPage,
   specialtiesPage,

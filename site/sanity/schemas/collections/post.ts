@@ -31,6 +31,8 @@ export const post = defineType({
       title: "Image principale",
       type: "image",
       options: { hotspot: true },
+      description:
+        "Cliquez sur l'icône crayon de l'image pour recadrer et placer le point focal : il restera visible sur tous les formats du site.",
     }),
     defineField({
       name: "publishedAt",
@@ -71,7 +73,19 @@ export const post = defineType({
       name: "body",
       title: "Contenu",
       type: "array",
-      of: [{ type: "block" }, { type: "image", options: { hotspot: true } }],
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          title: "Image",
+          options: { hotspot: true },
+          fields: [
+            defineField({ name: "alt", title: "Texte alternatif (SEO)", type: "string" }),
+            defineField({ name: "caption", title: "Légende", type: "string" }),
+          ],
+        },
+        { type: "videoEmbed" },
+      ],
     }),
     defineField({
       name: "seo",
